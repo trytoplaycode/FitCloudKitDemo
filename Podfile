@@ -1,0 +1,29 @@
+# Uncomment this line to define a global platform for your project
+
+# 忽略引入库的所有警告（强迫症者的福音啊）
+inhibit_all_warnings!
+
+target 'FitCloudKitDemo' do
+  platform :ios, '9.0'
+  workspace 'FitCloudKitDemo.xcworkspace'
+  project 'FitCloudKitDemo.xcodeproj'
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for FitCloudKitDemo
+  pod 'FitCloudKit', git: 'https://github.com/htangsmart/FitCloudPro-SDK-iOS.git'
+  pod 'QuickTraceiOSLogger'
+  pod 'YYCategories'
+  pod 'Toast'
+  pod 'Masonry'
+  pod 'YYModel'
+  pod 'BRPickerView'
+  pod 'MBProgressHUD'
+  
+  end
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
