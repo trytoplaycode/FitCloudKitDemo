@@ -116,6 +116,7 @@
 		A4911BB82A862D4000733B85 /* FCWeatherForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BB62A862D4000733B85 /* FCWeatherForecastViewController.m */; };
 		A4911BBA2A862DFB00733B85 /* FCAlarmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BB92A862DFB00733B85 /* FCAlarmListViewController.m */; };
 		A4911BBE2A86322D00733B85 /* FCGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BBD2A86322D00733B85 /* FCGlobal.m */; };
+		A4911BC22A8632F100733B85 /* FCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BC02A8632F100733B85 /* FCNetworking.m */; };
 		A4CD6ED02A5D4E76008E5E55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD6ECF2A5D4E76008E5E55 /* AppDelegate.m */; };
 		A4CD6ED92A5D4E76008E5E55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CD6ED72A5D4E76008E5E55 /* Main.storyboard */; };
 		A4CD6EDB2A5D4E77008E5E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4CD6EDA2A5D4E77008E5E55 /* Assets.xcassets */; };
@@ -317,6 +318,8 @@
 		A4911BB92A862DFB00733B85 /* FCAlarmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAlarmListViewController.m; sourceTree = "<group>"; };
 		A4911BBC2A86322D00733B85 /* FCGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCGlobal.h; sourceTree = "<group>"; };
 		A4911BBD2A86322D00733B85 /* FCGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCGlobal.m; sourceTree = "<group>"; };
+		A4911BC02A8632F100733B85 /* FCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCNetworking.m; sourceTree = "<group>"; };
+		A4911BC12A8632F100733B85 /* FCNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCNetworking.h; sourceTree = "<group>"; };
 		A4CD6ECB2A5D4E76008E5E55 /* FitCloudKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCloudKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CD6ECE2A5D4E76008E5E55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4CD6ECF2A5D4E76008E5E55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -668,11 +671,12 @@
 		A4911B012A86243200733B85 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A4911B022A86243200733B85 /* FCBaseNavigationViewController.m */,
-				A4911B032A86243200733B85 /* FCBaseViewController.m */,
-				A4911B042A86243200733B85 /* FCBaseViewController.h */,
 				A4911B052A86243200733B85 /* FCBaseNavigationViewController.h */,
+				A4911B022A86243200733B85 /* FCBaseNavigationViewController.m */,
 				A4911B062A86243200733B85 /* FCBaseTableBarViewController */,
+				A4911B042A86243200733B85 /* FCBaseViewController.h */,
+				A4911B032A86243200733B85 /* FCBaseViewController.m */,
+				A4911BBF2A8632F100733B85 /* Network */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -680,14 +684,14 @@
 		A4911B062A86243200733B85 /* FCBaseTableBarViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A4911B072A86243200733B85 /* FCTabbar.m */,
 				A4911B082A86243200733B85 /* FCBaseTabBarViewController.h */,
+				A4911B0C2A86243200733B85 /* FCBaseTabBarViewController.m */,
+				A4911B0B2A86243200733B85 /* FCButton.h */,
 				A4911B092A86243200733B85 /* FCButton.m */,
 				A4911B0A2A86243200733B85 /* FCCenterButton.h */,
-				A4911B0B2A86243200733B85 /* FCButton.h */,
-				A4911B0C2A86243200733B85 /* FCBaseTabBarViewController.m */,
-				A4911B0D2A86243200733B85 /* FCTabbar.h */,
 				A4911B0E2A86243200733B85 /* FCCenterButton.m */,
+				A4911B0D2A86243200733B85 /* FCTabbar.h */,
+				A4911B072A86243200733B85 /* FCTabbar.m */,
 			);
 			path = FCBaseTableBarViewController;
 			sourceTree = "<group>";
@@ -791,6 +795,15 @@
 				A4911BBD2A86322D00733B85 /* FCGlobal.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		A4911BBF2A8632F100733B85 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A4911BC02A8632F100733B85 /* FCNetworking.m */,
+				A4911BC12A8632F100733B85 /* FCNetworking.h */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A4CD6EC22A5D4E76008E5E55 = {
@@ -1166,6 +1179,7 @@
 				A4911B3B2A86243200733B85 /* FCDeviceBindViewController.m in Sources */,
 				A4911B842A862B5800733B85 /* FCWatchStyleViewController.m in Sources */,
 				A4911B422A86243200733B85 /* FCAboutBraceletViewController.m in Sources */,
+				A4911BC22A8632F100733B85 /* FCNetworking.m in Sources */,
 				A4911BB82A862D4000733B85 /* FCWeatherForecastViewController.m in Sources */,
 				A4911B592A86243200733B85 /* FCStepTargetViewController.m in Sources */,
 				A4911B702A86243200733B85 /* FCWomenHealthyViewController.m in Sources */,
