@@ -7,9 +7,116 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		794E1705674AFDC968319194 /* Pods_FitCloudKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9525761241BA050AF8CC4396 /* Pods_FitCloudKitDemo.framework */; };
+		A4911B282A86243200733B85 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = A4911A762A86243200733B85 /* Contents.json */; };
+		A4911B292A86243200733B85 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911A782A86243200733B85 /* LaunchScreen.strings */; };
+		A4911B2A2A86243200733B85 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911A7A2A86243200733B85 /* Main.strings */; };
+		A4911B2B2A86243200733B85 /* LocalizedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A7F2A86243200733B85 /* LocalizedLabel.m */; };
+		A4911B2C2A86243200733B85 /* LocalizedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A812A86243200733B85 /* LocalizedButton.m */; };
+		A4911B2D2A86243200733B85 /* MoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A852A86243200733B85 /* MoView.m */; };
+		A4911B2E2A86243200733B85 /* MoCurveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A862A86243200733B85 /* MoCurveLayer.m */; };
+		A4911B2F2A86243200733B85 /* AppDelegate+FitCloudKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A882A86243200733B85 /* AppDelegate+FitCloudKit.m */; };
+		A4911B302A86243200733B85 /* FCRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911A8B2A86243200733B85 /* FCRegistViewController.xib */; };
+		A4911B312A86243200733B85 /* FCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911A8C2A86243200733B85 /* FCLoginViewController.xib */; };
+		A4911B322A86243200733B85 /* FCRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A8D2A86243200733B85 /* FCRegistViewController.m */; };
+		A4911B332A86243200733B85 /* FCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A902A86243200733B85 /* FCLoginViewController.m */; };
+		A4911B342A86243200733B85 /* FCCommenRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A922A86243200733B85 /* FCCommenRecordModel.m */; };
+		A4911B352A86243200733B85 /* FCDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A952A86243200733B85 /* FCDeviceTableViewCell.m */; };
+		A4911B362A86243200733B85 /* FCSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911A962A86243200733B85 /* FCSearchViewController.xib */; };
+		A4911B372A86243200733B85 /* FCDeviceBindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911A982A86243200733B85 /* FCDeviceBindViewController.xib */; };
+		A4911B382A86243200733B85 /* FCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A9A2A86243200733B85 /* FCSearchViewController.m */; };
+		A4911B392A86243200733B85 /* FCDeviceBindingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911A9C2A86243200733B85 /* FCDeviceBindingViewController.xib */; };
+		A4911B3A2A86243200733B85 /* FCDeviceBindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A9D2A86243200733B85 /* FCDeviceBindingViewController.m */; };
+		A4911B3B2A86243200733B85 /* FCDeviceBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911A9F2A86243200733B85 /* FCDeviceBindViewController.m */; };
+		A4911B3C2A86243200733B85 /* FCScreenDisplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AA22A86243200733B85 /* FCScreenDisplayViewController.xib */; };
+		A4911B3D2A86243200733B85 /* FCScreenDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AA32A86243200733B85 /* FCScreenDisplayViewController.m */; };
+		A4911B402A86243200733B85 /* FCSocailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AAA2A86243200733B85 /* FCSocailViewController.xib */; };
+		A4911B412A86243200733B85 /* FCSocailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AAC2A86243200733B85 /* FCSocailViewController.m */; };
+		A4911B422A86243200733B85 /* FCAboutBraceletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AB12A86243200733B85 /* FCAboutBraceletViewController.m */; };
+		A4911B432A86243200733B85 /* FCCommenCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AB22A86243200733B85 /* FCCommenCellModel.m */; };
+		A4911B442A86243200733B85 /* FCContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AB52A86243200733B85 /* FCContactViewController.xib */; };
+		A4911B452A86243200733B85 /* FCContactsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AB62A86243200733B85 /* FCContactsDetailViewController.m */; };
+		A4911B462A86243200733B85 /* FCContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AB72A86243200733B85 /* FCContactViewController.m */; };
+		A4911B472A86243200733B85 /* FCContactsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AB82A86243200733B85 /* FCContactsDetailViewController.xib */; };
+		A4911B482A86243200733B85 /* FCFuncListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911ABA2A86243200733B85 /* FCFuncListTableViewCell.m */; };
+		A4911B492A86243200733B85 /* FCFuncListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911ABB2A86243200733B85 /* FCFuncListViewController.m */; };
+		A4911B4A2A86243200733B85 /* FCHisoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911ABD2A86243200733B85 /* FCHisoryListViewController.xib */; };
+		A4911B4B2A86243200733B85 /* FCHistoryDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AC02A86243200733B85 /* FCHistoryDataViewController.m */; };
+		A4911B4C2A86243200733B85 /* FCHistoryDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AC32A86243200733B85 /* FCHistoryDataTableViewCell.xib */; };
+		A4911B4D2A86243200733B85 /* FCHistoryDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AC42A86243200733B85 /* FCHistoryDataTableViewCell.m */; };
+		A4911B4E2A86243200733B85 /* FCHisoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AC52A86243200733B85 /* FCHisoryListViewController.m */; };
+		A4911B4F2A86243200733B85 /* FCHistoryDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AC62A86243200733B85 /* FCHistoryDataViewController.xib */; };
+		A4911B502A86243200733B85 /* FCAlarmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AC82A86243200733B85 /* FCAlarmDetailViewController.m */; };
+		A4911B512A86243200733B85 /* FCAlarmDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AC92A86243200733B85 /* FCAlarmDetailViewController.xib */; };
+		A4911B522A86243200733B85 /* FCAlarmCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911ACA2A86243200733B85 /* FCAlarmCycleViewController.m */; };
+		A4911B532A86243200733B85 /* FCAlarmListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911ACB2A86243200733B85 /* FCAlarmListViewController.xib */; };
+		A4911B542A86243200733B85 /* FCAlarmCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911ACD2A86243200733B85 /* FCAlarmCycleViewController.xib */; };
+		A4911B562A86243200733B85 /* FCTodySportsDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AD22A86243200733B85 /* FCTodySportsDataViewController.xib */; };
+		A4911B572A86243200733B85 /* FCStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AD42A86243200733B85 /* FCStepViewController.m */; };
+		A4911B582A86243200733B85 /* FCStepTargetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AD62A86243200733B85 /* FCStepTargetViewController.xib */; };
+		A4911B592A86243200733B85 /* FCStepTargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AD72A86243200733B85 /* FCStepTargetViewController.m */; };
+		A4911B5A2A86243200733B85 /* FCTodySportsDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AD92A86243200733B85 /* FCTodySportsDataViewController.m */; };
+		A4911B5B2A86243200733B85 /* FCQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911ADB2A86243200733B85 /* FCQRCodeViewController.m */; };
+		A4911B5C2A86243200733B85 /* FCQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911ADC2A86243200733B85 /* FCQRCodeViewController.xib */; };
+		A4911B5D2A86243200733B85 /* FCHealthMonitorSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AE02A86243200733B85 /* FCHealthMonitorSettingViewController.xib */; };
+		A4911B5E2A86243200733B85 /* DNDSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AE22A86243200733B85 /* DNDSettingViewController.xib */; };
+		A4911B5F2A86243200733B85 /* FCHealthMonitorSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AE32A86243200733B85 /* FCHealthMonitorSettingViewController.m */; };
+		A4911B602A86243200733B85 /* FCRaiseToWakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AE52A86243200733B85 /* FCRaiseToWakeViewController.xib */; };
+		A4911B612A86243200733B85 /* FCDrinkWaterReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AE72A86243200733B85 /* FCDrinkWaterReminderViewController.m */; };
+		A4911B622A86243200733B85 /* FCFuncionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AE82A86243200733B85 /* FCFuncionConfigViewController.m */; };
+		A4911B632A86243200733B85 /* FCDeviceConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AE92A86243200733B85 /* FCDeviceConfigViewController.m */; };
+		A4911B642A86243200733B85 /* FCDeviceConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AEB2A86243200733B85 /* FCDeviceConfigViewController.xib */; };
+		A4911B652A86243200733B85 /* FCRaiseToWakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AEC2A86243200733B85 /* FCRaiseToWakeViewController.m */; };
+		A4911B662A86243200733B85 /* FCSedentaryReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AED2A86243200733B85 /* FCSedentaryReminderViewController.m */; };
+		A4911B672A86243200733B85 /* FCBloodPressureReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AEE2A86243200733B85 /* FCBloodPressureReminderViewController.xib */; };
+		A4911B682A86243200733B85 /* FCBloodPressureReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AF02A86243200733B85 /* FCBloodPressureReminderViewController.m */; };
+		A4911B692A86243200733B85 /* DNDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AF22A86243200733B85 /* DNDSettingViewController.m */; };
+		A4911B6A2A86243200733B85 /* FCDrinkWaterReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AF32A86243200733B85 /* FCDrinkWaterReminderViewController.xib */; };
+		A4911B6B2A86243200733B85 /* FCMessageNotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AF42A86243200733B85 /* FCMessageNotifyViewController.m */; };
+		A4911B6C2A86243200733B85 /* FCSedentaryReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AF52A86243200733B85 /* FCSedentaryReminderViewController.xib */; };
+		A4911B6D2A86243200733B85 /* FCWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AFA2A86243200733B85 /* FCWeatherViewController.xib */; };
+		A4911B6E2A86243200733B85 /* FCWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911AFB2A86243200733B85 /* FCWeatherViewController.m */; };
+		A4911B6F2A86243200733B85 /* FCWomenHealthyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911AFE2A86243200733B85 /* FCWomenHealthyViewController.xib */; };
+		A4911B702A86243200733B85 /* FCWomenHealthyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B002A86243200733B85 /* FCWomenHealthyViewController.m */; };
+		A4911B712A86243200733B85 /* FCBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B022A86243200733B85 /* FCBaseNavigationViewController.m */; };
+		A4911B722A86243200733B85 /* FCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B032A86243200733B85 /* FCBaseViewController.m */; };
+		A4911B732A86243200733B85 /* FCTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B072A86243200733B85 /* FCTabbar.m */; };
+		A4911B742A86243200733B85 /* FCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B092A86243200733B85 /* FCButton.m */; };
+		A4911B752A86243200733B85 /* FCBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B0C2A86243200733B85 /* FCBaseTabBarViewController.m */; };
+		A4911B762A86243200733B85 /* FCCenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B0E2A86243200733B85 /* FCCenterButton.m */; };
+		A4911B772A86243200733B85 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911B112A86243200733B85 /* LaunchScreen.strings */; };
+		A4911B782A86243200733B85 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911B132A86243200733B85 /* Main.strings */; };
+		A4911B792A86243200733B85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911B152A86243200733B85 /* Localizable.strings */; };
+		A4911B7A2A86243200733B85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911B172A86243200733B85 /* InfoPlist.strings */; };
+		A4911B7B2A86243200733B85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4911B1A2A86243200733B85 /* Assets.xcassets */; };
+		A4911B7C2A86243200733B85 /* AppDelegate+LoggerService.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B1B2A86243200733B85 /* AppDelegate+LoggerService.m */; };
+		A4911B7D2A86243200733B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4911B1D2A86243200733B85 /* LaunchScreen.storyboard */; };
+		A4911B7E2A86243200733B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4911B1F2A86243200733B85 /* Main.storyboard */; };
+		A4911B7F2A86243200733B85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911B242A86243200733B85 /* Localizable.strings */; };
+		A4911B802A86243200733B85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911B262A86243200733B85 /* InfoPlist.strings */; };
+		A4911B842A862B5800733B85 /* FCWatchStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B822A862B5800733B85 /* FCWatchStyleViewController.m */; };
+		A4911B852A862B5800733B85 /* FCWatchStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B832A862B5800733B85 /* FCWatchStyleViewController.xib */; };
+		A4911B9C2A862C0200733B85 /* FCDailCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B872A862C0200733B85 /* FCDailCustomViewController.xib */; };
+		A4911B9D2A862C0200733B85 /* FCDailComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B882A862C0200733B85 /* FCDailComponentsViewController.m */; };
+		A4911B9E2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B8A2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m */; };
+		A4911B9F2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B8C2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.xib */; };
+		A4911BA02A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B8E2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.m */; };
+		A4911BA12A862C0200733B85 /* FCWatchFaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B8F2A862C0200733B85 /* FCWatchFaceViewController.xib */; };
+		A4911BA22A862C0200733B85 /* FCDailComponentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B922A862C0200733B85 /* FCDailComponentsViewController.xib */; };
+		A4911BA32A862C0200733B85 /* FCDailLibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B932A862C0200733B85 /* FCDailLibraryViewController.xib */; };
+		A4911BA42A862C0200733B85 /* FCDialLibraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B972A862C0200733B85 /* FCDialLibraryModel.m */; };
+		A4911BA52A862C0200733B85 /* FCDailLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B992A862C0200733B85 /* FCDailLibraryViewController.m */; };
+		A4911BA62A862C0200733B85 /* FCDailCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B9A2A862C0200733B85 /* FCDailCustomViewController.m */; };
+		A4911BA72A862C0200733B85 /* FCWatchFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B9B2A862C0200733B85 /* FCWatchFaceViewController.m */; };
+		A4911BB02A862C6300733B85 /* FCSportTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911BAB2A862C6300733B85 /* FCSportTypeTableViewCell.xib */; };
+		A4911BB12A862C6300733B85 /* FCSportTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BAC2A862C6300733B85 /* FCSportTypeTableViewCell.m */; };
+		A4911BB22A862C6300733B85 /* FCSportDataPushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911BAD2A862C6300733B85 /* FCSportDataPushViewController.xib */; };
+		A4911BB32A862C6300733B85 /* FCSportDataPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BAF2A862C6300733B85 /* FCSportDataPushViewController.m */; };
+		A4911BB72A862D4000733B85 /* FCWeatherForecastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911BB42A862D4000733B85 /* FCWeatherForecastViewController.xib */; };
+		A4911BB82A862D4000733B85 /* FCWeatherForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BB62A862D4000733B85 /* FCWeatherForecastViewController.m */; };
+		A4911BBA2A862DFB00733B85 /* FCAlarmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BB92A862DFB00733B85 /* FCAlarmListViewController.m */; };
+		A4911BBE2A86322D00733B85 /* FCGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911BBD2A86322D00733B85 /* FCGlobal.m */; };
 		A4CD6ED02A5D4E76008E5E55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD6ECF2A5D4E76008E5E55 /* AppDelegate.m */; };
-		A4CD6ED32A5D4E76008E5E55 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD6ED22A5D4E76008E5E55 /* SceneDelegate.m */; };
-		A4CD6ED62A5D4E76008E5E55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD6ED52A5D4E76008E5E55 /* ViewController.m */; };
 		A4CD6ED92A5D4E76008E5E55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CD6ED72A5D4E76008E5E55 /* Main.storyboard */; };
 		A4CD6EDB2A5D4E77008E5E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4CD6EDA2A5D4E77008E5E55 /* Assets.xcassets */; };
 		A4CD6EDE2A5D4E77008E5E55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CD6EDC2A5D4E77008E5E55 /* LaunchScreen.storyboard */; };
@@ -37,13 +144,182 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2954C895C39B9BFBF8F7E313 /* Pods-FitCloudKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCloudKitDemo.release.xcconfig"; path = "Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6A3771686778C614631A3CDE /* Pods-FitCloudKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCloudKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9525761241BA050AF8CC4396 /* Pods_FitCloudKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitCloudKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4911A762A86243200733B85 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A4911A792A86243200733B85 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = LaunchScreen.strings; sourceTree = "<group>"; };
+		A4911A7B2A86243200733B85 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = Main.strings; sourceTree = "<group>"; };
+		A4911A7E2A86243200733B85 /* LocalizedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizedLabel.h; sourceTree = "<group>"; };
+		A4911A7F2A86243200733B85 /* LocalizedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedLabel.m; sourceTree = "<group>"; };
+		A4911A812A86243200733B85 /* LocalizedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedButton.m; sourceTree = "<group>"; };
+		A4911A822A86243200733B85 /* LocalizedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizedButton.h; sourceTree = "<group>"; };
+		A4911A842A86243200733B85 /* MoCurveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoCurveLayer.h; sourceTree = "<group>"; };
+		A4911A852A86243200733B85 /* MoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoView.m; sourceTree = "<group>"; };
+		A4911A862A86243200733B85 /* MoCurveLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoCurveLayer.m; sourceTree = "<group>"; };
+		A4911A872A86243200733B85 /* MoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoView.h; sourceTree = "<group>"; };
+		A4911A882A86243200733B85 /* AppDelegate+FitCloudKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+FitCloudKit.m"; sourceTree = "<group>"; };
+		A4911A8B2A86243200733B85 /* FCRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCRegistViewController.xib; sourceTree = "<group>"; };
+		A4911A8C2A86243200733B85 /* FCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCLoginViewController.xib; sourceTree = "<group>"; };
+		A4911A8D2A86243200733B85 /* FCRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRegistViewController.m; sourceTree = "<group>"; };
+		A4911A8E2A86243200733B85 /* FCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLoginViewController.h; sourceTree = "<group>"; };
+		A4911A8F2A86243200733B85 /* FCRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRegistViewController.h; sourceTree = "<group>"; };
+		A4911A902A86243200733B85 /* FCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLoginViewController.m; sourceTree = "<group>"; };
+		A4911A922A86243200733B85 /* FCCommenRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCommenRecordModel.m; sourceTree = "<group>"; };
+		A4911A932A86243200733B85 /* FCCommenRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCommenRecordModel.h; sourceTree = "<group>"; };
+		A4911A952A86243200733B85 /* FCDeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDeviceTableViewCell.m; sourceTree = "<group>"; };
+		A4911A962A86243200733B85 /* FCSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCSearchViewController.xib; sourceTree = "<group>"; };
+		A4911A972A86243200733B85 /* FCDeviceBindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDeviceBindingViewController.h; sourceTree = "<group>"; };
+		A4911A982A86243200733B85 /* FCDeviceBindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDeviceBindViewController.xib; sourceTree = "<group>"; };
+		A4911A992A86243200733B85 /* FCDeviceBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDeviceBindViewController.h; sourceTree = "<group>"; };
+		A4911A9A2A86243200733B85 /* FCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSearchViewController.m; sourceTree = "<group>"; };
+		A4911A9B2A86243200733B85 /* FCDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDeviceTableViewCell.h; sourceTree = "<group>"; };
+		A4911A9C2A86243200733B85 /* FCDeviceBindingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDeviceBindingViewController.xib; sourceTree = "<group>"; };
+		A4911A9D2A86243200733B85 /* FCDeviceBindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDeviceBindingViewController.m; sourceTree = "<group>"; };
+		A4911A9E2A86243200733B85 /* FCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSearchViewController.h; sourceTree = "<group>"; };
+		A4911A9F2A86243200733B85 /* FCDeviceBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDeviceBindViewController.m; sourceTree = "<group>"; };
+		A4911AA22A86243200733B85 /* FCScreenDisplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCScreenDisplayViewController.xib; sourceTree = "<group>"; };
+		A4911AA32A86243200733B85 /* FCScreenDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCScreenDisplayViewController.m; sourceTree = "<group>"; };
+		A4911AA42A86243200733B85 /* FCScreenDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCScreenDisplayViewController.h; sourceTree = "<group>"; };
+		A4911AAA2A86243200733B85 /* FCSocailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCSocailViewController.xib; sourceTree = "<group>"; };
+		A4911AAB2A86243200733B85 /* FCSocailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSocailViewController.h; sourceTree = "<group>"; };
+		A4911AAC2A86243200733B85 /* FCSocailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSocailViewController.m; sourceTree = "<group>"; };
+		A4911AAD2A86243200733B85 /* FCFuncListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFuncListViewController.h; sourceTree = "<group>"; };
+		A4911AAF2A86243200733B85 /* FCCommenCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCommenCellModel.h; sourceTree = "<group>"; };
+		A4911AB02A86243200733B85 /* FCAboutBraceletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAboutBraceletViewController.h; sourceTree = "<group>"; };
+		A4911AB12A86243200733B85 /* FCAboutBraceletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAboutBraceletViewController.m; sourceTree = "<group>"; };
+		A4911AB22A86243200733B85 /* FCCommenCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCommenCellModel.m; sourceTree = "<group>"; };
+		A4911AB42A86243200733B85 /* FCContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCContactViewController.h; sourceTree = "<group>"; };
+		A4911AB52A86243200733B85 /* FCContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCContactViewController.xib; sourceTree = "<group>"; };
+		A4911AB62A86243200733B85 /* FCContactsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactsDetailViewController.m; sourceTree = "<group>"; };
+		A4911AB72A86243200733B85 /* FCContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCContactViewController.m; sourceTree = "<group>"; };
+		A4911AB82A86243200733B85 /* FCContactsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCContactsDetailViewController.xib; sourceTree = "<group>"; };
+		A4911AB92A86243200733B85 /* FCContactsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCContactsDetailViewController.h; sourceTree = "<group>"; };
+		A4911ABA2A86243200733B85 /* FCFuncListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFuncListTableViewCell.m; sourceTree = "<group>"; };
+		A4911ABB2A86243200733B85 /* FCFuncListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFuncListViewController.m; sourceTree = "<group>"; };
+		A4911ABD2A86243200733B85 /* FCHisoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCHisoryListViewController.xib; sourceTree = "<group>"; };
+		A4911ABE2A86243200733B85 /* FCHistoryDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCHistoryDataViewController.h; sourceTree = "<group>"; };
+		A4911ABF2A86243200733B85 /* FCHisoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCHisoryListViewController.h; sourceTree = "<group>"; };
+		A4911AC02A86243200733B85 /* FCHistoryDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCHistoryDataViewController.m; sourceTree = "<group>"; };
+		A4911AC22A86243200733B85 /* FCHistoryDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCHistoryDataTableViewCell.h; sourceTree = "<group>"; };
+		A4911AC32A86243200733B85 /* FCHistoryDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCHistoryDataTableViewCell.xib; sourceTree = "<group>"; };
+		A4911AC42A86243200733B85 /* FCHistoryDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCHistoryDataTableViewCell.m; sourceTree = "<group>"; };
+		A4911AC52A86243200733B85 /* FCHisoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCHisoryListViewController.m; sourceTree = "<group>"; };
+		A4911AC62A86243200733B85 /* FCHistoryDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCHistoryDataViewController.xib; sourceTree = "<group>"; };
+		A4911AC82A86243200733B85 /* FCAlarmDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAlarmDetailViewController.m; sourceTree = "<group>"; };
+		A4911AC92A86243200733B85 /* FCAlarmDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCAlarmDetailViewController.xib; sourceTree = "<group>"; };
+		A4911ACA2A86243200733B85 /* FCAlarmCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAlarmCycleViewController.m; sourceTree = "<group>"; };
+		A4911ACB2A86243200733B85 /* FCAlarmListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCAlarmListViewController.xib; sourceTree = "<group>"; };
+		A4911ACC2A86243200733B85 /* FCAlarmListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAlarmListViewController.h; sourceTree = "<group>"; };
+		A4911ACD2A86243200733B85 /* FCAlarmCycleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCAlarmCycleViewController.xib; sourceTree = "<group>"; };
+		A4911ACE2A86243200733B85 /* FCAlarmDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAlarmDetailViewController.h; sourceTree = "<group>"; };
+		A4911ACF2A86243200733B85 /* FCAlarmCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAlarmCycleViewController.h; sourceTree = "<group>"; };
+		A4911AD22A86243200733B85 /* FCTodySportsDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTodySportsDataViewController.xib; sourceTree = "<group>"; };
+		A4911AD32A86243200733B85 /* FCTodySportsDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTodySportsDataViewController.h; sourceTree = "<group>"; };
+		A4911AD42A86243200733B85 /* FCStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCStepViewController.m; sourceTree = "<group>"; };
+		A4911AD52A86243200733B85 /* FCStepTargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCStepTargetViewController.h; sourceTree = "<group>"; };
+		A4911AD62A86243200733B85 /* FCStepTargetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCStepTargetViewController.xib; sourceTree = "<group>"; };
+		A4911AD72A86243200733B85 /* FCStepTargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCStepTargetViewController.m; sourceTree = "<group>"; };
+		A4911AD82A86243200733B85 /* FCStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCStepViewController.h; sourceTree = "<group>"; };
+		A4911AD92A86243200733B85 /* FCTodySportsDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTodySportsDataViewController.m; sourceTree = "<group>"; };
+		A4911ADB2A86243200733B85 /* FCQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCQRCodeViewController.m; sourceTree = "<group>"; };
+		A4911ADC2A86243200733B85 /* FCQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCQRCodeViewController.xib; sourceTree = "<group>"; };
+		A4911ADD2A86243200733B85 /* FCQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCQRCodeViewController.h; sourceTree = "<group>"; };
+		A4911ADF2A86243200733B85 /* FCSedentaryReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSedentaryReminderViewController.h; sourceTree = "<group>"; };
+		A4911AE02A86243200733B85 /* FCHealthMonitorSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCHealthMonitorSettingViewController.xib; sourceTree = "<group>"; };
+		A4911AE12A86243200733B85 /* FCRaiseToWakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCRaiseToWakeViewController.h; sourceTree = "<group>"; };
+		A4911AE22A86243200733B85 /* DNDSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DNDSettingViewController.xib; sourceTree = "<group>"; };
+		A4911AE32A86243200733B85 /* FCHealthMonitorSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCHealthMonitorSettingViewController.m; sourceTree = "<group>"; };
+		A4911AE42A86243200733B85 /* DNDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDSettingViewController.h; sourceTree = "<group>"; };
+		A4911AE52A86243200733B85 /* FCRaiseToWakeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCRaiseToWakeViewController.xib; sourceTree = "<group>"; };
+		A4911AE62A86243200733B85 /* FCBloodPressureReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCBloodPressureReminderViewController.h; sourceTree = "<group>"; };
+		A4911AE72A86243200733B85 /* FCDrinkWaterReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDrinkWaterReminderViewController.m; sourceTree = "<group>"; };
+		A4911AE82A86243200733B85 /* FCFuncionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFuncionConfigViewController.m; sourceTree = "<group>"; };
+		A4911AE92A86243200733B85 /* FCDeviceConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDeviceConfigViewController.m; sourceTree = "<group>"; };
+		A4911AEA2A86243200733B85 /* FCMessageNotifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMessageNotifyViewController.h; sourceTree = "<group>"; };
+		A4911AEB2A86243200733B85 /* FCDeviceConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDeviceConfigViewController.xib; sourceTree = "<group>"; };
+		A4911AEC2A86243200733B85 /* FCRaiseToWakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCRaiseToWakeViewController.m; sourceTree = "<group>"; };
+		A4911AED2A86243200733B85 /* FCSedentaryReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSedentaryReminderViewController.m; sourceTree = "<group>"; };
+		A4911AEE2A86243200733B85 /* FCBloodPressureReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCBloodPressureReminderViewController.xib; sourceTree = "<group>"; };
+		A4911AEF2A86243200733B85 /* FCDrinkWaterReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDrinkWaterReminderViewController.h; sourceTree = "<group>"; };
+		A4911AF02A86243200733B85 /* FCBloodPressureReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCBloodPressureReminderViewController.m; sourceTree = "<group>"; };
+		A4911AF12A86243200733B85 /* FCHealthMonitorSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCHealthMonitorSettingViewController.h; sourceTree = "<group>"; };
+		A4911AF22A86243200733B85 /* DNDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNDSettingViewController.m; sourceTree = "<group>"; };
+		A4911AF32A86243200733B85 /* FCDrinkWaterReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDrinkWaterReminderViewController.xib; sourceTree = "<group>"; };
+		A4911AF42A86243200733B85 /* FCMessageNotifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMessageNotifyViewController.m; sourceTree = "<group>"; };
+		A4911AF52A86243200733B85 /* FCSedentaryReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCSedentaryReminderViewController.xib; sourceTree = "<group>"; };
+		A4911AF62A86243200733B85 /* FCDeviceConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDeviceConfigViewController.h; sourceTree = "<group>"; };
+		A4911AF72A86243200733B85 /* FCFuncionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFuncionConfigViewController.h; sourceTree = "<group>"; };
+		A4911AF82A86243200733B85 /* FCFuncListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFuncListTableViewCell.h; sourceTree = "<group>"; };
+		A4911AFA2A86243200733B85 /* FCWeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCWeatherViewController.xib; sourceTree = "<group>"; };
+		A4911AFB2A86243200733B85 /* FCWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWeatherViewController.m; sourceTree = "<group>"; };
+		A4911AFC2A86243200733B85 /* FCWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWeatherViewController.h; sourceTree = "<group>"; };
+		A4911AFE2A86243200733B85 /* FCWomenHealthyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCWomenHealthyViewController.xib; sourceTree = "<group>"; };
+		A4911AFF2A86243200733B85 /* FCWomenHealthyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWomenHealthyViewController.h; sourceTree = "<group>"; };
+		A4911B002A86243200733B85 /* FCWomenHealthyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWomenHealthyViewController.m; sourceTree = "<group>"; };
+		A4911B022A86243200733B85 /* FCBaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCBaseNavigationViewController.m; sourceTree = "<group>"; };
+		A4911B032A86243200733B85 /* FCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCBaseViewController.m; sourceTree = "<group>"; };
+		A4911B042A86243200733B85 /* FCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCBaseViewController.h; sourceTree = "<group>"; };
+		A4911B052A86243200733B85 /* FCBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCBaseNavigationViewController.h; sourceTree = "<group>"; };
+		A4911B072A86243200733B85 /* FCTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTabbar.m; sourceTree = "<group>"; };
+		A4911B082A86243200733B85 /* FCBaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCBaseTabBarViewController.h; sourceTree = "<group>"; };
+		A4911B092A86243200733B85 /* FCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCButton.m; sourceTree = "<group>"; };
+		A4911B0A2A86243200733B85 /* FCCenterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCenterButton.h; sourceTree = "<group>"; };
+		A4911B0B2A86243200733B85 /* FCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCButton.h; sourceTree = "<group>"; };
+		A4911B0C2A86243200733B85 /* FCBaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCBaseTabBarViewController.m; sourceTree = "<group>"; };
+		A4911B0D2A86243200733B85 /* FCTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTabbar.h; sourceTree = "<group>"; };
+		A4911B0E2A86243200733B85 /* FCCenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCenterButton.m; sourceTree = "<group>"; };
+		A4911B0F2A86243200733B85 /* AppDelegate+FitCloudKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+FitCloudKit.h"; sourceTree = "<group>"; };
+		A4911B122A86243200733B85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = LaunchScreen.strings; sourceTree = "<group>"; };
+		A4911B142A86243200733B85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Main.strings; sourceTree = "<group>"; };
+		A4911B162A86243200733B85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
+		A4911B182A86243200733B85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = InfoPlist.strings; sourceTree = "<group>"; };
+		A4911B192A86243200733B85 /* AppDelegate+LoggerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LoggerService.h"; sourceTree = "<group>"; };
+		A4911B1A2A86243200733B85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4911B1B2A86243200733B85 /* AppDelegate+LoggerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LoggerService.m"; sourceTree = "<group>"; };
+		A4911B1E2A86243200733B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A4911B202A86243200733B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		A4911B212A86243200733B85 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A4911B222A86243200733B85 /* FCDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDefinitions.h; sourceTree = "<group>"; };
+		A4911B252A86243200733B85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		A4911B272A86243200733B85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		A4911B812A862B5800733B85 /* FCWatchStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWatchStyleViewController.h; sourceTree = "<group>"; };
+		A4911B822A862B5800733B85 /* FCWatchStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWatchStyleViewController.m; sourceTree = "<group>"; };
+		A4911B832A862B5800733B85 /* FCWatchStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCWatchStyleViewController.xib; sourceTree = "<group>"; };
+		A4911B872A862C0200733B85 /* FCDailCustomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDailCustomViewController.xib; sourceTree = "<group>"; };
+		A4911B882A862C0200733B85 /* FCDailComponentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDailComponentsViewController.m; sourceTree = "<group>"; };
+		A4911B8A2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDailLibraryCollectionViewCell.m; sourceTree = "<group>"; };
+		A4911B8B2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCustomDialStyleCollectionViewCell.h; sourceTree = "<group>"; };
+		A4911B8C2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCCustomDialStyleCollectionViewCell.xib; sourceTree = "<group>"; };
+		A4911B8D2A862C0200733B85 /* FCDailLibraryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDailLibraryCollectionViewCell.h; sourceTree = "<group>"; };
+		A4911B8E2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCCustomDialStyleCollectionViewCell.m; sourceTree = "<group>"; };
+		A4911B8F2A862C0200733B85 /* FCWatchFaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCWatchFaceViewController.xib; sourceTree = "<group>"; };
+		A4911B902A862C0200733B85 /* FCDailLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDailLibraryViewController.h; sourceTree = "<group>"; };
+		A4911B912A862C0200733B85 /* FCDailCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDailCustomViewController.h; sourceTree = "<group>"; };
+		A4911B922A862C0200733B85 /* FCDailComponentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDailComponentsViewController.xib; sourceTree = "<group>"; };
+		A4911B932A862C0200733B85 /* FCDailLibraryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDailLibraryViewController.xib; sourceTree = "<group>"; };
+		A4911B942A862C0200733B85 /* FCWatchFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWatchFaceViewController.h; sourceTree = "<group>"; };
+		A4911B962A862C0200733B85 /* FCDialLibraryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDialLibraryModel.h; sourceTree = "<group>"; };
+		A4911B972A862C0200733B85 /* FCDialLibraryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDialLibraryModel.m; sourceTree = "<group>"; };
+		A4911B982A862C0200733B85 /* FCDailComponentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCDailComponentsViewController.h; sourceTree = "<group>"; };
+		A4911B992A862C0200733B85 /* FCDailLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDailLibraryViewController.m; sourceTree = "<group>"; };
+		A4911B9A2A862C0200733B85 /* FCDailCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDailCustomViewController.m; sourceTree = "<group>"; };
+		A4911B9B2A862C0200733B85 /* FCWatchFaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWatchFaceViewController.m; sourceTree = "<group>"; };
+		A4911BAA2A862C6200733B85 /* FCSportTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSportTypeTableViewCell.h; sourceTree = "<group>"; };
+		A4911BAB2A862C6300733B85 /* FCSportTypeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCSportTypeTableViewCell.xib; sourceTree = "<group>"; };
+		A4911BAC2A862C6300733B85 /* FCSportTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSportTypeTableViewCell.m; sourceTree = "<group>"; };
+		A4911BAD2A862C6300733B85 /* FCSportDataPushViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCSportDataPushViewController.xib; sourceTree = "<group>"; };
+		A4911BAE2A862C6300733B85 /* FCSportDataPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCSportDataPushViewController.h; sourceTree = "<group>"; };
+		A4911BAF2A862C6300733B85 /* FCSportDataPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCSportDataPushViewController.m; sourceTree = "<group>"; };
+		A4911BB42A862D4000733B85 /* FCWeatherForecastViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCWeatherForecastViewController.xib; sourceTree = "<group>"; };
+		A4911BB52A862D4000733B85 /* FCWeatherForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWeatherForecastViewController.h; sourceTree = "<group>"; };
+		A4911BB62A862D4000733B85 /* FCWeatherForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWeatherForecastViewController.m; sourceTree = "<group>"; };
+		A4911BB92A862DFB00733B85 /* FCAlarmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAlarmListViewController.m; sourceTree = "<group>"; };
+		A4911BBC2A86322D00733B85 /* FCGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCGlobal.h; sourceTree = "<group>"; };
+		A4911BBD2A86322D00733B85 /* FCGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCGlobal.m; sourceTree = "<group>"; };
 		A4CD6ECB2A5D4E76008E5E55 /* FitCloudKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCloudKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CD6ECE2A5D4E76008E5E55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4CD6ECF2A5D4E76008E5E55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A4CD6ED12A5D4E76008E5E55 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		A4CD6ED22A5D4E76008E5E55 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A4CD6ED42A5D4E76008E5E55 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A4CD6ED52A5D4E76008E5E55 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A4CD6ED82A5D4E76008E5E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4CD6EDA2A5D4E77008E5E55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4CD6EDD2A5D4E77008E5E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +337,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794E1705674AFDC968319194 /* Pods_FitCloudKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +358,441 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		646CD61DD8FB31F445D1FDCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9525761241BA050AF8CC4396 /* Pods_FitCloudKitDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4911A772A86243200733B85 /* en-GB.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A782A86243200733B85 /* LaunchScreen.strings */,
+				A4911A7A2A86243200733B85 /* Main.strings */,
+			);
+			path = "en-GB.lproj";
+			sourceTree = "<group>";
+		};
+		A4911A7C2A86243200733B85 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A7D2A86243200733B85 /* LocalizedLabel */,
+				A4911A802A86243200733B85 /* LocalizedButton */,
+				A4911A832A86243200733B85 /* MoLoading */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		A4911A7D2A86243200733B85 /* LocalizedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A7E2A86243200733B85 /* LocalizedLabel.h */,
+				A4911A7F2A86243200733B85 /* LocalizedLabel.m */,
+			);
+			path = LocalizedLabel;
+			sourceTree = "<group>";
+		};
+		A4911A802A86243200733B85 /* LocalizedButton */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A812A86243200733B85 /* LocalizedButton.m */,
+				A4911A822A86243200733B85 /* LocalizedButton.h */,
+			);
+			path = LocalizedButton;
+			sourceTree = "<group>";
+		};
+		A4911A832A86243200733B85 /* MoLoading */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A842A86243200733B85 /* MoCurveLayer.h */,
+				A4911A852A86243200733B85 /* MoView.m */,
+				A4911A862A86243200733B85 /* MoCurveLayer.m */,
+				A4911A872A86243200733B85 /* MoView.h */,
+			);
+			path = MoLoading;
+			sourceTree = "<group>";
+		};
+		A4911A892A86243200733B85 /* Modle */ = {
+			isa = PBXGroup;
+			children = (
+				A4911BBB2A86322D00733B85 /* Tools */,
+				A4911A8A2A86243200733B85 /* 登陆与注册 */,
+				A4911AA02A86243200733B85 /* 功能使用 */,
+				A4911A942A86243200733B85 /* 设备绑定 */,
+				A4911A912A86243200733B85 /* Models */,
+			);
+			path = Modle;
+			sourceTree = "<group>";
+		};
+		A4911A8A2A86243200733B85 /* 登陆与注册 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A8E2A86243200733B85 /* FCLoginViewController.h */,
+				A4911A902A86243200733B85 /* FCLoginViewController.m */,
+				A4911A8C2A86243200733B85 /* FCLoginViewController.xib */,
+				A4911A8F2A86243200733B85 /* FCRegistViewController.h */,
+				A4911A8D2A86243200733B85 /* FCRegistViewController.m */,
+				A4911A8B2A86243200733B85 /* FCRegistViewController.xib */,
+			);
+			path = "登陆与注册";
+			sourceTree = "<group>";
+		};
+		A4911A912A86243200733B85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A932A86243200733B85 /* FCCommenRecordModel.h */,
+				A4911A922A86243200733B85 /* FCCommenRecordModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4911A942A86243200733B85 /* 设备绑定 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911A972A86243200733B85 /* FCDeviceBindingViewController.h */,
+				A4911A9D2A86243200733B85 /* FCDeviceBindingViewController.m */,
+				A4911A9C2A86243200733B85 /* FCDeviceBindingViewController.xib */,
+				A4911A992A86243200733B85 /* FCDeviceBindViewController.h */,
+				A4911A9F2A86243200733B85 /* FCDeviceBindViewController.m */,
+				A4911A982A86243200733B85 /* FCDeviceBindViewController.xib */,
+				A4911A9B2A86243200733B85 /* FCDeviceTableViewCell.h */,
+				A4911A952A86243200733B85 /* FCDeviceTableViewCell.m */,
+				A4911A9E2A86243200733B85 /* FCSearchViewController.h */,
+				A4911A9A2A86243200733B85 /* FCSearchViewController.m */,
+				A4911A962A86243200733B85 /* FCSearchViewController.xib */,
+			);
+			path = "设备绑定";
+			sourceTree = "<group>";
+		};
+		A4911AA02A86243200733B85 /* 功能使用 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B862A862C0200733B85 /* 表盘 */,
+				A4911AA52A86243200733B85 /* 表盘风格 */,
+				A4911AA12A86243200733B85 /* 表盘显示 */,
+				A4911AD12A86243200733B85 /* 步数 */,
+				A4911ADA2A86243200733B85 /* 二维码 */,
+				A4911AAE2A86243200733B85 /* 关于手环 */,
+				A4911ABC2A86243200733B85 /* 历史数据 */,
+				A4911AB32A86243200733B85 /* 联系人(通话) */,
+				A4911AC72A86243200733B85 /* 闹钟 */,
+				A4911AFD2A86243200733B85 /* 女性健康 */,
+				A4911ADE2A86243200733B85 /* 设备设置 */,
+				A4911AA92A86243200733B85 /* 社交 */,
+				A4911AF92A86243200733B85 /* 天气 */,
+				A4911BA82A862C6200733B85 /* 运动数据推送 */,
+				A4911AF82A86243200733B85 /* FCFuncListTableViewCell.h */,
+				A4911ABA2A86243200733B85 /* FCFuncListTableViewCell.m */,
+				A4911AAD2A86243200733B85 /* FCFuncListViewController.h */,
+				A4911ABB2A86243200733B85 /* FCFuncListViewController.m */,
+			);
+			path = "功能使用";
+			sourceTree = "<group>";
+		};
+		A4911AA12A86243200733B85 /* 表盘显示 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AA42A86243200733B85 /* FCScreenDisplayViewController.h */,
+				A4911AA32A86243200733B85 /* FCScreenDisplayViewController.m */,
+				A4911AA22A86243200733B85 /* FCScreenDisplayViewController.xib */,
+			);
+			path = "表盘显示";
+			sourceTree = "<group>";
+		};
+		A4911AA52A86243200733B85 /* 表盘风格 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B812A862B5800733B85 /* FCWatchStyleViewController.h */,
+				A4911B822A862B5800733B85 /* FCWatchStyleViewController.m */,
+				A4911B832A862B5800733B85 /* FCWatchStyleViewController.xib */,
+			);
+			path = "表盘风格";
+			sourceTree = "<group>";
+		};
+		A4911AA92A86243200733B85 /* 社交 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AAA2A86243200733B85 /* FCSocailViewController.xib */,
+				A4911AAB2A86243200733B85 /* FCSocailViewController.h */,
+				A4911AAC2A86243200733B85 /* FCSocailViewController.m */,
+			);
+			path = "社交";
+			sourceTree = "<group>";
+		};
+		A4911AAE2A86243200733B85 /* 关于手环 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AB02A86243200733B85 /* FCAboutBraceletViewController.h */,
+				A4911AB12A86243200733B85 /* FCAboutBraceletViewController.m */,
+				A4911AAF2A86243200733B85 /* FCCommenCellModel.h */,
+				A4911AB22A86243200733B85 /* FCCommenCellModel.m */,
+			);
+			path = "关于手环";
+			sourceTree = "<group>";
+		};
+		A4911AB32A86243200733B85 /* 联系人(通话) */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AB92A86243200733B85 /* FCContactsDetailViewController.h */,
+				A4911AB62A86243200733B85 /* FCContactsDetailViewController.m */,
+				A4911AB82A86243200733B85 /* FCContactsDetailViewController.xib */,
+				A4911AB42A86243200733B85 /* FCContactViewController.h */,
+				A4911AB72A86243200733B85 /* FCContactViewController.m */,
+				A4911AB52A86243200733B85 /* FCContactViewController.xib */,
+			);
+			path = "联系人(通话)";
+			sourceTree = "<group>";
+		};
+		A4911ABC2A86243200733B85 /* 历史数据 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AC12A86243200733B85 /* Cell */,
+				A4911ABF2A86243200733B85 /* FCHisoryListViewController.h */,
+				A4911AC52A86243200733B85 /* FCHisoryListViewController.m */,
+				A4911ABD2A86243200733B85 /* FCHisoryListViewController.xib */,
+				A4911ABE2A86243200733B85 /* FCHistoryDataViewController.h */,
+				A4911AC02A86243200733B85 /* FCHistoryDataViewController.m */,
+				A4911AC62A86243200733B85 /* FCHistoryDataViewController.xib */,
+			);
+			path = "历史数据";
+			sourceTree = "<group>";
+		};
+		A4911AC12A86243200733B85 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AC22A86243200733B85 /* FCHistoryDataTableViewCell.h */,
+				A4911AC32A86243200733B85 /* FCHistoryDataTableViewCell.xib */,
+				A4911AC42A86243200733B85 /* FCHistoryDataTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A4911AC72A86243200733B85 /* 闹钟 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911ACF2A86243200733B85 /* FCAlarmCycleViewController.h */,
+				A4911ACA2A86243200733B85 /* FCAlarmCycleViewController.m */,
+				A4911ACD2A86243200733B85 /* FCAlarmCycleViewController.xib */,
+				A4911ACE2A86243200733B85 /* FCAlarmDetailViewController.h */,
+				A4911AC82A86243200733B85 /* FCAlarmDetailViewController.m */,
+				A4911AC92A86243200733B85 /* FCAlarmDetailViewController.xib */,
+				A4911ACC2A86243200733B85 /* FCAlarmListViewController.h */,
+				A4911BB92A862DFB00733B85 /* FCAlarmListViewController.m */,
+				A4911ACB2A86243200733B85 /* FCAlarmListViewController.xib */,
+			);
+			path = "闹钟";
+			sourceTree = "<group>";
+		};
+		A4911AD12A86243200733B85 /* 步数 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AD52A86243200733B85 /* FCStepTargetViewController.h */,
+				A4911AD72A86243200733B85 /* FCStepTargetViewController.m */,
+				A4911AD62A86243200733B85 /* FCStepTargetViewController.xib */,
+				A4911AD82A86243200733B85 /* FCStepViewController.h */,
+				A4911AD42A86243200733B85 /* FCStepViewController.m */,
+				A4911AD32A86243200733B85 /* FCTodySportsDataViewController.h */,
+				A4911AD92A86243200733B85 /* FCTodySportsDataViewController.m */,
+				A4911AD22A86243200733B85 /* FCTodySportsDataViewController.xib */,
+			);
+			path = "步数";
+			sourceTree = "<group>";
+		};
+		A4911ADA2A86243200733B85 /* 二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911ADD2A86243200733B85 /* FCQRCodeViewController.h */,
+				A4911ADB2A86243200733B85 /* FCQRCodeViewController.m */,
+				A4911ADC2A86243200733B85 /* FCQRCodeViewController.xib */,
+			);
+			path = "二维码";
+			sourceTree = "<group>";
+		};
+		A4911ADE2A86243200733B85 /* 设备设置 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AE42A86243200733B85 /* DNDSettingViewController.h */,
+				A4911AF22A86243200733B85 /* DNDSettingViewController.m */,
+				A4911AE22A86243200733B85 /* DNDSettingViewController.xib */,
+				A4911AE62A86243200733B85 /* FCBloodPressureReminderViewController.h */,
+				A4911AF02A86243200733B85 /* FCBloodPressureReminderViewController.m */,
+				A4911AEE2A86243200733B85 /* FCBloodPressureReminderViewController.xib */,
+				A4911AF62A86243200733B85 /* FCDeviceConfigViewController.h */,
+				A4911AE92A86243200733B85 /* FCDeviceConfigViewController.m */,
+				A4911AEB2A86243200733B85 /* FCDeviceConfigViewController.xib */,
+				A4911AEF2A86243200733B85 /* FCDrinkWaterReminderViewController.h */,
+				A4911AE72A86243200733B85 /* FCDrinkWaterReminderViewController.m */,
+				A4911AF32A86243200733B85 /* FCDrinkWaterReminderViewController.xib */,
+				A4911AF72A86243200733B85 /* FCFuncionConfigViewController.h */,
+				A4911AE82A86243200733B85 /* FCFuncionConfigViewController.m */,
+				A4911AF12A86243200733B85 /* FCHealthMonitorSettingViewController.h */,
+				A4911AE32A86243200733B85 /* FCHealthMonitorSettingViewController.m */,
+				A4911AE02A86243200733B85 /* FCHealthMonitorSettingViewController.xib */,
+				A4911AEA2A86243200733B85 /* FCMessageNotifyViewController.h */,
+				A4911AF42A86243200733B85 /* FCMessageNotifyViewController.m */,
+				A4911AE12A86243200733B85 /* FCRaiseToWakeViewController.h */,
+				A4911AEC2A86243200733B85 /* FCRaiseToWakeViewController.m */,
+				A4911AE52A86243200733B85 /* FCRaiseToWakeViewController.xib */,
+				A4911ADF2A86243200733B85 /* FCSedentaryReminderViewController.h */,
+				A4911AED2A86243200733B85 /* FCSedentaryReminderViewController.m */,
+				A4911AF52A86243200733B85 /* FCSedentaryReminderViewController.xib */,
+			);
+			path = "设备设置";
+			sourceTree = "<group>";
+		};
+		A4911AF92A86243200733B85 /* 天气 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911BB52A862D4000733B85 /* FCWeatherForecastViewController.h */,
+				A4911BB62A862D4000733B85 /* FCWeatherForecastViewController.m */,
+				A4911BB42A862D4000733B85 /* FCWeatherForecastViewController.xib */,
+				A4911AFC2A86243200733B85 /* FCWeatherViewController.h */,
+				A4911AFB2A86243200733B85 /* FCWeatherViewController.m */,
+				A4911AFA2A86243200733B85 /* FCWeatherViewController.xib */,
+			);
+			path = "天气";
+			sourceTree = "<group>";
+		};
+		A4911AFD2A86243200733B85 /* 女性健康 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911AFF2A86243200733B85 /* FCWomenHealthyViewController.h */,
+				A4911B002A86243200733B85 /* FCWomenHealthyViewController.m */,
+				A4911AFE2A86243200733B85 /* FCWomenHealthyViewController.xib */,
+			);
+			path = "女性健康";
+			sourceTree = "<group>";
+		};
+		A4911B012A86243200733B85 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B022A86243200733B85 /* FCBaseNavigationViewController.m */,
+				A4911B032A86243200733B85 /* FCBaseViewController.m */,
+				A4911B042A86243200733B85 /* FCBaseViewController.h */,
+				A4911B052A86243200733B85 /* FCBaseNavigationViewController.h */,
+				A4911B062A86243200733B85 /* FCBaseTableBarViewController */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A4911B062A86243200733B85 /* FCBaseTableBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B072A86243200733B85 /* FCTabbar.m */,
+				A4911B082A86243200733B85 /* FCBaseTabBarViewController.h */,
+				A4911B092A86243200733B85 /* FCButton.m */,
+				A4911B0A2A86243200733B85 /* FCCenterButton.h */,
+				A4911B0B2A86243200733B85 /* FCButton.h */,
+				A4911B0C2A86243200733B85 /* FCBaseTabBarViewController.m */,
+				A4911B0D2A86243200733B85 /* FCTabbar.h */,
+				A4911B0E2A86243200733B85 /* FCCenterButton.m */,
+			);
+			path = FCBaseTableBarViewController;
+			sourceTree = "<group>";
+		};
+		A4911B102A86243200733B85 /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B112A86243200733B85 /* LaunchScreen.strings */,
+				A4911B132A86243200733B85 /* Main.strings */,
+				A4911B152A86243200733B85 /* Localizable.strings */,
+				A4911B172A86243200733B85 /* InfoPlist.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
+		A4911B1C2A86243200733B85 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B1D2A86243200733B85 /* LaunchScreen.storyboard */,
+				A4911B1F2A86243200733B85 /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		A4911B232A86243200733B85 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B242A86243200733B85 /* Localizable.strings */,
+				A4911B262A86243200733B85 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		A4911B862A862C0200733B85 /* 表盘 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B892A862C0200733B85 /* Cells */,
+				A4911B982A862C0200733B85 /* FCDailComponentsViewController.h */,
+				A4911B882A862C0200733B85 /* FCDailComponentsViewController.m */,
+				A4911B922A862C0200733B85 /* FCDailComponentsViewController.xib */,
+				A4911B912A862C0200733B85 /* FCDailCustomViewController.h */,
+				A4911B9A2A862C0200733B85 /* FCDailCustomViewController.m */,
+				A4911B872A862C0200733B85 /* FCDailCustomViewController.xib */,
+				A4911B902A862C0200733B85 /* FCDailLibraryViewController.h */,
+				A4911B992A862C0200733B85 /* FCDailLibraryViewController.m */,
+				A4911B932A862C0200733B85 /* FCDailLibraryViewController.xib */,
+				A4911B942A862C0200733B85 /* FCWatchFaceViewController.h */,
+				A4911B9B2A862C0200733B85 /* FCWatchFaceViewController.m */,
+				A4911B8F2A862C0200733B85 /* FCWatchFaceViewController.xib */,
+				A4911B952A862C0200733B85 /* Models */,
+			);
+			path = "表盘";
+			sourceTree = "<group>";
+		};
+		A4911B892A862C0200733B85 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B8B2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.h */,
+				A4911B8E2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.m */,
+				A4911B8C2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.xib */,
+				A4911B8D2A862C0200733B85 /* FCDailLibraryCollectionViewCell.h */,
+				A4911B8A2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A4911B952A862C0200733B85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4911B962A862C0200733B85 /* FCDialLibraryModel.h */,
+				A4911B972A862C0200733B85 /* FCDialLibraryModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4911BA82A862C6200733B85 /* 运动数据推送 */ = {
+			isa = PBXGroup;
+			children = (
+				A4911BA92A862C6200733B85 /* Cells */,
+				A4911BAD2A862C6300733B85 /* FCSportDataPushViewController.xib */,
+				A4911BAE2A862C6300733B85 /* FCSportDataPushViewController.h */,
+				A4911BAF2A862C6300733B85 /* FCSportDataPushViewController.m */,
+			);
+			path = "运动数据推送";
+			sourceTree = "<group>";
+		};
+		A4911BA92A862C6200733B85 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A4911BAA2A862C6200733B85 /* FCSportTypeTableViewCell.h */,
+				A4911BAB2A862C6300733B85 /* FCSportTypeTableViewCell.xib */,
+				A4911BAC2A862C6300733B85 /* FCSportTypeTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A4911BBB2A86322D00733B85 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A4911BBC2A86322D00733B85 /* FCGlobal.h */,
+				A4911BBD2A86322D00733B85 /* FCGlobal.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		A4CD6EC22A5D4E76008E5E55 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +800,8 @@
 				A4CD6EE92A5D4E78008E5E55 /* FitCloudKitDemoTests */,
 				A4CD6EF32A5D4E78008E5E55 /* FitCloudKitDemoUITests */,
 				A4CD6ECC2A5D4E76008E5E55 /* Products */,
+				E878C35EC5AF7BF2197E29C0 /* Pods */,
+				646CD61DD8FB31F445D1FDCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,15 +820,26 @@
 			children = (
 				A4CD6ECE2A5D4E76008E5E55 /* AppDelegate.h */,
 				A4CD6ECF2A5D4E76008E5E55 /* AppDelegate.m */,
-				A4CD6ED12A5D4E76008E5E55 /* SceneDelegate.h */,
-				A4CD6ED22A5D4E76008E5E55 /* SceneDelegate.m */,
-				A4CD6ED42A5D4E76008E5E55 /* ViewController.h */,
-				A4CD6ED52A5D4E76008E5E55 /* ViewController.m */,
-				A4CD6ED72A5D4E76008E5E55 /* Main.storyboard */,
-				A4CD6EDA2A5D4E77008E5E55 /* Assets.xcassets */,
-				A4CD6EDC2A5D4E77008E5E55 /* LaunchScreen.storyboard */,
+				A4911B0F2A86243200733B85 /* AppDelegate+FitCloudKit.h */,
+				A4911A882A86243200733B85 /* AppDelegate+FitCloudKit.m */,
+				A4911B192A86243200733B85 /* AppDelegate+LoggerService.h */,
+				A4911B1B2A86243200733B85 /* AppDelegate+LoggerService.m */,
+				A4911B1A2A86243200733B85 /* Assets.xcassets */,
+				A4911B012A86243200733B85 /* Base */,
+				A4911B1C2A86243200733B85 /* Base.lproj */,
+				A4911A762A86243200733B85 /* Contents.json */,
+				A4911A772A86243200733B85 /* en-GB.lproj */,
+				A4911B232A86243200733B85 /* en.lproj */,
+				A4911B222A86243200733B85 /* FCDefinitions.h */,
 				A4CD6EDF2A5D4E77008E5E55 /* Info.plist */,
+				A4CD6EDC2A5D4E77008E5E55 /* LaunchScreen.storyboard */,
 				A4CD6EE02A5D4E77008E5E55 /* main.m */,
+				A4CD6ED72A5D4E76008E5E55 /* Main.storyboard */,
+				A4911A892A86243200733B85 /* Modle */,
+				A4911B212A86243200733B85 /* PrefixHeader.pch */,
+				A4911A7C2A86243200733B85 /* Vendors */,
+				A4911B102A86243200733B85 /* zh-Hans.lproj */,
+				A4CD6EDA2A5D4E77008E5E55 /* Assets.xcassets */,
 			);
 			path = FitCloudKitDemo;
 			sourceTree = "<group>";
@@ -136,6 +861,15 @@
 			path = FitCloudKitDemoUITests;
 			sourceTree = "<group>";
 		};
+		E878C35EC5AF7BF2197E29C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A3771686778C614631A3CDE /* Pods-FitCloudKitDemo.debug.xcconfig */,
+				2954C895C39B9BFBF8F7E313 /* Pods-FitCloudKitDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +877,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4CD6EFA2A5D4E78008E5E55 /* Build configuration list for PBXNativeTarget "FitCloudKitDemo" */;
 			buildPhases = (
+				EBDFF9C18D12B5CBD806DEF5 /* [CP] Check Pods Manifest.lock */,
 				A4CD6EC72A5D4E76008E5E55 /* Sources */,
 				A4CD6EC82A5D4E76008E5E55 /* Frameworks */,
 				A4CD6EC92A5D4E76008E5E55 /* Resources */,
+				CAF6A568D19E6A7C1C2276B9 /* [CP] Embed Pods Frameworks */,
+				65BDBAE652831459BF981238 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +958,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
+				"zh-Hans",
 			);
 			mainGroup = A4CD6EC22A5D4E76008E5E55;
 			productRefGroup = A4CD6ECC2A5D4E76008E5E55 /* Products */;
@@ -239,9 +978,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4911B402A86243200733B85 /* FCSocailViewController.xib in Resources */,
+				A4911B472A86243200733B85 /* FCContactsDetailViewController.xib in Resources */,
+				A4911B7E2A86243200733B85 /* Main.storyboard in Resources */,
+				A4911B6F2A86243200733B85 /* FCWomenHealthyViewController.xib in Resources */,
+				A4911B562A86243200733B85 /* FCTodySportsDataViewController.xib in Resources */,
+				A4911B6C2A86243200733B85 /* FCSedentaryReminderViewController.xib in Resources */,
+				A4911B672A86243200733B85 /* FCBloodPressureReminderViewController.xib in Resources */,
+				A4911B852A862B5800733B85 /* FCWatchStyleViewController.xib in Resources */,
 				A4CD6EDE2A5D4E77008E5E55 /* LaunchScreen.storyboard in Resources */,
 				A4CD6EDB2A5D4E77008E5E55 /* Assets.xcassets in Resources */,
+				A4911B4F2A86243200733B85 /* FCHistoryDataViewController.xib in Resources */,
+				A4911B782A86243200733B85 /* Main.strings in Resources */,
+				A4911BB72A862D4000733B85 /* FCWeatherForecastViewController.xib in Resources */,
+				A4911B392A86243200733B85 /* FCDeviceBindingViewController.xib in Resources */,
+				A4911B6D2A86243200733B85 /* FCWeatherViewController.xib in Resources */,
 				A4CD6ED92A5D4E76008E5E55 /* Main.storyboard in Resources */,
+				A4911B642A86243200733B85 /* FCDeviceConfigViewController.xib in Resources */,
+				A4911B312A86243200733B85 /* FCLoginViewController.xib in Resources */,
+				A4911BB02A862C6300733B85 /* FCSportTypeTableViewCell.xib in Resources */,
+				A4911B582A86243200733B85 /* FCStepTargetViewController.xib in Resources */,
+				A4911B2A2A86243200733B85 /* Main.strings in Resources */,
+				A4911B302A86243200733B85 /* FCRegistViewController.xib in Resources */,
+				A4911B7B2A86243200733B85 /* Assets.xcassets in Resources */,
+				A4911B772A86243200733B85 /* LaunchScreen.strings in Resources */,
+				A4911B5D2A86243200733B85 /* FCHealthMonitorSettingViewController.xib in Resources */,
+				A4911B362A86243200733B85 /* FCSearchViewController.xib in Resources */,
+				A4911B802A86243200733B85 /* InfoPlist.strings in Resources */,
+				A4911B5C2A86243200733B85 /* FCQRCodeViewController.xib in Resources */,
+				A4911B4A2A86243200733B85 /* FCHisoryListViewController.xib in Resources */,
+				A4911B792A86243200733B85 /* Localizable.strings in Resources */,
+				A4911B532A86243200733B85 /* FCAlarmListViewController.xib in Resources */,
+				A4911BA12A862C0200733B85 /* FCWatchFaceViewController.xib in Resources */,
+				A4911BB22A862C6300733B85 /* FCSportDataPushViewController.xib in Resources */,
+				A4911B442A86243200733B85 /* FCContactViewController.xib in Resources */,
+				A4911B3C2A86243200733B85 /* FCScreenDisplayViewController.xib in Resources */,
+				A4911B292A86243200733B85 /* LaunchScreen.strings in Resources */,
+				A4911B7F2A86243200733B85 /* Localizable.strings in Resources */,
+				A4911B7A2A86243200733B85 /* InfoPlist.strings in Resources */,
+				A4911B512A86243200733B85 /* FCAlarmDetailViewController.xib in Resources */,
+				A4911BA32A862C0200733B85 /* FCDailLibraryViewController.xib in Resources */,
+				A4911B542A86243200733B85 /* FCAlarmCycleViewController.xib in Resources */,
+				A4911B7D2A86243200733B85 /* LaunchScreen.storyboard in Resources */,
+				A4911BA22A862C0200733B85 /* FCDailComponentsViewController.xib in Resources */,
+				A4911B602A86243200733B85 /* FCRaiseToWakeViewController.xib in Resources */,
+				A4911B9C2A862C0200733B85 /* FCDailCustomViewController.xib in Resources */,
+				A4911B372A86243200733B85 /* FCDeviceBindViewController.xib in Resources */,
+				A4911B6A2A86243200733B85 /* FCDrinkWaterReminderViewController.xib in Resources */,
+				A4911B282A86243200733B85 /* Contents.json in Resources */,
+				A4911B4C2A86243200733B85 /* FCHistoryDataTableViewCell.xib in Resources */,
+				A4911B9F2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.xib in Resources */,
+				A4911B5E2A86243200733B85 /* DNDSettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,15 +1048,132 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65BDBAE652831459BF981238 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF6A568D19E6A7C1C2276B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FitCloudKitDemo/Pods-FitCloudKitDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBDFF9C18D12B5CBD806DEF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitCloudKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4CD6EC72A5D4E76008E5E55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4CD6ED62A5D4E76008E5E55 /* ViewController.m in Sources */,
+				A4911B742A86243200733B85 /* FCButton.m in Sources */,
+				A4911B732A86243200733B85 /* FCTabbar.m in Sources */,
+				A4911BA62A862C0200733B85 /* FCDailCustomViewController.m in Sources */,
+				A4911B482A86243200733B85 /* FCFuncListTableViewCell.m in Sources */,
+				A4911B712A86243200733B85 /* FCBaseNavigationViewController.m in Sources */,
+				A4911B342A86243200733B85 /* FCCommenRecordModel.m in Sources */,
+				A4911BA52A862C0200733B85 /* FCDailLibraryViewController.m in Sources */,
+				A4911B2D2A86243200733B85 /* MoView.m in Sources */,
+				A4911B3D2A86243200733B85 /* FCScreenDisplayViewController.m in Sources */,
+				A4911B9D2A862C0200733B85 /* FCDailComponentsViewController.m in Sources */,
+				A4911BA42A862C0200733B85 /* FCDialLibraryModel.m in Sources */,
+				A4911B632A86243200733B85 /* FCDeviceConfigViewController.m in Sources */,
+				A4911B522A86243200733B85 /* FCAlarmCycleViewController.m in Sources */,
+				A4911BBE2A86322D00733B85 /* FCGlobal.m in Sources */,
+				A4911BA72A862C0200733B85 /* FCWatchFaceViewController.m in Sources */,
+				A4911B4D2A86243200733B85 /* FCHistoryDataTableViewCell.m in Sources */,
+				A4911B492A86243200733B85 /* FCFuncListViewController.m in Sources */,
+				A4911B322A86243200733B85 /* FCRegistViewController.m in Sources */,
+				A4911B2B2A86243200733B85 /* LocalizedLabel.m in Sources */,
+				A4911B762A86243200733B85 /* FCCenterButton.m in Sources */,
+				A4911B352A86243200733B85 /* FCDeviceTableViewCell.m in Sources */,
+				A4911B382A86243200733B85 /* FCSearchViewController.m in Sources */,
+				A4911B6B2A86243200733B85 /* FCMessageNotifyViewController.m in Sources */,
+				A4911B2F2A86243200733B85 /* AppDelegate+FitCloudKit.m in Sources */,
+				A4911B5F2A86243200733B85 /* FCHealthMonitorSettingViewController.m in Sources */,
+				A4911B4B2A86243200733B85 /* FCHistoryDataViewController.m in Sources */,
+				A4911B692A86243200733B85 /* DNDSettingViewController.m in Sources */,
+				A4911B5B2A86243200733B85 /* FCQRCodeViewController.m in Sources */,
+				A4911B612A86243200733B85 /* FCDrinkWaterReminderViewController.m in Sources */,
+				A4911BB32A862C6300733B85 /* FCSportDataPushViewController.m in Sources */,
+				A4911B9E2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m in Sources */,
+				A4911B752A86243200733B85 /* FCBaseTabBarViewController.m in Sources */,
+				A4911B3A2A86243200733B85 /* FCDeviceBindingViewController.m in Sources */,
+				A4911B6E2A86243200733B85 /* FCWeatherViewController.m in Sources */,
+				A4911B452A86243200733B85 /* FCContactsDetailViewController.m in Sources */,
+				A4911B502A86243200733B85 /* FCAlarmDetailViewController.m in Sources */,
+				A4911BA02A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.m in Sources */,
+				A4911B7C2A86243200733B85 /* AppDelegate+LoggerService.m in Sources */,
+				A4911B462A86243200733B85 /* FCContactViewController.m in Sources */,
 				A4CD6ED02A5D4E76008E5E55 /* AppDelegate.m in Sources */,
+				A4911BB12A862C6300733B85 /* FCSportTypeTableViewCell.m in Sources */,
+				A4911B432A86243200733B85 /* FCCommenCellModel.m in Sources */,
+				A4911BBA2A862DFB00733B85 /* FCAlarmListViewController.m in Sources */,
+				A4911B682A86243200733B85 /* FCBloodPressureReminderViewController.m in Sources */,
+				A4911B572A86243200733B85 /* FCStepViewController.m in Sources */,
+				A4911B662A86243200733B85 /* FCSedentaryReminderViewController.m in Sources */,
 				A4CD6EE12A5D4E78008E5E55 /* main.m in Sources */,
-				A4CD6ED32A5D4E76008E5E55 /* SceneDelegate.m in Sources */,
+				A4911B5A2A86243200733B85 /* FCTodySportsDataViewController.m in Sources */,
+				A4911B722A86243200733B85 /* FCBaseViewController.m in Sources */,
+				A4911B4E2A86243200733B85 /* FCHisoryListViewController.m in Sources */,
+				A4911B652A86243200733B85 /* FCRaiseToWakeViewController.m in Sources */,
+				A4911B3B2A86243200733B85 /* FCDeviceBindViewController.m in Sources */,
+				A4911B842A862B5800733B85 /* FCWatchStyleViewController.m in Sources */,
+				A4911B422A86243200733B85 /* FCAboutBraceletViewController.m in Sources */,
+				A4911BB82A862D4000733B85 /* FCWeatherForecastViewController.m in Sources */,
+				A4911B592A86243200733B85 /* FCStepTargetViewController.m in Sources */,
+				A4911B702A86243200733B85 /* FCWomenHealthyViewController.m in Sources */,
+				A4911B2C2A86243200733B85 /* LocalizedButton.m in Sources */,
+				A4911B412A86243200733B85 /* FCSocailViewController.m in Sources */,
+				A4911B332A86243200733B85 /* FCLoginViewController.m in Sources */,
+				A4911B622A86243200733B85 /* FCFuncionConfigViewController.m in Sources */,
+				A4911B2E2A86243200733B85 /* MoCurveLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +1210,86 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A4911A782A86243200733B85 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911A792A86243200733B85 /* en-GB */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		A4911A7A2A86243200733B85 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911A7B2A86243200733B85 /* en-GB */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+		A4911B112A86243200733B85 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B122A86243200733B85 /* zh-Hans */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		A4911B132A86243200733B85 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B142A86243200733B85 /* zh-Hans */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+		A4911B152A86243200733B85 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B162A86243200733B85 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A4911B172A86243200733B85 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B182A86243200733B85 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A4911B1D2A86243200733B85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B1E2A86243200733B85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A4911B1F2A86243200733B85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B202A86243200733B85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A4911B242A86243200733B85 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B252A86243200733B85 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A4911B262A86243200733B85 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4911B272A86243200733B85 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		A4CD6ED72A5D4E76008E5E55 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -437,6 +1421,7 @@
 		};
 		A4CD6EFB2A5D4E78008E5E55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3771686778C614631A3CDE /* Pods-FitCloudKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +1449,7 @@
 		};
 		A4CD6EFC2A5D4E78008E5E55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2954C895C39B9BFBF8F7E313 /* Pods-FitCloudKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

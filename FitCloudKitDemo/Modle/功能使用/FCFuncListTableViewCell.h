@@ -6,10 +6,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LocalizedLabel.h"
 NS_ASSUME_NONNULL_BEGIN
+typedef NS_ENUM(NSInteger, FCCellStyle) {
+    FCCellStyleNone,
+    FCCellStyleNormal,
+    FCCellStyleSwitchs,
+    FCCellStyleSelect,
+};
 
 @interface FCFuncListTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) LocalizedLabel *nameLabel;
+@property (nonatomic, strong) LocalizedLabel *valueLabel;
+@property (nonatomic, strong) UISwitch *switchs;
+@property (nonatomic, strong) UIImageView *selectImageView;
+
+- (void)configCellStyle:(FCCellStyle)style;
 
 @end
 

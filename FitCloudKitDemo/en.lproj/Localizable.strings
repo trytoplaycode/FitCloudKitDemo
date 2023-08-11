@@ -5,3 +5,335 @@
   Created by Jasper on 2023/7/11.
   
 */
+
+/// 登陆注册
+"Sign In" = "Sign In";
+"Input username" = "Input username";
+"Input password" = "Input password";
+"SIGN IN" = "SIGN IN";
+"Login In" = "Login In";
+"No account?" = "No account?";
+"Sign Up" = "Sign Up";
+"Back" = " Back";
+"Account password mismatch" = "Account password mismatch";
+
+/// 设备搜索与绑定
+"Search Device" = "Search Device";
+"Device Name" = "Device Name";
+"Binding Device" = "Binding Device";
+"Connect Device" = "Connect Device";
+"Remove Device" = "Remove Device";
+"SYSTEM PAIRED" = "SYSTEM PAIRED";
+"Device List" = "Device List";
+
+"Synchronous Data"="Synchronous Data";
+"Synchronous"="Synchronous";
+/// 运动数据
+"Step" = "Step";
+"Get Sports Data Today" = "Get Sports Data Today";
+"Step Target" = "Step Target";
+"History Data" = "History Data";
+"Step：" = "Step：";
+"Distance：" = "Distance：";
+"Heart Rate：" = "Heart Rate：";
+"Total calories：" = "Total calories";
+"step" = "step";
+"m" = "m";
+"bmp" = "bmp";
+"kcal" = "kcal";
+"Sports Data Today" = "Sports Data Today";
+"Bracelet Setting" = "Bracelet Setting";
+"Software Version" = "Software Version";
+"Factory Reset" = "Factory Reset";
+
+/// 手环功能
+"Device Config" = "Device Config";
+"Notification Config" = "Notification Config";
+"Function Config" = "Function Config";
+"Health Monitor Config" = "Health Monitor Config";
+"Sedentary Reminder Config" = "Sedentary Reminder Config";
+"Drink Water Reminder Config" = "Drink Water Reminder Config";
+"Blood Pressure Reference Config" = "Blood Pressure Reference Config";
+"Raise to Wake Config" = "Raise to Wake Config";
+"DND Config" = "DND Config";
+"Add" = "Add";
+/// 消息通知管理
+"Telephony" = "Telephony";
+"SMS" = "SMS";
+"QQ" = "QQ";
+"WeChat" = "WeChat";
+"Facebook" = "Facebook";
+"Twitter" = "Twitter";
+"LinkedIn" = "LinkedIn";
+"Instagram" = "Instagram";
+"Pinterest" = "Pinterest";
+"WhatsApp" = "WhatsApp";
+"Line" = "Line";
+"Facebook Messenger" = "Facebook Messenger";
+"Kakao Talk" = "Kakao Talk";
+"Skype" = "Skype";
+"Email" = "Email";
+"Others App" = "Others App";
+"Snapchat"="Snapchat";
+/// 手环设置
+"Right Hand Wearing" = "Right Hand Wearing";
+"Enhanced Measurement" = "Enhanced Measurement";
+"Time Format-12Hour" = "Time Format-12Hour";
+"Length Units-Imperial(miles,feet)" = "Length Units-Imperial(miles,feet)";
+"Temperature Units-Fahrenheit(­°F)" = "Temperature Units-Fahrenheit(­°F)";
+"Display Weather" = "Display Weather";
+"Disconnect Reminder" = "Disconnect Reminder";
+"Display Exercise Goal" = "Display Exercise Goal";
+/// 健康检测
+"Health Monitor Status：" = "Health Monitor Status：";
+"Sedentary Reminder Status：" = "Sedentary Reminder Status：";
+"OffWhenLunchBreak：" = "OffWhenLunchBreak：";
+"Drink Water Reminder Status：" = "Drink Water Reminder Status：";
+"Interval：" = "Interval：";
+"Blood Pressure Reference Status：" = "Blood Pressure Reference Status：";
+"Diastolic pressure：" = "Diastolic pressure：";
+"Systolic pressure：" = "Systolic pressure：";
+"Function Status：" = "Function Status：";
+"DND Period Status：" = "DND Period Status：";
+
+"Start Time：" = "Start Time：";
+"End Time：" = "End Time：";
+"Set" = "Set";
+/// 闹钟
+"Status" = "Status";
+"Fire Date" = "Fire Date";
+"Cycle" = "Cycle";
+"Label" = "Label";
+"Describe the Alarm" = "Describe the Alarm";
+
+"Today" = "Today";
+"Mon" = "Mon";
+"Tue" = "Tue";
+"Wed" = "Wed";
+"Thu" = "Thu";
+"Fri" = "Fri";
+"Sat" = "Sat";
+"Sun" = "Sun";
+/// 天气
+"Temperature" = "Temperature";
+"Minimum Temperature" = "Minimum Temperature";
+"Maximum Temperature" = "Minimum Temperature";
+"Weather" = "Weather";
+"City" = "City";
+"Pressure" = "Pressure";
+"WindScale" = "WindScale";
+"Visiable" = "Visiable";
+"Forecast" = "Forecast(14 days most)";
+
+"Sunny" = "Sunny";
+"Cloudy"="Cloudy";
+"OverCast"="OverCast";
+"Showers"="Showers";
+"ThunderShowersWithHail"="ThunderShowersWithHail";
+"LightRain"="LightRain";
+"MHSRain"="MHSRain";
+"Sleet"="Sleet";
+"LightSnow"="LightSnow";
+"HeavySnow"="HeavySnow";
+"SandStorm"="SANDSTORM";
+"Fogorhaze"="FOGORHAZE";
+"Unknown"="UNKNOWN";
+
+/// 女性健康
+"Women Health"="Women Health";
+"Mode"="Mode";
+"Open"="Open";
+"Close"="Close";
+"Advance days to remind"="Advance days to remind";
+"Remind minutes"="Remind minutes";
+"Menses duration"="Menses duration";
+"Menstrual cycle"="Menstrual cycle";
+"Recent menstruation begin"="Recent menstruation begin";
+"Days of finish since menses begin"="Days of finish since menses begin";
+"Pregancy remind type"="Pregancy remind type";
+"Day"="Day";
+
+/// 表盘
+"Scrren Display"="Scrren Display";
+"Date Time"="Date Time";
+"Steps"="Steps";
+"Distance"="Distance";
+"Calories"="Calories";
+"Sleep"="Sleep";
+"Heart Rate"="Heart Rate";
+"Blood Oxygen"="Blood Oxygen";
+"Blood Pressure"="Blood Pressure";
+"Weather Forecast"="Weather Forecast";
+"Find iPhone"="Find iPhone";
+"Mac ID"="Mac ID";
+"UV"="UV";
+"Geomagnetism"="Geomagnetism";
+"Stop Watch"="Stop Watch";
+
+// 二维码
+"QR Code"="QR Code";
+"PayPay"="PayPay";
+"PayTM"="PayTM";
+"PhonePE"="PhonePE";
+"GPay"="GPay";
+"BHTM"="BHTM";
+
+/// 社交
+"Social Contact"="Social Contact";
+"Date"="Date";
+"Sports"="Sports";
+
+// 睡眠
+"Asleep"="Asleep";
+"In Bed"="In Bed";
+"AWake"="AWeke";
+"Consume"="Consume";
+"No Data"="No Data";
+"Please make sure that synchronous watch data befor"="Please make sure that synchronous watch data befor";
+
+// 表盘
+"Watch Face"="Watch Face";
+"Watch Face Style One"="Watch Face Style One";
+"Watch Face Style Two"="Watch Face Style Two";
+"Watch Face Style Three"="Watch Face Style Three";
+"Watch Face Style Four"="Watch Face Style Four";
+"Watch Face Style Five"="Watch Face Style Five";
+"Watch Face Style Six"="Watch Face Style Six";
+"Watch Face Style Seven"="Watch Face Style Seven";
+"Dial"="Dial";
+"The dial library feature allows you to access the dial on the FitCloud server and push it to your device" = "The dial library feature allows you to access the dial on the FitCloud server and push it to your device";
+"The custom dial feature allows you to customize your dial using pictures from photos/albums, as well as optional styles"="The custom dial feature allows you to customize your dial using pictures from photos/albums, as well as optional styles";
+"The dial component feature allows you to switch between existing dials on the device and change their style"="The dial component feature allows you to switch between existing dials on the device and change their style";
+"DIAL LIBRARY"="DIAL LIBRARY";
+"DIAL CUSTOM"="DIAL CUSTOM";
+"DIAL COMPONENT"="DIAL COMPONENT";
+//联系人
+"Contacts"="Contacts";
+"Contacts："="Contacts：";
+"Add Contacts"="Add Contacts";
+"Delete"="Delete";
+"Phone Number："="Phone Number：";
+"Please input the name"="Please input the name";
+"Please input the phone number"="Please input the phone number";
+"Save"="Save";
+
+"Refresh" = "Refresh";
+"Make sure the watch is fully charged" = "Make sure the watch is fully charged";
+"Keep the watch and the mobile phone within 0.5 meters"="Keep the watch and the mobile phone within 0.5 meters";
+"Search for places with few Bluetooth devices" = "Search for places with few Bluetooth devices";
+"Make sure the watch is not bonded or connected by another phone"="Make sure the watch is not bonded or connected by another phone";
+
+"More Demo >" = "More Demo >";
+
+
+"Are you sure you want to reset factory settings" = "Are you sure you want to reset factory settings";
+"Cancel" = "Cancel";
+"Sure" = "Sure";
+
+"Sport Data Push" = "Sport Data Push";
+
+"Allow up to 5 alarm clocks to be set" = "Allow up to 5 alarm clocks to be set";
+
+"SOC: %@%%" = "SOC: %@%%";
+
+"Discovered Devices" = "Discovered Devices";
+"Click to connect and bind the smart watch" = "Click to connect and bind the smart watch";
+
+"SYSTEM PAIRED" = "SYSTEM PAIRED";
+"CONNECTED" = "CONNECTED";
+"DISCONNECTED" = "DISCONNECTED";
+
+"Connecting..." = "Connecting...";
+"Connected" = "Connected";
+"Disconnected" = "Disconnected";
+
+"Logging On User Object" = "Logging On User Object";
+"Login User Object Success" = "Login User Object Success";
+"Login User Object Failure" = "Login User Object Failure";
+"Preparing Work for Smart Watch" = "Preparing Work for Smart Watch";
+"Prepare Work for Smart Watch Finished." = "Prepare Work for Smart Watch Finished.";
+
+"Binding User Object" = "Binding User Object";
+"Bind User Object Success" = "Bind User Object Success";
+"Bind User Object Failure" = "Bind User Object Failure";
+"Getting Smart Watch All Config" = "Getting Smart Watch All Config";
+"Get Smart Watch All Config Success" = "Get Smart Watch All Config Success";
+"Get Smart Watch All Config Failure" = "Get Smart Watch All Config Failure";
+
+"Enjoy Now" = "Enjoy Now";
+"Retry" = "Retry";
+"Unbind And Retry" = "Unbind And Retry";
+"Try Later" = "Try Later";
+
+"Binding Smart Watch" = "Binding Smart Watch";
+"Please keep the smart watch nearby your iPhone." = "Please keep the smart watch nearby your iPhone.";
+"Smart Watch Bind Success" = "Smart Watch Bind Success";
+"Your Smart Watch Complete Bind..." = "Your Smart Watch Complete Bind...";
+"Smart Watch Bind Failure" = "Smart Watch Bind Failure";
+"Your Smart Watch Complete Failed to Bind..." = "Your Smart Watch Complete Failed to Bind...";
+
+"Demos" = "Demos";
+"Click to run the demo" = "Click to run the demo";
+"View the results in the console." = "View the results in the console.";
+
+"Get Sports Data Today" = "Get Sports Data Today";
+"Manual Sync Data" = "手动同步";
+"Message Reminder" = "消息提醒";
+"Alarm" = "闹钟";
+"Add Alarm" = "Add Alarm";
+"Sedentary Remind" = "久坐提醒";
+"Drink Remind" = "喝水提醒";
+"Wrist Wake Up" = "抬腕唤醒";
+"Health Monitor Settings" = "健康监控设置";
+"Screen Display" = "屏幕显示";
+"Health Measurement" = "健康测量";
+"Daily Goal Settings" = "每日目标设置";
+"Unit Prefer Settings" = "单位偏好设置";
+"User Profile Settings" = "用户资料设置";
+"Sync Weather" = "同步天气";
+
+"Whether Support Mail Reminder" = "手环是否支持邮件提醒";
+"Wheather Support TelegramAndViber Reminder" = "手环是否支持Telegram和Viber提醒";
+"Whether Call Reminder Enabled" = "来电提醒是否开启";
+"Enable Call Reminder" = "开启来电提醒";
+"Disable Call Reminder" = "关闭来电提醒";
+"Enable Call & SMS Reminder at the same time" = "同时开启来电和短信提醒";
+"Disable Call & SMS Reminder at the same time" = "同时关闭来电和短信提醒";
+
+"Op success." = "操作成功。";
+"Op failure." = "操作失败。";
+
+"Alarm List" = "闹钟列表";
+"Add Alarm" = "添加闹钟";
+"Edit Alarm" = "编辑闹钟";
+
+"Fetch Sedentary Remind Settings" = "获取久坐提醒设置";
+"Do Sedentary Remind Settings" = "设置久坐提醒";
+
+"Fetch Drink Remind Settings" = "获取喝水提醒设置";
+"Do Drink Remind Settings" = "喝水提醒设置";
+
+"Fetch Wrist Wake Up Settings" = "获取抬腕唤醒设置";
+"Do Wrist Wake Up Settings" = "设置抬腕唤醒";
+
+"Fetch Health Monitor Settings" = "获取健康监测设置";
+"Do Health Monitor Settings" = "健康监测设置";
+
+"Fetch Supported Screen Display Items" = "获取手环支持的屏幕显示功能";
+"Wheather Support Display Steps" = "手环是否支持显示步数";
+"Wheather Steps Item Current Shown" = "手环当前是否显示步数功能";
+"Enable Steps Item Dispay" = "开启步数功能显示";
+"Disable Steps Item Display" = "关闭步数功能显示";
+
+"Realtime Measurement" = "实时测量";
+"Start Heart Rate Realtime Measurement" = "启动心率实时测量";
+"One Click to Start All Measurement" = "一键测量";
+"Stop the Measurement" = "停止测量";
+
+"Set Daily Goal" = "设置每日目标";
+
+"Do Length & Weight Unit Prefer Settings" = "长度及重量单位偏好设置(公制/英制)";
+"Do Temperature Unit Prefer Settings" = "温度单位偏好设置(摄氏度/华氏度)";
+
+"Do User Profile Settings" = "用户资料设置";
+"Do BloodPressure Rreference Settings" = "血压参考设置";

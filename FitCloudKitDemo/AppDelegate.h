@@ -6,8 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FitCloudKit/FitCloudKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) FitCloudKit *fitCloudKit;
 
 
 @end

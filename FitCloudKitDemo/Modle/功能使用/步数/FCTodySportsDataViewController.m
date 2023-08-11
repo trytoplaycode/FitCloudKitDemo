@@ -38,7 +38,7 @@
                 weakSelf.stepLabel.text = [NSString stringWithFormat:@"%@%@", @(dataObject.steps), NSLocalizedString(@"step", nil)];
                 weakSelf.distanceLabel.text = [NSString stringWithFormat:@"%@%@", @(dataObject.distance), NSLocalizedString(@"m", nil)];
                 weakSelf.heartRateLabel.text = [NSString stringWithFormat:@"%@%@", @(dataObject.averageHeartRate), NSLocalizedString(@"bmp", nil)];
-                weakSelf.caloriesLabel.text = [NSString stringWithFormat:@"%@%@", @(dataObject.calory),NSLocalizedString(@"cal", nil)];
+                weakSelf.caloriesLabel.text = [NSString stringWithFormat:@"%@%@", [NSString stringWithFormat:@"%0.2f", dataObject.calory/1000.f],NSLocalizedString(@"kcal", nil)];
             });
         }
         

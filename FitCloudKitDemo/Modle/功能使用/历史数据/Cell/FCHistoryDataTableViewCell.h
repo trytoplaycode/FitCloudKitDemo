@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FCHistoryDataTableViewCell : UITableViewCell
 
-- (void)configStep:(FCCommenRecordModel *)model;
+- (void)configHistory:(FCCommenRecordModel *)model;
 
 @end
 

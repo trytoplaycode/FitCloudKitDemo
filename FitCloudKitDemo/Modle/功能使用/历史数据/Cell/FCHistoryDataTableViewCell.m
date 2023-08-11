@@ -79,11 +79,44 @@
     return label;
 }
 
-- (void)configStep:(FCCommenRecordModel *)model {
+- (NSString *)getSleepStatus:(FITCLOUDSLEEPQUALITY)type {
+    NSString *status = @"";
+    if (type == FITCLOUDSLEEPQUALITY_ASLEEP) {
+        status = NSLocalizedString(@"Asleep", nil);
+    }else if (type == FITCLOUDSLEEPQUALITY_INBED) {
+        status = NSLocalizedString(@"In Bed", nil);
+    }else if (type == FITCLOUDSLEEPQUALITY_AWAKE) {
+        status = NSLocalizedString(@"Awake", nil);
+    }
+    
+    return status;
+}
+
+- (NSString *)formatterSecond:(int)second {
+    return [NSString stringWithFormat:@"%02d:%02d", second/60, second%60];
+}
+
+- (void)configHistory:(FCCommenRecordModel *)model {
     self.timeLabel.text = [model.recordDate substringFromIndex:11];
-    self.firstValueLabel.text = [NSString stringWithFormat:@"%@：%d %@", NSLocalizedString(@"Steps", nil), model.steps, NSLocalizedString(@"step", nil)];
-    self.secondValueLabel.text = [NSString stringWithFormat:@"%@：%.2f kcal", NSLocalizedString(@"Calories", nil), model.calory/1000.f];
-    self.thirdValueLabel.text = [NSString stringWithFormat:@"%@：%d m", NSLocalizedString(@"Distance", nil), model.distance/1000];
+    if (model.type == FCHistoryTypeStep) {
+        self.firstValueLabel.text = [NSString stringWithFormat:@"%@：%d %@", NSLocalizedString(@"Steps", nil), model.steps, NSLocalizedString(@"step", nil)];
+        self.secondValueLabel.text = [NSString stringWithFormat:@"%@：%.2f kcal", NSLocalizedString(@"Calories", nil), model.calory/1000.f];
+        self.thirdValueLabel.text = [NSString stringWithFormat:@"%@：%d m", NSLocalizedString(@"Distance", nil), model.distance/1000];
+    }else if (model.type == FCHistoryTypeHeartRate) {
+        self.firstValueLabel.text = [NSString stringWithFormat:@"%@：%d", NSLocalizedString(@"Heart Rate", nil), model.hrValue];
+    }else if (model.type == FCHistoryTypeBloodOxygen) {
+        self.firstValueLabel.text = [NSString stringWithFormat:@"%@：%d", NSLocalizedString(@"Blood Oxygen", nil), model.boValue];
+    }else if (model.type == FCHistoryTypeBloodPressure) {
+        self.firstValueLabel.text = [NSString stringWithFormat:@"%@：%d", NSLocalizedString(@"Diastolic pressure：", nil), model.diastolic];
+        self.secondValueLabel.text = [NSString stringWithFormat:@"%@：%d", NSLocalizedString(@"Systolic pressure：", nil), model.systolic];
+    }else if (model.type == FCHistoryTypeSleep) {
+        self.firstValueLabel.text = [self getSleepStatus:model.quality];
+    }else if (model.type == FCHistoryTypeSports) {
+        self.firstValueLabel.text = @"";
+        self.secondValueLabel.text = [self formatterSecond:model.duration];
+        self.thirdValueLabel.text = [NSString stringWithFormat:@"%@：%d kcal",NSLocalizedString(@"Consume", nil), model.calory];
+        self.fourthValueLabel.text = [NSString stringWithFormat:@"%@：%d kcal",NSLocalizedString(@"Heart Rate", nil), model.hr_excercise];
+    }
 }
 #pragma mark - 懒加载
 - (UILabel *)timeLabel {

@@ -8,6 +8,9 @@
 
 #import "AppDelegate+LoggerService.h"
 #import <XLFacility/XLStandardLogger.h>
+#import <XLFacilityMacros.h>
+#import <QuickiOSLogServer.h>
+#import "FCDefinitions.h"
 
 @implementation AppDelegate (LoggerService)
 

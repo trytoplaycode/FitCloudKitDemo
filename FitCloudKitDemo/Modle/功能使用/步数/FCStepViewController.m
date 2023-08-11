@@ -11,7 +11,6 @@
 #import "FCFuncListTableViewCell.h"
 #import "FCTodySportsDataViewController.h"
 #import "FCStepTargetViewController.h"
-
 @interface FCStepViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -32,6 +31,10 @@ static NSString *identifier = @"step";
     [self.view addSubview:self.tableView];
 }
 
+- (void)backAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - <UITableViewDelegate, UITableViewDataSource>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArr.count;
@@ -39,6 +42,8 @@ static NSString *identifier = @"step";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FCFuncListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    [cell configCellStyle:FCCellStyleNormal];
+
     cell.nameLabel.text = self.dataArr[indexPath.row];
     
     return cell;
@@ -78,7 +83,7 @@ static NSString *identifier = @"step";
 
 - (NSMutableArray *)dataArr {
     if (!_dataArr) {
-        _dataArr = @[NSLocalizedString(@"Get Sports Data Today", nil), NSLocalizedString(@"Step Target", nil),NSLocalizedString(@"History Data", nil)].mutableCopy;
+        _dataArr = @[NSLocalizedString(@"Get Sports Data Today", nil), NSLocalizedString(@"Step Target", nil)].mutableCopy;
     }
     
     return _dataArr;

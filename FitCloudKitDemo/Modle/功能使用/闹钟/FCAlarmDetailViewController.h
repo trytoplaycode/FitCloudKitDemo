@@ -6,10 +6,13 @@
 //
 
 #import "FCBaseViewController.h"
+#import <FitCloudKit/FitCloudKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@interface FCAlarmDetailViewController : FCBaseViewController
 
-@interface FCAlarmListViewController : FCBaseViewController
+@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 

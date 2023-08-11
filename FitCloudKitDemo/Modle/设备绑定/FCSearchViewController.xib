@@ -1,22 +1,250 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCSearchViewController">
             <connections>
+                <outlet property="btnConnectDevice" destination="EST-CZ-nGh" id="6Hv-Sk-bNm"/>
+                <outlet property="btnMoreDemo" destination="eBv-pY-2rp" id="vlB-n6-Rr9"/>
+                <outlet property="btnRemoveDevice" destination="qJ4-xI-xU3" id="Tj1-KK-Ydk"/>
+                <outlet property="btnSearch" destination="SId-Km-K92" id="crh-EO-125"/>
+                <outlet property="connectStatus" destination="Vwd-GO-NUz" id="Tb4-b3-7LW"/>
+                <outlet property="deviceName" destination="3zb-mX-I2h" id="Ynf-Qy-81K"/>
+                <outlet property="imageSmartWatch" destination="r5W-jo-Pnv" id="RsJ-Fg-8hH"/>
+                <outlet property="indicator" destination="g9Y-JG-qqk" id="APx-We-Qva"/>
+                <outlet property="progressTip" destination="3ZK-O0-aqz" id="u7I-WY-0qD"/>
+                <outlet property="searchTipsView" destination="SVD-wV-QXa" id="Xct-Cb-Xxw"/>
+                <outlet property="soc" destination="4MT-gd-rWh" id="14X-HQ-mLx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smart-watch" translatesAutoresizingMaskIntoConstraints="NO" id="r5W-jo-Pnv">
+                    <rect key="frame" x="96.666666666666686" y="179" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="2KX-M7-7mc"/>
+                        <constraint firstAttribute="height" constant="200" id="iJG-nL-N4e"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zb-mX-I2h">
+                    <rect key="frame" x="20" y="399" width="353" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="pFV-xU-HA1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-JG-qqk">
+                    <rect key="frame" x="176.66666666666666" y="444" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="S21-YD-1st"/>
+                        <constraint firstAttribute="width" constant="40" id="kVl-oc-3tm"/>
+                    </constraints>
+                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vwd-GO-NUz">
+                    <rect key="frame" x="20" y="499" width="353" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ThA-vG-czI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SId-Km-K92">
+                    <rect key="frame" x="96.666666666666686" y="688" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Cwa-t1-fYI"/>
+                        <constraint firstAttribute="height" constant="50" id="IBh-uu-q1c"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Search Device">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="zcW-PR-y9m"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EST-CZ-nGh">
+                    <rect key="frame" x="96.666666666666686" y="549" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="EQc-iX-Ebk"/>
+                        <constraint firstAttribute="height" constant="50" id="uF6-zb-ub0"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Connect Device">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="OnConnectDevice:" destination="-1" eventType="touchUpInside" id="aee-Q3-skp"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZK-O0-aqz">
+                    <rect key="frame" x="196.66666666666666" y="452" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MT-gd-rWh">
+                    <rect key="frame" x="196.66666666666666" y="429" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJ4-xI-xU3">
+                    <rect key="frame" x="19.999999999999993" y="59" width="101.33333333333331" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Jrt-vz-LJo"/>
+                        <constraint firstAttribute="height" constant="50" id="T1w-RE-n7V"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Remove Device">
+                        <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="removeDeviceAction:" destination="-1" eventType="touchUpInside" id="ycR-jM-Wra"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBv-pY-2rp">
+                    <rect key="frame" x="281.66666666666669" y="59" width="91.333333333333314" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="V3d-Vj-vgH"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="More Demo &gt;">
+                        <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="moreDemoAction:" destination="-1" eventType="touchUpInside" id="Mrm-ig-Oiz"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVD-wV-QXa">
+                    <rect key="frame" x="0.0" y="109" width="393" height="559"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqW-IA-teK">
+                            <rect key="frame" x="30" y="80" width="333" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="ZdL-PZ-iXd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure the watch is fully charged" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJE-S4-2hS">
+                            <rect key="frame" x="30" y="130" width="333" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="7LE-6P-8d1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep the watch and the mobile phone within 0.5 meters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFm-zL-QJQ">
+                            <rect key="frame" x="30" y="165" width="333" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="YbW-23-BfP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for places with few Bluetooth devices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-LB-xXL">
+                            <rect key="frame" x="30" y="216" width="333" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="8ay-N3-ezC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure the watch is not bonded or connected by another phone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMK-n9-e9q">
+                            <rect key="frame" x="30" y="251" width="333" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Uj8-lr-hos"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="sMK-n9-e9q" firstAttribute="top" secondItem="zUh-LB-xXL" secondAttribute="bottom" constant="15" id="9ou-ck-i8j"/>
+                        <constraint firstAttribute="trailing" secondItem="zUh-LB-xXL" secondAttribute="trailing" constant="30" id="ICq-1c-npz"/>
+                        <constraint firstAttribute="trailing" secondItem="MFm-zL-QJQ" secondAttribute="trailing" constant="30" id="NjA-ez-vBl"/>
+                        <constraint firstItem="MFm-zL-QJQ" firstAttribute="top" secondItem="dJE-S4-2hS" secondAttribute="bottom" constant="15" id="NxV-B5-Vm7"/>
+                        <constraint firstItem="dJE-S4-2hS" firstAttribute="leading" secondItem="SVD-wV-QXa" secondAttribute="leading" constant="30" id="UIt-ek-Nr0"/>
+                        <constraint firstItem="zUh-LB-xXL" firstAttribute="leading" secondItem="SVD-wV-QXa" secondAttribute="leading" constant="30" id="XHJ-eI-yrM"/>
+                        <constraint firstAttribute="trailing" secondItem="cqW-IA-teK" secondAttribute="trailing" constant="30" id="Z3N-8J-puK"/>
+                        <constraint firstAttribute="trailing" secondItem="sMK-n9-e9q" secondAttribute="trailing" constant="30" id="bBK-8p-ROo"/>
+                        <constraint firstItem="cqW-IA-teK" firstAttribute="leading" secondItem="SVD-wV-QXa" secondAttribute="leading" constant="30" id="cJg-57-fwn"/>
+                        <constraint firstItem="cqW-IA-teK" firstAttribute="top" secondItem="SVD-wV-QXa" secondAttribute="top" constant="80" id="cfS-kI-C4s"/>
+                        <constraint firstItem="zUh-LB-xXL" firstAttribute="top" secondItem="MFm-zL-QJQ" secondAttribute="bottom" constant="15" id="dXZ-qd-HqS"/>
+                        <constraint firstItem="dJE-S4-2hS" firstAttribute="top" secondItem="cqW-IA-teK" secondAttribute="bottom" constant="20" id="fYF-OE-z7D"/>
+                        <constraint firstAttribute="trailing" secondItem="dJE-S4-2hS" secondAttribute="trailing" constant="30" id="hzG-cE-5q7"/>
+                        <constraint firstItem="MFm-zL-QJQ" firstAttribute="leading" secondItem="SVD-wV-QXa" secondAttribute="leading" constant="30" id="lFt-hi-RCR"/>
+                        <constraint firstItem="sMK-n9-e9q" firstAttribute="leading" secondItem="SVD-wV-QXa" secondAttribute="leading" constant="30" id="tbW-fb-hte"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4MT-gd-rWh" firstAttribute="top" secondItem="3zb-mX-I2h" secondAttribute="bottom" constant="10" id="42a-77-VnB"/>
+                <constraint firstItem="SVD-wV-QXa" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="4tD-7R-aYH"/>
+                <constraint firstItem="3ZK-O0-aqz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5S9-Xo-f4Y"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="SVD-wV-QXa" secondAttribute="trailing" id="5hc-Vk-iaY"/>
+                <constraint firstItem="qJ4-xI-xU3" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="8CZ-Le-cKh"/>
+                <constraint firstItem="eBv-pY-2rp" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="9ND-dR-VG0"/>
+                <constraint firstItem="EST-CZ-nGh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9n2-IM-W6g"/>
+                <constraint firstItem="r5W-jo-Pnv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Dbv-ap-Tbj"/>
+                <constraint firstItem="SId-Km-K92" firstAttribute="top" secondItem="SVD-wV-QXa" secondAttribute="bottom" constant="20" id="EJ0-U4-zuj"/>
+                <constraint firstItem="4MT-gd-rWh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HyQ-O4-ihp"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="eBv-pY-2rp" secondAttribute="trailing" constant="20" id="LwM-nu-5Lz"/>
+                <constraint firstItem="3ZK-O0-aqz" firstAttribute="top" secondItem="3zb-mX-I2h" secondAttribute="bottom" constant="33" id="MXf-pP-hO2"/>
+                <constraint firstItem="r5W-jo-Pnv" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="120" id="OUJ-2N-eCK"/>
+                <constraint firstItem="qJ4-xI-xU3" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="OdZ-Nb-itw"/>
+                <constraint firstItem="Vwd-GO-NUz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="PYI-Gc-UoO"/>
+                <constraint firstItem="g9Y-JG-qqk" firstAttribute="top" secondItem="3zb-mX-I2h" secondAttribute="bottom" constant="25" id="Qca-qY-l99"/>
+                <constraint firstItem="g9Y-JG-qqk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Sco-SX-zmR"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="3zb-mX-I2h" secondAttribute="trailing" constant="20" id="ThF-pq-mMl"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Vwd-GO-NUz" secondAttribute="trailing" constant="20" id="Yhf-vI-clr"/>
+                <constraint firstItem="SVD-wV-QXa" firstAttribute="top" secondItem="qJ4-xI-xU3" secondAttribute="bottom" id="Ynd-fW-eYE"/>
+                <constraint firstItem="EST-CZ-nGh" firstAttribute="top" secondItem="Vwd-GO-NUz" secondAttribute="bottom" constant="30" id="aaH-D9-933"/>
+                <constraint firstItem="Vwd-GO-NUz" firstAttribute="top" secondItem="g9Y-JG-qqk" secondAttribute="bottom" constant="15" id="fd4-Ob-2q8"/>
+                <constraint firstItem="Vwd-GO-NUz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gJH-29-JoG"/>
+                <constraint firstItem="3zb-mX-I2h" firstAttribute="top" secondItem="r5W-jo-Pnv" secondAttribute="bottom" constant="20" id="jCZ-z1-aI5"/>
+                <constraint firstItem="SId-Km-K92" firstAttribute="top" relation="lessThanOrEqual" secondItem="EST-CZ-nGh" secondAttribute="bottom" constant="140" id="pCn-UC-wPJ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="SId-Km-K92" secondAttribute="bottom" constant="80" id="qMK-CH-Fl6"/>
+                <constraint firstItem="3zb-mX-I2h" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="qpz-ze-owf"/>
+                <constraint firstItem="SId-Km-K92" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uxM-Gw-t6t"/>
+            </constraints>
+            <point key="canvasLocation" x="57" y="21"/>
         </view>
     </objects>
+    <resources>
+        <image name="smart-watch" width="200" height="200"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

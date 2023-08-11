@@ -8,7 +8,7 @@
 
 #import "MoView.h"
 #import "MoCurveLayer.h"
-
+#import <YYCategories/YYCategories.h>
 #define DefaultColor RGB(0xff, 0xff, 0xff)
 #define ErrorColor [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0]
 
@@ -42,7 +42,7 @@
         self.moLayer = [[MoCurveLayer alloc] init];
         self.moLayer.bounds = self.bounds;
         self.moLayer.anchorPoint = CGPointZero;
-        [MoCurveLayer setStrokeColor:DefaultColor];
+        [MoCurveLayer setStrokeColor:[UIColor whiteColor]];
         [self.layer addSublayer:self.moLayer];
         
     }
@@ -58,7 +58,7 @@
         self.moLayer = [[MoCurveLayer alloc] init];
         self.moLayer.bounds = self.bounds;
         self.moLayer.anchorPoint = CGPointZero;
-        [MoCurveLayer setStrokeColor:DefaultColor];
+        [MoCurveLayer setStrokeColor:[UIColor whiteColor]];
         [self.layer addSublayer:self.moLayer];
     }
     return self;
@@ -78,7 +78,7 @@
 {
     CAShapeLayer *tickLayer = [[CAShapeLayer alloc] init];
     tickLayer.fillColor = nil;
-    tickLayer.strokeColor = DefaultColor.CGColor;
+    tickLayer.strokeColor = [UIColor whiteColor].CGColor;
     tickLayer.lineWidth = 3;
     tickLayer.miterLimit = 3;//斜接，大于线宽，线条衔接处会出现斜接角
     tickLayer.lineCap = kCALineCapRound;
@@ -261,7 +261,7 @@
     if(self.isWaitingState == 1) {
         self.moLayer.progress = [MoCurveLayer processing];
         [self.moLayer removeAllAnimations];
-        [MoCurveLayer setStrokeColor:DefaultColor];
+        [MoCurveLayer setStrokeColor:[UIColor whiteColor]];
         [self.moLayer applyAnimation:[self finishProcessCAAnimation:self.moLayer.progress]];
         self.isWaitingState = 2;
         self.successBlock = successBlock;

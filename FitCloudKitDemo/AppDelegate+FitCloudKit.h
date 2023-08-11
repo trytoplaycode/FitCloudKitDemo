@@ -6,10 +6,13 @@
 //
 
 #import "AppDelegate.h"
+#import <FitCloudKit/FitCloudKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AppDelegate (FitCloudKit)
+@interface AppDelegate (FitCloudKit)<FitCloudCallback>
+
+-(void) fitCloudKitConfig;
 
 @end
 

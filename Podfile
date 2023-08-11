@@ -8,7 +8,7 @@ target 'FitCloudKitDemo' do
   workspace 'FitCloudKitDemo.xcworkspace'
   project 'FitCloudKitDemo.xcodeproj'
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  #use_frameworks!
+  use_frameworks!
 
   # Pods for FitCloudKitDemo
   pod 'FitCloudKit', git: 'https://github.com/htangsmart/FitCloudPro-SDK-iOS.git'
@@ -19,6 +19,13 @@ target 'FitCloudKitDemo' do
   pod 'YYModel'
   pod 'BRPickerView'
   pod 'MBProgressHUD'
+  pod 'AFNetworking'
+  pod 'SDWebImage'
+  pod 'FitCloudDFUKit'
+  pod 'FitCloudWFKit'
+  pod 'FitCloudNWFKit'
+  pod 'TZImagePickerController'
+  pod 'Bugly'
   
   end
 

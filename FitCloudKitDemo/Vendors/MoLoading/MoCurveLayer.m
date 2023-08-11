@@ -7,6 +7,8 @@
 //
 
 #import "MoCurveLayer.h"
+#import "FCDefinitions.h"
+#import <YYCategories/YYCategories.h>
 #define kLineWidth 3
 
 
@@ -21,7 +23,7 @@ static UIColor * strokeColor = nil;
     if (self) {
         self.progress = 0.f;
         self.contentsScale = [UIScreen mainScreen].scale;
-        strokeColor = RGB(0x75, 0xBD, 0x21);
+        strokeColor = UIColorWithRGB(0x75bd21, 1.f);
     }
     return self;
 }
@@ -38,7 +40,7 @@ static UIColor * strokeColor = nil;
 - (void)reset
 {
     self.progress = 0.f;
-    strokeColor = RGB(0xff, 0xff, 0xff);
+    strokeColor = [UIColor whiteColor];
     recordProgcessing = 0.f;
     finishProgcessing = 0.f;
 }
