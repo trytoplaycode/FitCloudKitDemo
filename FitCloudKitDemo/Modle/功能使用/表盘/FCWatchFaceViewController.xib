@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCWatchFaceViewController">
+            <connections>
+                <outlet property="componentButton" destination="8mp-ZE-TeP" id="PPP-gV-maI"/>
+                <outlet property="customButton" destination="R8y-cH-eU1" id="xbJ-A3-SUa"/>
+                <outlet property="libraryButton" destination="R1Z-t5-uak" id="kSQ-t2-KYR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The dial library feature allows you to access the dial on the FitCloud server and push it to your device" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-pO-1Dl" customClass="LocalizedLabel">
+                    <rect key="frame" x="10" y="139" width="373" height="38.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1Z-t5-uak" customClass="LocalizedButton">
+                    <rect key="frame" x="131.66666666666666" y="197.33333333333334" width="129.99999999999997" height="40"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="aVq-sJ-IhQ"/>
+                        <constraint firstAttribute="width" constant="130" id="myu-Zm-a6d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="DIAL LIBRARY"/>
+                    <connections>
+                        <action selector="libraryAction:" destination="-1" eventType="touchUpInside" id="htc-5H-D3B"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MmF-WK-NLH">
+                    <rect key="frame" x="10" y="257.33333333333331" width="373" height="1"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="I60-2a-tBO"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The custom dial feature allows you to customize your dial using pictures from photos/albums, as well as optional styles" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9v-mM-OPw" customClass="LocalizedLabel">
+                    <rect key="frame" x="10" y="278.33333333333331" width="373" height="57.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8y-cH-eU1" customClass="LocalizedButton">
+                    <rect key="frame" x="131.66666666666666" y="355.66666666666669" width="129.99999999999997" height="40"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="77y-vl-IWP"/>
+                        <constraint firstAttribute="width" constant="130" id="8sU-so-WEx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="DIAL CUSTOM">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="customAction:" destination="-1" eventType="touchUpInside" id="ycv-VE-Ncd"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ma-zs-a3Y">
+                    <rect key="frame" x="10" y="415.66666666666669" width="373" height="1"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Ld3-Ka-KqF"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The dial component feature allows you to switch between existing dials on the device and change their style" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHt-k5-NBc">
+                    <rect key="frame" x="10" y="436.66666666666669" width="373" height="57.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mp-ZE-TeP">
+                    <rect key="frame" x="96.666666666666686" y="514" width="200" height="40"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="N6i-7e-A2o"/>
+                        <constraint firstAttribute="height" constant="40" id="VSW-98-n9z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="DIAL COMPONENT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="componentsAction:" destination="-1" eventType="touchUpInside" id="JoL-9s-tIE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="jHt-k5-NBc" secondAttribute="trailing" constant="10" id="2xz-gl-Zet"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="MmF-WK-NLH" secondAttribute="trailing" constant="10" id="73e-OH-oBk"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="1Ma-zs-a3Y" secondAttribute="trailing" constant="10" id="7n5-hh-OJ0"/>
+                <constraint firstItem="dnK-pO-1Dl" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="80" id="8Ti-vR-S7n"/>
+                <constraint firstItem="R8y-cH-eU1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="967-Zo-rCY"/>
+                <constraint firstItem="R1Z-t5-uak" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CiO-fX-7Po"/>
+                <constraint firstItem="jHt-k5-NBc" firstAttribute="top" secondItem="1Ma-zs-a3Y" secondAttribute="bottom" constant="20" id="DMI-4K-ao9"/>
+                <constraint firstItem="jHt-k5-NBc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="KSZ-ge-TSf"/>
+                <constraint firstItem="1Ma-zs-a3Y" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="Tfc-yI-LFk"/>
+                <constraint firstItem="g9v-mM-OPw" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="VBv-o0-F2t"/>
+                <constraint firstItem="R1Z-t5-uak" firstAttribute="top" secondItem="dnK-pO-1Dl" secondAttribute="bottom" constant="20" id="X4w-0U-hdd"/>
+                <constraint firstItem="1Ma-zs-a3Y" firstAttribute="top" secondItem="R8y-cH-eU1" secondAttribute="bottom" constant="20" id="Zn9-nJ-z50"/>
+                <constraint firstItem="MmF-WK-NLH" firstAttribute="top" secondItem="R1Z-t5-uak" secondAttribute="bottom" constant="20" id="aY8-dW-Wdr"/>
+                <constraint firstItem="MmF-WK-NLH" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="cD4-FV-vaN"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="g9v-mM-OPw" secondAttribute="trailing" constant="10" id="fZ7-AW-yuQ"/>
+                <constraint firstItem="8mp-ZE-TeP" firstAttribute="top" secondItem="jHt-k5-NBc" secondAttribute="bottom" constant="20" id="hJa-hP-Ewp"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="dnK-pO-1Dl" secondAttribute="trailing" constant="10" id="q1R-jo-v6v"/>
+                <constraint firstItem="g9v-mM-OPw" firstAttribute="top" secondItem="MmF-WK-NLH" secondAttribute="bottom" constant="20" id="sUc-46-iAs"/>
+                <constraint firstItem="8mp-ZE-TeP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="t3O-hc-UGb"/>
+                <constraint firstItem="R8y-cH-eU1" firstAttribute="top" secondItem="g9v-mM-OPw" secondAttribute="bottom" constant="20" id="vmt-FT-fvI"/>
+                <constraint firstItem="dnK-pO-1Dl" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="yXh-f2-a1t"/>
+            </constraints>
+            <point key="canvasLocation" x="57" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

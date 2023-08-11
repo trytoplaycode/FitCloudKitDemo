@@ -1,17 +1,17 @@
 //
-//  FCWatchFaceViewController.m
+//  FCWatchStyleViewController.m
 //  FitCloudKitDemo
 //
-//  Created by Jasper on 2023/7/30.
+//  Created by Jasper on 2023/8/9.
 //
 
-#import "FCWatchFaceViewController.h"
+#import "FCWatchStyleViewController.h"
 #import "FCDefinitions.h"
 #import "FCFuncListTableViewCell.h"
 #import "FCCommenCellModel.h"
 #import <FitCloudKit/FitCloudKit.h>
 #import <Toast.h>
-@interface FCWatchFaceViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface FCWatchStyleViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
@@ -20,7 +20,7 @@
 @end
 
 static NSString *identifier = @"watchface";
-@implementation FCWatchFaceViewController
+@implementation FCWatchStyleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,7 +38,7 @@ static NSString *identifier = @"watchface";
 }
 
 - (void)sureAction {
-    WATCHFACEMODULESTYLE value = 0;
+    WATCHFACEMODULESTYLE value = WATCHFACEMODULESTYLE_INVALID;
     BOOL select = NO;
     for (FCCommenCellModel *model in self.dataArr) {
         if ([model.value intValue] == 1) {
@@ -48,7 +48,7 @@ static NSString *identifier = @"watchface";
     }
     
     if (!select) {
-        value = 0;
+        value = WATCHFACEMODULESTYLE_INVALID;
     }
     for (NSInteger i = 0; i < self.dataArr.count; i++) {
         FCCommenCellModel *model = self.dataArr[i];
@@ -73,10 +73,12 @@ static NSString *identifier = @"watchface";
             value = current;
         }
     }
-    if (value == 0) {return;}
+    if (value == WATCHFACEMODULESTYLE_INVALID) {return;}
     FitCloudWatchfaceModule *module = [FitCloudWatchfaceModule moduleWithStyle:value];
     [FitCloudKit setWatchfacePostion:0 modules:@[module] completion:^(BOOL succeed, NSError *error) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            OpResultToastTip(self.view, succeed);
+        });
     }];
 }
 
@@ -119,7 +121,7 @@ static NSString *identifier = @"watchface";
 - (NSMutableArray *)dataArr {
     if (!_dataArr) {
         _dataArr = @[].mutableCopy;
-        NSArray *arr = @[NSLocalizedString(@"Watch Face Style One", nil),NSLocalizedString(@"Watch Face Style Two", nil),NSLocalizedString(@"Watch Face Style Three", nil),NSLocalizedString(@"Watch Face Style Four", nil),NSLocalizedString(@"Watch Face Style Five", nil),NSLocalizedString(@"Watch Face Style Six", nil),NSLocalizedString(@"Watch Face Style Seven", nil),NSLocalizedString(@"Watch Face Style One", nil)];
+        NSArray *arr = @[NSLocalizedString(@"Watch Face Style One", nil),NSLocalizedString(@"Watch Face Style Two", nil),NSLocalizedString(@"Watch Face Style Three", nil),NSLocalizedString(@"Watch Face Style Four", nil),NSLocalizedString(@"Watch Face Style Five", nil),NSLocalizedString(@"Watch Face Style Six", nil),NSLocalizedString(@"Watch Face Style Seven", nil)];
         for (NSInteger i = 0; i < arr.count; i++) {
             FCCommenCellModel *model = [FCCommenCellModel new];
             model.title = arr[i];
@@ -146,4 +148,3 @@ static NSString *identifier = @"watchface";
 }
 
 @end
-
