@@ -417,16 +417,16 @@
 			path = MoLoading;
 			sourceTree = "<group>";
 		};
-		A4911A892A86243200733B85 /* Modle */ = {
+		A4911A892A86243200733B85 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				A4911BBB2A86322D00733B85 /* Tools */,
 				A4911A8A2A86243200733B85 /* 登陆与注册 */,
 				A4911AA02A86243200733B85 /* 功能使用 */,
 				A4911A942A86243200733B85 /* 设备绑定 */,
+				A4911BBB2A86322D00733B85 /* Tools */,
 				A4911A912A86243200733B85 /* Models */,
 			);
-			path = Modle;
+			path = Module;
 			sourceTree = "<group>";
 		};
 		A4911A8A2A86243200733B85 /* 登陆与注册 */ = {
@@ -840,15 +840,15 @@
 				A4911B1A2A86243200733B85 /* Assets.xcassets */,
 				A4911B012A86243200733B85 /* Base */,
 				A4911B1C2A86243200733B85 /* Base.lproj */,
-				A4911A762A86243200733B85 /* Contents.json */,
+				A4911A892A86243200733B85 /* Module */,
 				A4911A772A86243200733B85 /* en-GB.lproj */,
 				A4911B232A86243200733B85 /* en.lproj */,
 				A4911B222A86243200733B85 /* FCDefinitions.h */,
 				A4CD6EDF2A5D4E77008E5E55 /* Info.plist */,
 				A4CD6EDC2A5D4E77008E5E55 /* LaunchScreen.storyboard */,
+				A4911A762A86243200733B85 /* Contents.json */,
 				A4CD6EE02A5D4E77008E5E55 /* main.m */,
 				A4CD6ED72A5D4E76008E5E55 /* Main.storyboard */,
-				A4911A892A86243200733B85 /* Modle */,
 				A4911B212A86243200733B85 /* PrefixHeader.pch */,
 				A4911A7C2A86243200733B85 /* Vendors */,
 				A4911B102A86243200733B85 /* zh-Hans.lproj */,
@@ -1439,6 +1439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V574YPW5N9;
@@ -1446,6 +1447,9 @@
 				INFOPLIST_FILE = FitCloudKitDemo/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "FitCloudKitDemo将使用您的蓝牙外设权限用于与手环设备配对";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "FitCloudKitDemo将使用您的蓝牙外设权限用于与手环设备配对";
+				INFOPLIST_KEY_NSCameraUsageDescription = "app需要访问相机用于拍摄自定义表盘背景";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "app需要访问系统相册来设置自定义表盘背景";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "app需要访问系统相册来设置自定义表盘背景";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1459,6 +1463,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wm.FitCloudKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1470,6 +1475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V574YPW5N9;
@@ -1477,6 +1483,9 @@
 				INFOPLIST_FILE = FitCloudKitDemo/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "FitCloudKitDemo将使用您的蓝牙外设权限用于与手环设备配对";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "FitCloudKitDemo将使用您的蓝牙外设权限用于与手环设备配对";
+				INFOPLIST_KEY_NSCameraUsageDescription = "app需要访问相机用于拍摄自定义表盘背景";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "app需要访问系统相册来设置自定义表盘背景";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "app需要访问系统相册来设置自定义表盘背景";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1490,6 +1499,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wm.FitCloudKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

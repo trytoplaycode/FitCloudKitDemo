@@ -45,12 +45,27 @@
 
 - (IBAction)addContactsAction:(id)sender {
     [self.view endEditing:YES];
+    if (self.dataArr.count >= 10) {
+        [self.view makeToast:NSLocalizedString(@"A maximum of 10 contacts can be added", nil)];
+        return;
+    }
     if (self.nameTF.text.length == 0) {
         [self.view makeToast:NSLocalizedString(@"Please input the name", nil)];
         return;
     }
     if (self.numberTF.text.length == 0) {
         [self.view makeToast:NSLocalizedString(@"Please input the phone number", nil)];
+        return;
+    }
+    BOOL exist = NO;
+    for (FCCommenCellModel *model in self.dataArr) {
+        if ([model.title isEqualToString:self.nameTF.text] && [model.value isEqualToString:self.numberTF.text]) {
+            exist = YES;
+            break;
+        }
+    }
+    if (exist) {
+        [self.view makeToast:NSLocalizedString(@"Contacts already exist", nil)];
         return;
     }
     if (self.model) {

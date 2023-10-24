@@ -27,6 +27,10 @@
     [self initialization];
 }
 
+- (void)backAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)initialization {
     self.libraryButton.clipsToBounds = YES;
     self.libraryButton.layer.cornerRadius = 8;

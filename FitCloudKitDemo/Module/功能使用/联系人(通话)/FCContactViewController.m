@@ -107,6 +107,7 @@ static NSString *identifier = @"contact";
 - (void)addAction {
     weakSelf(weakSelf);
     FCContactsDetailViewController *detail = [FCContactsDetailViewController new];
+    detail.dataArr = self.dataArr;
     detail.addContactsCallback = ^(FCCommenCellModel * _Nonnull model) {
         [weakSelf.dataArr addObject:model];
         weakSelf.emptyView.hidden = weakSelf.dataArr.count > 0;

@@ -84,7 +84,7 @@ static NSString *identifier = @"list";
 - (void)sureAction {
     FitCloudWeatherObject *weather = [FitCloudWeatherObject new];
     FCCommenCellModel *cityModel = self.dataArr[0];
-    weather.city = cityModel.value;
+    weather.city = cityModel.value?:@"";
     FCCommenCellModel *tempModel = self.dataArr[1];
     weather.temperature = [tempModel.value integerValue];
     FCCommenCellModel *minTempModel = self.dataArr[2];
@@ -127,7 +127,7 @@ static NSString *identifier = @"list";
     switch (indexPath.row) {
         case 0:
         {
-            [BRAddressPickerView showAddressPickerWithMode:BRAddressPickerModeCity selectIndexs:@[@(0)] isAutoSelect:YES resultBlock:^(BRProvinceModel * _Nullable province, BRCityModel * _Nullable city, BRAreaModel * _Nullable area) {
+            [BRAddressPickerView showAddressPickerWithMode:BRAddressPickerModeCity selectIndexs:@[@(0)] isAutoSelect:NO resultBlock:^(BRProvinceModel * _Nullable province, BRCityModel * _Nullable city, BRAreaModel * _Nullable area) {
                 model.value = city.name;
                 [self.tableView reloadData];
             }];

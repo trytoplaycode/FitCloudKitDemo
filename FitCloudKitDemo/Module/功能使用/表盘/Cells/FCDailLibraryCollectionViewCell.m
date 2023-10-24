@@ -8,6 +8,7 @@
 #import "FCDailLibraryCollectionViewCell.h"
 #import <Masonry.h>
 #import <SDWebImage.h>
+#import "FCDefinitions.h"
 @interface FCDailLibraryCollectionViewCell()
 
 @property (nonatomic, strong) UIImageView *iconImageView;
@@ -20,6 +21,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        self.contentView.backgroundColor = UIColorFromRGB(0xe0e0e0, 1.f);
         [self.contentView addSubview:self.iconImageView];
         [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.contentView.mas_left).offset(5);

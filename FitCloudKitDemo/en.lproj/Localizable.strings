@@ -277,63 +277,65 @@
 "View the results in the console." = "View the results in the console.";
 
 "Get Sports Data Today" = "Get Sports Data Today";
-"Manual Sync Data" = "手动同步";
-"Message Reminder" = "消息提醒";
-"Alarm" = "闹钟";
+"Manual Sync Data" = "Manual Sync Data";
+"Message Reminder" = "Message Reminder";
+"Alarm" = "Alarm";
 "Add Alarm" = "Add Alarm";
-"Sedentary Remind" = "久坐提醒";
-"Drink Remind" = "喝水提醒";
-"Wrist Wake Up" = "抬腕唤醒";
-"Health Monitor Settings" = "健康监控设置";
-"Screen Display" = "屏幕显示";
-"Health Measurement" = "健康测量";
-"Daily Goal Settings" = "每日目标设置";
-"Unit Prefer Settings" = "单位偏好设置";
-"User Profile Settings" = "用户资料设置";
-"Sync Weather" = "同步天气";
+"Sedentary Remind" = "Sedentary Remind";
+"Drink Remind" = "Drink Remind";
+"Wrist Wake Up" = "Wrist Wake Up";
+"Health Monitor Settings" = "Health Monitor Settings";
+"Screen Display" = "Screen Display";
+"Health Measurement" = "Health Measurement";
+"Daily Goal Settings" = "Daily Goal Settings";
+"Unit Prefer Settings" = "Unit Prefer Settings";
+"User Profile Settings" = "User Profile Settings";
+"Sync Weather" = "Sync Weather";
 
-"Whether Support Mail Reminder" = "手环是否支持邮件提醒";
-"Wheather Support TelegramAndViber Reminder" = "手环是否支持Telegram和Viber提醒";
-"Whether Call Reminder Enabled" = "来电提醒是否开启";
-"Enable Call Reminder" = "开启来电提醒";
-"Disable Call Reminder" = "关闭来电提醒";
-"Enable Call & SMS Reminder at the same time" = "同时开启来电和短信提醒";
-"Disable Call & SMS Reminder at the same time" = "同时关闭来电和短信提醒";
+"Whether Support Mail Reminder" = "Whether Support Mail Reminder";
+"Wheather Support TelegramAndViber Reminder" = "Wheather Support TelegramAndViber Reminder";
+"Whether Call Reminder Enabled" = "Whether Call Reminder Enabled";
+"Enable Call Reminder" = "Enable Call Reminder";
+"Disable Call Reminder" = "Disable Call Reminder";
+"Enable Call & SMS Reminder at the same time" = "Enable Call & SMS Reminder at the same time";
+"Disable Call & SMS Reminder at the same time" = "Disable Call & SMS Reminder at the same time";
 
-"Op success." = "操作成功。";
-"Op failure." = "操作失败。";
+"Op success." = "Op success.";
+"Op failure." = "Op failure.";
 
-"Alarm List" = "闹钟列表";
-"Add Alarm" = "添加闹钟";
-"Edit Alarm" = "编辑闹钟";
+"Alarm List" = "Alarm List";
+"Add Alarm" = "Add Alarm";
+"Edit Alarm" = "Edit Alarm";
 
-"Fetch Sedentary Remind Settings" = "获取久坐提醒设置";
-"Do Sedentary Remind Settings" = "设置久坐提醒";
+"Fetch Sedentary Remind Settings" = "Fetch Sedentary Remind Settings";
+"Do Sedentary Remind Settings" = "Do Sedentary Remind Settings";
 
-"Fetch Drink Remind Settings" = "获取喝水提醒设置";
-"Do Drink Remind Settings" = "喝水提醒设置";
+"Fetch Drink Remind Settings" = "Fetch Drink Remind Settings";
+"Do Drink Remind Settings" = "Do Drink Remind Settings";
 
-"Fetch Wrist Wake Up Settings" = "获取抬腕唤醒设置";
-"Do Wrist Wake Up Settings" = "设置抬腕唤醒";
+"Fetch Wrist Wake Up Settings" = "Fetch Wrist Wake Up Settings";
+"Do Wrist Wake Up Settings" = "Do Wrist Wake Up Settings";
 
-"Fetch Health Monitor Settings" = "获取健康监测设置";
-"Do Health Monitor Settings" = "健康监测设置";
+"Fetch Health Monitor Settings" = "Fetch Health Monitor Settings";
+"Do Health Monitor Settings" = "Do Health Monitor Settings";
 
-"Fetch Supported Screen Display Items" = "获取手环支持的屏幕显示功能";
-"Wheather Support Display Steps" = "手环是否支持显示步数";
-"Wheather Steps Item Current Shown" = "手环当前是否显示步数功能";
-"Enable Steps Item Dispay" = "开启步数功能显示";
-"Disable Steps Item Display" = "关闭步数功能显示";
+"Fetch Supported Screen Display Items" = "Fetch Supported Screen Display Items";
+"Wheather Support Display Steps" = "Wheather Support Display Steps";
+"Wheather Steps Item Current Shown" = "Wheather Steps Item Current Shown";
+"Enable Steps Item Dispay" = "Enable Steps Item Dispay";
+"Disable Steps Item Display" = "Disable Steps Item Display";
 
-"Realtime Measurement" = "实时测量";
-"Start Heart Rate Realtime Measurement" = "启动心率实时测量";
-"One Click to Start All Measurement" = "一键测量";
-"Stop the Measurement" = "停止测量";
+"Realtime Measurement" = "Realtime Measurement";
+"Start Heart Rate Realtime Measurement" = "Start Heart Rate Realtime Measurement";
+"One Click to Start All Measurement" = "One Click to Start All Measurement";
+"Stop the Measurement" = "Stop the Measurement";
 
-"Set Daily Goal" = "设置每日目标";
+"Set Daily Goal" = "Set Daily Goal";
 
-"Do Length & Weight Unit Prefer Settings" = "长度及重量单位偏好设置(公制/英制)";
-"Do Temperature Unit Prefer Settings" = "温度单位偏好设置(摄氏度/华氏度)";
+"Do Length & Weight Unit Prefer Settings" = "Do Length & Weight Unit Prefer Settings";
+"Do Temperature Unit Prefer Settings" = "Do Temperature Unit Prefer Settings";
 
-"Do User Profile Settings" = "用户资料设置";
-"Do BloodPressure Rreference Settings" = "血压参考设置";
+"Do User Profile Settings" = "Do User Profile Settings";
+"Do BloodPressure Rreference Settings" = "Do BloodPressure Rreference Settings";
+"Contacts already exist" = "Contacts already exist";
+"A maximum of 10 contacts can be added" = "A maximum of 10 contacts can be added";

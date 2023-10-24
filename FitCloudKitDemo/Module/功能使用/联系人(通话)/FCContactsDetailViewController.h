@@ -17,6 +17,7 @@ typedef void (^deleteContactsBlock)(FCCommenCellModel *model);
 @interface FCContactsDetailViewController : FCBaseViewController
 
 @property (nonatomic, strong) FCCommenCellModel *model;
+@property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 
 @property (nonatomic, copy) addContactsBlock addContactsCallback;

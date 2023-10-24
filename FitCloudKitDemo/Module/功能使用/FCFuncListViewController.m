@@ -156,7 +156,6 @@ static NSString *identifier = @"list";
                 }
             }
             /// 注意：正规使用场景建议使用数据库进行存储管理，此处仅为演示
-            NSArray *steps = [[NSUserDefaults standardUserDefaults] objectForKey:kStepRecordList];
             [[NSUserDefaults standardUserDefaults] setObject:stepRcords forKey:kStepRecordList];
             NSArray *bo = [[NSUserDefaults standardUserDefaults] objectForKey:kBORecordList];
             [[NSUserDefaults standardUserDefaults] setObject:boRcords forKey:kBORecordList];

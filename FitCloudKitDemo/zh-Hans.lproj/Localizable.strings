@@ -337,4 +337,5 @@
 "DIAL LIBRARY"="DIAL LIBRARY";
 "DIAL CUSTOM"="DIAL CUSTOM";
 "DIAL COMPONENT"="DIAL COMPONENT";
-
+"Contacts already exist" = "用户已存在";
+"A maximum of 10 contacts can be added" = "最多增加10位联系人";

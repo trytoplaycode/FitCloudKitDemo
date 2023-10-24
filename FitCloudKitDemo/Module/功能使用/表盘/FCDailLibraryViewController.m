@@ -56,7 +56,9 @@ static NSString *identifier = @"dail";
 -(void)OnReconnectWithDFUMode:(NSNotification*)notification
 {
     NSString *string = [NSString stringWithFormat:@"此次推送%@", self.dfuSuccess ? @"成功" : @"失败"];
-    [self.view makeToast:string];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.view makeToast:string];
+    });
 }
 
 - (void)loadData {
