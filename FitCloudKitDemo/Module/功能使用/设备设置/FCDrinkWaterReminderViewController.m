@@ -67,8 +67,16 @@
 }
 
 - (IBAction)endAction:(id)sender {
-    [BRDatePickerView showDatePickerWithMode:BRDatePickerModeHM title:NSLocalizedString(@"Start Time", nil) selectValue:self.endButton.titleLabel.text resultBlock:^(NSDate * _Nullable selectDate, NSString * _Nullable selectValue) {
-        [self.endButton setTitle:selectValue forState:UIControlStateNormal];
+    [BRDatePickerView showDatePickerWithMode:BRDatePickerModeHM title:NSLocalizedString(@"End Time", nil) selectValue:self.endButton.titleLabel.text resultBlock:^(NSDate * _Nullable selectDate, NSString * _Nullable selectValue) {
+        int startTime = [self convertTimeToInterval:self.startButton.titleLabel.text];
+        int endTime = [self convertTimeToInterval:selectValue];
+        if (endTime < startTime) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.view makeToast:NSLocalizedString(@"The end time cannot be less than the start time", nil)];
+            });
+        }else {
+            [self.endButton setTitle:selectValue forState:UIControlStateNormal];
+        }
     }];
 }
 

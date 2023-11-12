@@ -43,8 +43,16 @@
     [self.view endEditing:YES];
 }
 
+- (BOOL)isAvalable:(NSString *)phone {
+    NSString *pattern = @"^1[3-9]\\d{9}$";
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    return [predicate evaluateWithObject:phone];
+}
+
 - (IBAction)addContactsAction:(id)sender {
     [self.view endEditing:YES];
+    self.nameTF.text = [self.nameTF.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (self.dataArr.count >= 10) {
         [self.view makeToast:NSLocalizedString(@"A maximum of 10 contacts can be added", nil)];
         return;
@@ -55,6 +63,10 @@
     }
     if (self.numberTF.text.length == 0) {
         [self.view makeToast:NSLocalizedString(@"Please input the phone number", nil)];
+        return;
+    }
+    if (![self isAvalable:self.numberTF.text]) {
+        [self.view makeToast:NSLocalizedString(@"The phone number is invalid", nil)];
         return;
     }
     BOOL exist = NO;

@@ -135,8 +135,29 @@ static NSString *identifier = @"list";
             break;
         case 1:
         {
-            [BRStringPickerView showPickerWithTitle:model.title dataSourceArr:self.temperatureArr selectIndex:100 resultBlock:^(BRResultModel * _Nullable resultModel) {
+            FCCommenCellModel *min = self.dataArr[2];
+            FCCommenCellModel *max = self.dataArr[3];
+            NSMutableArray *source = self.temperatureArr.mutableCopy;
+            if (min.hasSet || max.hasSet) {
+                NSInteger minIndex = 0;
+                NSInteger maxIndex = 0;
+                for (NSInteger i = 0; i < self.temperatureArr.count; i++) {
+                    NSString *value = self.temperatureArr[i];
+                    if ([value isEqualToString:min.value]) {
+                        minIndex = i;
+                    }
+                    if ([value isEqualToString:max.value]) {
+                        maxIndex = i;
+                    }
+                }
+                if (minIndex <= maxIndex) {
+                    source = [self.temperatureArr subarrayWithRange:NSMakeRange(minIndex, maxIndex-minIndex+1)].mutableCopy;
+                }
+            }
+            
+            [BRStringPickerView showPickerWithTitle:model.title dataSourceArr:source selectIndex:100 resultBlock:^(BRResultModel * _Nullable resultModel) {
                 model.value = resultModel.value;
+                model.hasSet = YES;
                 [self.tableView reloadData];
             }];
         }
@@ -144,16 +165,28 @@ static NSString *identifier = @"list";
         case 2:
         {
             [BRStringPickerView showPickerWithTitle:model.title dataSourceArr:self.temperatureArr selectIndex:100 resultBlock:^(BRResultModel * _Nullable resultModel) {
-                model.value = resultModel.value;
-                [self.tableView reloadData];
+                FCCommenCellModel *max = self.dataArr[3];
+                if (max.hasSet &&  [resultModel.value intValue] > [max.value intValue]) {
+                    [self.view makeToast:NSLocalizedString(@"The lowest temperature can't be greater than the highest temperature", nil)];
+                }else {
+                    model.value = resultModel.value;
+                    model.hasSet = YES;
+                    [self.tableView reloadData];
+                }
             }];
         }
             break;
         case 3:
         {
             [BRStringPickerView showPickerWithTitle:model.title dataSourceArr:self.temperatureArr selectIndex:100 resultBlock:^(BRResultModel * _Nullable resultModel) {
-                model.value = resultModel.value;
-                [self.tableView reloadData];
+                FCCommenCellModel *min = self.dataArr[2];
+                if (min.hasSet &&  [resultModel.value intValue] < [min.value intValue]) {
+                    [self.view makeToast:NSLocalizedString(@"The highest temperature can't be lower than the lowest temperature", nil)];
+                }else {
+                    model.value = resultModel.value;
+                    model.hasSet = YES;
+                    [self.tableView reloadData];
+                }
             }];
         }
             break;

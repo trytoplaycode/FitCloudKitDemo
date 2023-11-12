@@ -16,6 +16,7 @@
 
 @interface FCAlarmDetailViewController ()
 
+@property (nonatomic, strong) UIButton *navRightButton;
 @property (nonatomic, strong) FitCloudAlarmObject *model;
 @property (weak, nonatomic) IBOutlet UISwitch *switchs;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -41,12 +42,12 @@ static NSString *identifier = @"list";
     [super viewDidLoad];
     self.formatter = [NSDateFormatter new];
     [self.formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
     if (self.indexPath) {
         self.model = self.dataArr[self.indexPath.row];
         [self addNavBar:self.model.label];
         [self initialization];
         [self.setButton setTitle:NSLocalizedString(@"Set", nil) forState:UIControlStateNormal];
+        [self addNavRightButton:NSLocalizedString(@"Delete", nil) isImage:NO];
     }else {
         self.model = [FitCloudAlarmObject new];
         self.model.on = YES;
@@ -112,6 +113,19 @@ static NSString *identifier = @"list";
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+}
+
+- (void)rightButtonAction {
+    [self.dataArr removeObjectAtIndex:self.indexPath.row];
+    [FitCloudKit setAlarms:self.dataArr block:^(BOOL succeed, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            OpResultToastTip(self.view, succeed);
+            if (self.refreshCallback) {
+                self.refreshCallback();
+            }
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    }];
 }
 
 - (IBAction)timeAction:(id)sender {

@@ -11,7 +11,7 @@
 #import "FCFuncListTableViewCell.h"
 #import <FitCloudKit/FitCloudKit.h>
 #import "FCCommenCellModel.h"
-
+#import "FCGlobal.h"
 @interface FCAboutBraceletViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -81,6 +81,9 @@ static NSString *identifier = @"about";
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Factory Reset", nil) message:NSLocalizedString(@"Are you sure you want to reset factory settings", nil) preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *sure = [UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [FitCloudKit restoreAsFactorySettingsWithBlock:^(BOOL succeed, NSError *error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [FitCloudKit connect:[FCGlobal shareInstance].currentPeripheral];
+                    });
                     NSLog(@"恢复出厂设置:%@", succeed ? @"成功" : @"失败");
                 }];
             }];

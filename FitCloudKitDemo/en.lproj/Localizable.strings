@@ -339,3 +339,10 @@
 "Do BloodPressure Rreference Settings" = "Do BloodPressure Rreference Settings";
 "Contacts already exist" = "Contacts already exist";
 "A maximum of 10 contacts can be added" = "A maximum of 10 contacts can be added";
+
+"The end time cannot be less than the start time" = "The end time cannot be less than the start time";
+"Delete" = "Delete";
+"The lowest temperature can't be greater than the highest temperature" = "The lowest temperature can't be greater than the highest temperature";
+"The highest temperature can't be lower than the lowest temperature" = "The highest temperature can't be lower than the lowest temperature";
+"Please choose the dial" = "Please choose the dial";
+"The phone number is invalid" = "The phone number is invalid";

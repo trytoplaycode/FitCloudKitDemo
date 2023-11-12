@@ -8,9 +8,11 @@
 #import "FCBaseViewController.h"
 #import <FitCloudKit/FitCloudKit.h>
 
+typedef void (^refreshBlock)(void);
 NS_ASSUME_NONNULL_BEGIN
 @interface FCAlarmDetailViewController : FCBaseViewController
 
+@property (nonatomic, copy) refreshBlock refreshCallback;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 

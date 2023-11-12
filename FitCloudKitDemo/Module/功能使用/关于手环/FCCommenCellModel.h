@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *value;
 @property (nonatomic, assign) BOOL isSelected;
+@property (nonatomic, assign) BOOL hasSet;
 
 @end
 

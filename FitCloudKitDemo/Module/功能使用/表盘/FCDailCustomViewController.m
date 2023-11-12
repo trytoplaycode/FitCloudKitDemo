@@ -70,6 +70,11 @@ static NSString *identifier = @"custom";
     
     [self.sureButton setTitle:NSLocalizedString(@"Create", nil) forState:UIControlStateNormal];
     self.position = FITCLOUDWATCHFACEDTPOSITION_TOP;
+    [self.previewImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(70);
+        make.centerX.mas_equalTo(self.view.mas_centerX).offset(0);
+        make.size.mas_equalTo(CGSizeMake(220, 220));
+    }];
     self.previewImageView.backgroundColor = [UIColor blackColor];
     self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.previewImageView.clipsToBounds = YES;

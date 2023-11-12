@@ -60,6 +60,10 @@ static NSString *identifier = @"list";
     }
     FCAlarmDetailViewController *detail = [FCAlarmDetailViewController new];
     detail.dataArr = self.dataArr;
+    __weak typeof(self) weakSelf = self;
+    detail.refreshCallback = ^{
+        [weakSelf.tableView reloadData];
+    };
     [self.navigationController pushViewController:detail animated:YES];
 }
 

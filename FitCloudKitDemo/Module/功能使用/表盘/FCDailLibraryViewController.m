@@ -66,35 +66,40 @@ static NSString *identifier = @"dail";
     [FitCloudKit getWatchfaceUIInformationWithBlock:^(BOOL succeed, FitCloudWatchfaceUIInfo *faceUI, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             //获取手环支持的在线表盘列表所需参数
-            FitCloudAllConfigObject *obj = [FitCloudKit allConfig];
-            NSString *hardwareInfo = [obj.firmware.description uppercaseString];
-            NSDictionary *params = @{@"hardwareInfo":hardwareInfo,
-                                     @"lcd":@(faceUI.lcd),
-                                     @"toolVersion":faceUI.toolVersion
-            };
-            // 获取手环支持的表盘列表
-            [FCNetworking POST:@"public/dial/list" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSArray *data = [responseObject objectForKey:@"data"];
-                    if (data.count > 0) {
-                        [self.dataArr removeAllObjects];
-                        for (NSInteger i = 0; i < data.count; i++) {
-                            FCDialLibraryModel *model = [FCDialLibraryModel yy_modelWithJSON:data[i]];
-                            [self.dataArr addObject:model];
+            if (faceUI) {
+                FitCloudAllConfigObject *obj = [FitCloudKit allConfig];
+                NSString *hardwareInfo = [obj.firmware.description uppercaseString];
+                NSDictionary *params = @{@"hardwareInfo":hardwareInfo,
+                                         @"lcd":@(faceUI.lcd),
+                                         @"toolVersion":faceUI.toolVersion
+                };
+                // 获取手环支持的表盘列表
+                [FCNetworking POST:@"public/dial/list" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSArray *data = [responseObject objectForKey:@"data"];
+                        if (data.count > 0) {
+                            [self.dataArr removeAllObjects];
+                            for (NSInteger i = 0; i < data.count; i++) {
+                                FCDialLibraryModel *model = [FCDialLibraryModel yy_modelWithJSON:data[i]];
+                                [self.dataArr addObject:model];
+                            }
+                            [self.collectionView reloadData];
+                            [MBProgressHUD hideHUDForView:self.view animated:YES];
                         }
-                        [self.collectionView reloadData];
-                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    }
-                });
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                NSLog(@"123");
-            }];
-
+                    });
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    NSLog(@"123");
+                }];
+            }
         });
     }];
 }
 
 - (void)sureAction {
+    if (!self.selectIndexPath) {
+        [self.view makeToast:NSLocalizedString(@"Please choose the dial", nil)];
+        return;
+    }
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     // 查询是否可以进行DFU
     [FitCloudKit enterDFUModeWithBlock:^(BOOL succeed, CBPeripheral *dfuPeripheral, FITCLOUDCHIPVENDOR chipVendor, NSError *error) {
@@ -107,6 +112,11 @@ static NSString *identifier = @"dail";
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
             }];
+        }
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         }
     }];
 }
@@ -149,6 +159,10 @@ static NSString *identifier = @"dail";
 //    NSString *msg = APP_GET_ERROR_MSG(error);
     NSLog(@"固件升级失败，%@...", error);
     dispatch_async(dispatch_get_main_queue(), ^{
+        [FitCloudKit exitDFUModeWithBlock:^(BOOL succeed, NSError *error) {
+            [FitCloudKit connect:[FCGlobal shareInstance].currentPeripheral];
+            NSLog(@"退出固件升级模式");
+        }];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
 }
@@ -173,6 +187,10 @@ static NSString *identifier = @"dail";
 //    NSString *msg = APP_GET_ERROR_MSG(error);
     NSLog(@"固件升级终止，%@...",error);
     dispatch_async(dispatch_get_main_queue(), ^{
+        [FitCloudKit exitDFUModeWithBlock:^(BOOL succeed, NSError *error) {
+            [FitCloudKit connect:[FCGlobal shareInstance].currentPeripheral];
+            NSLog(@"退出固件升级模式");
+        }];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
 }
@@ -186,6 +204,10 @@ static NSString *identifier = @"dail";
     NSLog(@"固件升级成功...");
     self.dfuSuccess = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
+        [FitCloudKit exitDFUModeWithBlock:^(BOOL succeed, NSError *error) {
+            [FitCloudKit connect:[FCGlobal shareInstance].currentPeripheral];
+            NSLog(@"退出固件升级模式");
+        }];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
 }

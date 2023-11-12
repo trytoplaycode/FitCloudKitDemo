@@ -339,3 +339,10 @@
 "DIAL COMPONENT"="DIAL COMPONENT";
 "Contacts already exist" = "用户已存在";
 "A maximum of 10 contacts can be added" = "最多增加10位联系人";
+
+"The end time cannot be less than the start time" = "结束时间不能小于开始时间";
+"Delete" = "删除";
+"The lowest temperature can't be greater than the highest temperature" = "最低温不能高于最高温";
+"The highest temperature can't be lower than the lowest temperature" = "最高温不能低于最低温";
+"Please choose the dial" = "请选择表盘";
+"The phone number is invalid" = "手机号码不正确";

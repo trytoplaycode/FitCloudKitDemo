@@ -123,7 +123,9 @@ static NSString *identifier = @"contact";
     for (NSInteger i = 0; i < self.dataArr.count; i++) {
         FCCommenCellModel *model = self.dataArr[i];
         FitCloudContactObject *contact = [FitCloudContactObject createWithName:model.title phone:model.value];
-        [list addObject:contact];
+        if (contact) {
+            [list addObject:contact];
+        }
     }
     [FitCloudKit setFavContacts:list block:^(BOOL succeed, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
