@@ -160,6 +160,7 @@ static NSString *identifier = @"contact";
         FCContactsDetailViewController *detail = [FCContactsDetailViewController new];
         detail.indexPath = indexPath;
         detail.model = model;
+        detail.dataArr = self.dataArr;
         weakSelf(weakSelf);
         detail.editContactsCallback = ^(FCCommenCellModel * _Nonnull model, NSIndexPath * _Nonnull indexPath) {
             [weakSelf.dataArr replaceObjectAtIndex:indexPath.row withObject:model];
@@ -170,6 +171,7 @@ static NSString *identifier = @"contact";
             [weakSelf.dataArr removeObject:model];
             [weakSelf.tableView reloadData];
             [weakSelf sureAction];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         };
         [self.navigationController pushViewController:detail animated:YES];
     }

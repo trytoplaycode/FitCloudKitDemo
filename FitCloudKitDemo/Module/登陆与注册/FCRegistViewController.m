@@ -44,7 +44,24 @@
 
 - (IBAction)registAction:(id)sender {
     [self.view endEditing:YES];
-    if (self.userNameTF.text.length == 0 || self.passwordTF.text.length == 0 || self.heightTF.text.length == 0 || self.weightTF.text.length == 0 || self.ageTF.text.length == 0) {
+    if (self.userNameTF.text.length == 0) {
+        [self.view makeToast:NSLocalizedString(@"Please input the user name", nil)];
+        return;
+    }
+    if (self.passwordTF.text.length == 0) {
+        [self.view makeToast:NSLocalizedString(@"Please input the password", nil)];
+        return;
+    }
+    if (self.heightTF.text.length == 0) {
+        [self.view makeToast:NSLocalizedString(@"Please input the height", nil)];
+        return;
+    }
+    if (self.weightTF.text.length == 0) {
+        [self.view makeToast:NSLocalizedString(@"Please input the weight", nil)];
+        return;
+    }
+    if (self.ageTF.text.length == 0) {
+        [self.view makeToast:NSLocalizedString(@"Please input the age", nil)];
         return;
     }
     FitCloudUserProfileObject *model = [FitCloudUserProfileObject new];

@@ -115,6 +115,7 @@ static NSString *identifier = @"dail";
         }
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.view makeToast:error.description];
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
         }
@@ -124,6 +125,7 @@ static NSString *identifier = @"dail";
 - (void)parserReult:(id)result {
     NSDictionary *data = [[result objectForKey:@"data"] firstObject];
     NSString *binUrl = [data objectForKey:@"binUrl"];
+    NSLog(@"当前bin文件url:\n%@", binUrl);
     [FCNetworking downLoadFile:binUrl fileName:@"dail.bin" finished:^(NSError * _Nullable error) {
         if (!error) {
             // 下载bin文件，并传输给手环，开始进行DFU
@@ -156,7 +158,6 @@ static NSString *identifier = @"dail";
  */
 -(void) OnStartDFUFailureWithError:(NSError*)error
 {
-//    NSString *msg = APP_GET_ERROR_MSG(error);
     NSLog(@"固件升级失败，%@...", error);
     dispatch_async(dispatch_get_main_queue(), ^{
         [FitCloudKit exitDFUModeWithBlock:^(BOOL succeed, NSError *error) {
@@ -164,6 +165,7 @@ static NSString *identifier = @"dail";
             NSLog(@"退出固件升级模式");
         }];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.view makeToast:@"进入DFU失败"];
     });
 }
 
@@ -192,6 +194,7 @@ static NSString *identifier = @"dail";
             NSLog(@"退出固件升级模式");
         }];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.view makeToast:@"意外终止"];
     });
 }
 
@@ -208,7 +211,12 @@ static NSString *identifier = @"dail";
             [FitCloudKit connect:[FCGlobal shareInstance].currentPeripheral];
             NSLog(@"退出固件升级模式");
         }];
+        NSArray *arrDocumentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+        NSString *documentPath = [arrDocumentPaths objectAtIndex:0];
+        NSString *path = [NSString stringWithFormat:@"%@/dail.bin", documentPath];
+        [[NSFileManager defaultManager] removeItemAtURL:[NSURL fileURLWithPath:path] error:nil];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.view makeToast:NSLocalizedString(@"Push Success", nil)];
     });
 }
 

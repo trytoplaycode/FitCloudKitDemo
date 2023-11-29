@@ -11,6 +11,7 @@
 #import "FCCommenCellModel.h"
 #import <FitCloudKit/FitCloudKit.h>
 #import <Toast.h>
+#import "FCGlobal.h"
 @interface FCQRCodeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -30,11 +31,7 @@ static NSString *identifier = @"code";
 }
 
 - (void)loadScreenDisplay {
-    [FitCloudKit getWatchSpecifiedSupportedMoneyReceiveAndBusinessQRCodeFeaturesWithBlock:^(BOOL succeed, NSArray<NSNumber *> *supported, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
-    }];
+    
 }
 
 - (void)backAction {
@@ -47,17 +44,26 @@ static NSString *identifier = @"code";
 }
 
 - (void)sureAction {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     FITCLOUDQRCODE value = 0;
+    NSInteger index = 0;
     BOOL select = NO;
-    for (FCCommenCellModel *model in self.dataArr) {
+    for (NSInteger i = 0; i < self.dataArr.count; i++) {
+        FCCommenCellModel *model = self.dataArr[i];
         if ([model.value intValue] == 1) {
             select = YES;
+            index = i;
             break;
         }
     }
     
     if (!select) {
         value = 0;
+        [self.view makeToast:NSLocalizedString(@"Please choose the application", nil)];
+        return;
     }
     for (NSInteger i = 0; i < self.dataArr.count; i++) {
         FCCommenCellModel *model = self.dataArr[i];
@@ -86,6 +92,7 @@ static NSString *identifier = @"code";
     if (value == 0) {return;}
     [FitCloudKit sendQRCode:value content:@"www.baidu.com" withBlock:^(BOOL succeed, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSUserDefaults standardUserDefaults] setObject:@(index) forKey:kQRCode];
             OpResultToastTip(self.view, succeed);
         });
     }];
@@ -131,9 +138,13 @@ static NSString *identifier = @"code";
     if (!_dataArr) {
         _dataArr = @[].mutableCopy;
         NSArray *arr = @[NSLocalizedString(@"WeChat", nil),NSLocalizedString(@"Alipay", nil),NSLocalizedString(@"PayPay", nil),NSLocalizedString(@"QQ", nil),NSLocalizedString(@"PayTM", nil),NSLocalizedString(@"PhonePE", nil),NSLocalizedString(@"GPay", nil),NSLocalizedString(@"BHTM", nil)];
+        int index = [[[NSUserDefaults standardUserDefaults] objectForKey:kQRCode] intValue];
         for (NSInteger i = 0; i < arr.count; i++) {
             FCCommenCellModel *model = [FCCommenCellModel new];
             model.title = arr[i];
+            if (i+1 == index) {
+                model.value = @"1";
+            }
             [_dataArr addObject:model];
         }
     }

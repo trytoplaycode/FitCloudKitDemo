@@ -37,6 +37,10 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.sysFinished = NO;
@@ -47,13 +51,11 @@
     self.btnRemoveDevice.titleLabel.font = FONT_REGULAR(11);
     self.btnMoreDemo.titleLabel.font = FONT_REGULAR(11);
     [self setNavBarClear];
-    
     {
         [self.btnConnectDevice setTitle:NSLocalizedString(@"Connect Device", nil) forState:UIControlStateNormal];
         self.btnConnectDevice.layer.borderColor = UIColor.blackColor.CGColor;
         [self.btnConnectDevice setContentEdgeInsets:UIEdgeInsetsMake(0, 30, 0, 30)];
     }
-    
     {
         [self.btnSearch setTitle:NSLocalizedString(@"Search Device", nil) forState:UIControlStateNormal];
         self.btnSearch.layer.borderColor = UIColor.blackColor.CGColor;
@@ -96,7 +98,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnPeripheralConnectedNotification:) name:FITCLOUDEVENT_PERIPHERAL_CONNECTED_NOTIFY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnPeripheralDisconnectedNotification:) name:FITCLOUDEVENT_PERIPHERAL_DISCONNECT_NOTIFY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnPeripherialConnectFailureNotification:) name:FITCLOUDEVENT_PERIPHERAL_CONNECT_FAILURE_NOTIFY object:nil];
-    
+        
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnBatteryInfoNotification:) name:FTICLOUDEVENT_BATTERYINFO_NOTIFY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnFitCloudLoginUserObjectBegin:) name:FITCLOUDEVENT_LOGINUSEROBJECT_BEGIN_NOTIFY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnFitCloudLoginUserObjectResult:) name:FITCLOUDEVENT_LOGINUSEROBJECT_RESULT_NOTIFY object:nil];
@@ -104,6 +106,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnFitCloudGetAllConfigResult:) name:FITCLOUDEVENT_GETALLCONFIG_RESULT_NOTIFY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnPrepareSyncWorkBeginNotification:) name:FITCLOUDEVENT_PREPARESYNCWORK_BEGIN_NOTIFY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnPrepareSyncWorkEndNotification:) name:FITCLOUDEVENT_PREPARESYNCWORK_END_NOTIFY object:nil];
+
 }
 
 -(void)OnPeripheralConnectingNotification:(NSNotification *) notification
@@ -240,6 +243,7 @@
             }];
         }
         
+        self.step = 1;
         self.btnRemoveDevice.hidden = FALSE;
         self.btnMoreDemo.hidden = FALSE;
         self.sysFinished = YES;
@@ -313,10 +317,13 @@
         FitCloudKitConnectRecord *record = [[FitCloudKit historyPeripherals] lastObject];
         [FitCloudKit removePeripheralHistoryWithUUID:record.uuid.UUIDString];
         dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.step = 0;
+            [FCGlobal shareInstance].currentPeripheral = nil;
             [weakSelf updateControlVisible];
         });
     }];
 }
+
 - (IBAction)moreDemoAction:(id)sender {
     FCFuncListViewController *func = [FCFuncListViewController new];
     [self.navigationController pushViewController:func animated:YES];

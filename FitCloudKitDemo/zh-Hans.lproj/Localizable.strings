@@ -6,7 +6,6 @@
   
 */
 
-
 "Sign In" = "登 陆";
 "Input username" = "请输入用户名";
 "Input password" = "请输入密码";
@@ -346,3 +345,18 @@
 "The highest temperature can't be lower than the lowest temperature" = "最高温不能低于最低温";
 "Please choose the dial" = "请选择表盘";
 "The phone number is invalid" = "手机号码不正确";
+"Please input the user name" = "请输入用户名";
+"Please input the password" = "请输入密码";
+"Please input the height" = "请输入身高";
+"Please input the weight" = "请输入体重";
+"Please input the age" = "请输入年龄";
+"Please connect the bracelet first" = "请先连接手环";
+"Target Distance" = "目标距离：";
+"Target Calory" = "目标卡路里：";
+"Target Step" = "目标步数：";
+"Please choose the style" = "请选择表盘风格";
+"Please choose the application" = "请选择app";
+"Please choose input the alarm name" = "请输入闹钟名称";
+"Push Success" = "推送成功";
+"Contacts name already exist" = "用户名重复";
+"Select" = "选择";

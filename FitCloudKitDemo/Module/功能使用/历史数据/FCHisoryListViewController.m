@@ -10,6 +10,7 @@
 #import "FCFuncListTableViewCell.h"
 #import "FCCommenCellModel.h"
 #import "FCHistoryDataViewController.h"
+#import "FCGlobal.h"
 
 @interface FCHisoryListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -49,6 +50,10 @@ static NSString *identifier = @"list";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     FCHistoryDataViewController *history = [FCHistoryDataViewController new];
     if (indexPath.row == 0) {
         history.type = FCHistoryTypeStep;

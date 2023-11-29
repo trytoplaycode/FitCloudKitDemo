@@ -12,7 +12,7 @@
 #import <BRPickerView.h>
 #import <FitCloudKit/FitCloudKit.h>
 #import <Toast.h>
-
+#import <MBProgressHUD/MBProgressHUD.h>
 @interface FCWomenHealthyViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -59,13 +59,37 @@ static NSString *identifier = @"women";
 
 - (void)loadWomenHealthSettings {
     weakSelf(weakSelf);
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [FitCloudKit getWomenHealthSettingWithBlock:^(BOOL succeed, FitCloudWomenHealthSetting *whSetting, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *status = whSetting.mode == WOMENHEALTHMODE_MENSES ? NSLocalizedString(@"Open", nil) : NSLocalizedString(@"Close", nil);
-            NSArray *arr = @[status, [NSString stringWithFormat:@"%d", whSetting.advanceDaysToRemind],[self convertIntervalToTime:whSetting.offsetMinutesInDayOfRemind],[NSString stringWithFormat:@"%d", whSetting.mensesDuration], [NSString stringWithFormat:@"%d", whSetting.menstrualCycle],whSetting.recentMenstruationBegin?:@"",[NSString stringWithFormat:@"%d", whSetting.daysOfFinishSinceMensesBegin]];
-            for (NSInteger i = 0; i < weakSelf.dataArr.count; i++) {
-                FCCommenCellModel *model = weakSelf.dataArr[i];
-                model.value = arr[i];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if (whSetting) {
+                NSString *status = whSetting.mode == WOMENHEALTHMODE_MENSES ? NSLocalizedString(@"Open", nil) : NSLocalizedString(@"Close", nil);
+                NSArray *arr = @[status, [NSString stringWithFormat:@"%d", whSetting.advanceDaysToRemind],[self convertIntervalToTime:whSetting.offsetMinutesInDayOfRemind],[NSString stringWithFormat:@"%d", whSetting.mensesDuration], [NSString stringWithFormat:@"%d", whSetting.menstrualCycle],whSetting.recentMenstruationBegin?:@"",[NSString stringWithFormat:@"%d", whSetting.daysOfFinishSinceMensesBegin]];
+                for (NSInteger i = 0; i < weakSelf.dataArr.count; i++) {
+                    FCCommenCellModel *model = weakSelf.dataArr[i];
+                    model.value = arr[i];
+                }
+            }else {
+                NSString *status = whSetting.mode == WOMENHEALTHMODE_MENSES ? NSLocalizedString(@"Open", nil) : NSLocalizedString(@"Close", nil);
+                NSArray *arr = @[status, [NSString stringWithFormat:@"%d", whSetting.advanceDaysToRemind],[self convertIntervalToTime:whSetting.offsetMinutesInDayOfRemind],[NSString stringWithFormat:@"%d", whSetting.mensesDuration], [NSString stringWithFormat:@"%d", whSetting.menstrualCycle],whSetting.recentMenstruationBegin?:@"",[NSString stringWithFormat:@"%d", whSetting.daysOfFinishSinceMensesBegin]];
+                
+                NSDictionary *info = [[NSUserDefaults standardUserDefaults] objectForKey:kWomenHealthy];
+                if (info) {
+                    NSString *mode = [info objectForKey:@"mode"]?:@"";
+                    int remindDay = [[info objectForKey:@"remindDay"] intValue];
+                    NSString *time = [info objectForKey:@"time"];
+                    int duration = [[info objectForKey:@"duration"] intValue];
+                    int cycle = [[info objectForKey:@"cycle"] intValue];
+                    NSString *recent = [info objectForKey:@"recent"] ? : @"";
+                    int last = [[info objectForKey:@"last"] intValue];
+                    status = mode;
+                    arr = @[status, [NSString stringWithFormat:@"%d", remindDay],time,[NSString stringWithFormat:@"%d", duration], [NSString stringWithFormat:@"%d", cycle],recent,[NSString stringWithFormat:@"%d", last]];
+                }
+                for (NSInteger i = 0; i < weakSelf.dataArr.count; i++) {
+                    FCCommenCellModel *model = weakSelf.dataArr[i];
+                    model.value = arr[i];
+                }
             }
             [weakSelf.tableView reloadData];
         });
@@ -85,6 +109,8 @@ static NSString *identifier = @"women";
     [FitCloudKit setWomenHealthConfig:health block:^(BOOL succeed, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             OpResultToastTip(self.view, succeed);
+            NSDictionary *info = @{@"mode":mode.value?:@"", @"remindDay":remindDay.value?:@"", @"time":time.value?:@"", @"duration":duration.value?:@"", @"cycle":cycle.value?:@"", @"recent":recent.value?:@"", @"last":last.value?:@""};
+            [[NSUserDefaults standardUserDefaults] setObject:info forKey:kWomenHealthy];
             [weakSelf loadWomenHealthSettings];
         });
     }];

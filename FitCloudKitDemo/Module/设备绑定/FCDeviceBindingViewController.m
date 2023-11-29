@@ -13,6 +13,7 @@
 #import <NSDictionary+YYAdd.h>
 #import "FCSearchViewController.h"
 #import "FCFuncListViewController.h"
+#import "FCSearchViewController.h"
 #define USER_ID @"10000"
 
 @interface FCDeviceBindingViewController ()
@@ -71,7 +72,11 @@
 }
 
 - (void)backAction {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 -(void)dealloc
@@ -298,8 +303,10 @@
 - (IBAction)OnTryLater:(id)sender {
     [FitCloudKit ignoreConnectedPeripheral:YES];
     //[[NSNotificationCenter defaultCenter] postNotificationName:IGNORECONNECTEDPERIPHERALNOTIFICATION object:nil];
-    [self dismissViewControllerAnimated:NO completion:^{
+//    [self dismissViewControllerAnimated:NO completion:^{
         //[[NSNotificationCenter defaultCenter] postNotificationName:SKIPTOAPPHOMENOTIFICATION object:nil];
-    }];
+//    }];
+    FCFuncListViewController *func = [FCFuncListViewController new];
+    [self.navigationController pushViewController:func animated:YES];
 }
 @end

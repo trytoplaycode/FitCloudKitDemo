@@ -10,7 +10,8 @@
 #import "FCDailLibraryViewController.h"
 #import "FCDailCustomViewController.h"
 #import "FCDailComponentsViewController.h"
-
+#import <FitCloudKit/FitCloudKit.h>
+#import <UIView+Toast.h>
 @interface FCWatchFaceViewController ()
 
 @property (weak, nonatomic) IBOutlet LocalizedButton *libraryButton;
@@ -38,19 +39,31 @@
     self.customButton.layer.cornerRadius = 8;
     self.componentButton.clipsToBounds = YES;
     self.componentButton.layer.cornerRadius = 8;
-    
 }
+
 - (IBAction)libraryAction:(id)sender {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     FCDailLibraryViewController *dail = [FCDailLibraryViewController new];
     [self.navigationController pushViewController:dail animated:YES];
 }
 
 - (IBAction)customAction:(id)sender {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     FCDailCustomViewController *custom = [FCDailCustomViewController new];
     [self.navigationController pushViewController:custom animated:YES];
     
 }
 - (IBAction)componentsAction:(id)sender {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     FCDailComponentsViewController *components = [FCDailComponentsViewController new];
     [self.navigationController pushViewController:components animated:YES];
 }

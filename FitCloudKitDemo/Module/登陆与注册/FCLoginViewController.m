@@ -32,6 +32,7 @@
 }
 
 - (void)setNavBar {
+    self.needBack = NO;
     [self addNavBar:NSLocalizedString(@"Sign In", nil)];
 }
 
@@ -80,6 +81,7 @@
 
 #pragma mark - 点击事件
 - (void)signInAction {
+    [self.view endEditing:YES];
     NSDictionary *info = [[NSUserDefaults standardUserDefaults] objectForKey:kUserNameAndPwd];
     if ([info.allKeys containsObject:self.userNameTF.text]) {
         if ([[info objectForKey:self.userNameTF.text] isEqualToString:self.pwdTF.text]) {
@@ -87,8 +89,10 @@
             [self.navigationController pushViewController:bind animated:YES];
             [[NSUserDefaults standardUserDefaults] setObject:@(1) forKey:kLoginFlag];
         }else {
-            //"Account password mismatch" = "Account password mismatch";
+            [self.view makeToast:NSLocalizedString(@"Account password mismatch", nil)];
         }
+    }else {
+        [self.view makeToast:NSLocalizedString(@"Account password mismatch", nil)];
     }
 }
 

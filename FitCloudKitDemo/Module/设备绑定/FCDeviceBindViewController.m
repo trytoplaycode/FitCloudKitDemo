@@ -13,6 +13,7 @@
 #import "FCDeviceBindingViewController.h"
 #import <MBProgressHUD.h>
 #import "FCGlobal.h"
+#import "FCSearchViewController.h"
 @interface FCDeviceBindViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSMutableArray *peripherals;
 @property (strong, nonatomic) UITableView *tableView;
@@ -94,8 +95,18 @@ static NSString *identifier = @"device";
 -(void)OnFitCloudWriteCharacteristicReady:(NSNotification*) notification
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        FCDeviceBindingViewController* bindingVC = [FCDeviceBindingViewController new];
-        [self.navigationController pushViewController:bindingVC animated:YES];
+        UIViewController *controller = nil;
+        for (UIViewController *viewController in self.navigationController.viewControllers) {
+            if ([viewController isKindOfClass:[FCSearchViewController class]]) {
+                controller = viewController;
+                break;
+            }
+        }
+        FCSearchViewController *search = (FCSearchViewController *)controller;
+        if (!controller || search.step == 0) {
+            FCDeviceBindingViewController* bindingVC = [FCDeviceBindingViewController new];
+            [self.navigationController pushViewController:bindingVC animated:YES];
+        }
     });
 }
 

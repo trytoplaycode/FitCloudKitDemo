@@ -26,6 +26,7 @@ target 'FitCloudKitDemo' do
   pod 'FitCloudNWFKit'
   pod 'TZImagePickerController'
   pod 'Bugly'
+  pod 'FMDB'
   
   end
 

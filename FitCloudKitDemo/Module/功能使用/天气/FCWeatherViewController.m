@@ -14,7 +14,7 @@
 #import <FitCloudKit/FitCloudKit.h>
 #import <Toast.h>
 #import "FCWeatherForecastViewController.h"
-
+#import "FCGlobal.h"
 @interface FCWeatherViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -82,6 +82,10 @@ static NSString *identifier = @"list";
 }
 
 - (void)sureAction {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     FitCloudWeatherObject *weather = [FitCloudWeatherObject new];
     FCCommenCellModel *cityModel = self.dataArr[0];
     weather.city = cityModel.value?:@"";
@@ -91,6 +95,7 @@ static NSString *identifier = @"list";
     weather.min = [minTempModel.value integerValue];
     FCCommenCellModel *maxTempModel = self.dataArr[3];
     weather.max = [maxTempModel.value integerValue];
+    FCCommenCellModel *weatherModel = self.dataArr[4];
     weather.weathertype = [self getWeatherType];
     FCCommenCellModel *pressureModel = self.dataArr[5];
     weather.pressure = [pressureModel.value intValue];
@@ -98,11 +103,16 @@ static NSString *identifier = @"list";
     weather.windScale = [windModel.value integerValue];
     FCCommenCellModel *visModel = self.dataArr[7];
     weather.vis = [visModel.value integerValue];
-    weather.forecast = @[self.forestArr];
+    
+    if (self.forestArr.count > 0) {
+        weather.forecast = @[self.forestArr];
+    }
     
     [FitCloudKit syncWeather:weather block:^(BOOL succeed, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            OpResultToastTip(self.view, succeed);
+            OpResultToastTip(self.view, YES);
+            NSArray *info = @[cityModel.value?:@"", tempModel.value?:@"", minTempModel.value?:@"", maxTempModel.value?:@"", weatherModel.value?:@"", pressureModel.value?:@"", windModel.value?:@"",visModel.value?:@"",@""];
+            [[NSUserDefaults standardUserDefaults] setObject:info forKey:kWeather];
         });
     }];
 }
@@ -117,7 +127,7 @@ static NSString *identifier = @"list";
     [cell configCellStyle:FCCellStyleNormal];
     FCCommenCellModel *model = self.dataArr[indexPath.row];
     cell.nameLabel.text = model.title;
-    cell.valueLabel.text = model.value;
+    cell.valueLabel.text = [NSString stringWithFormat:@"%@", model.value];
     
     return cell;
 }
@@ -267,9 +277,15 @@ static NSString *identifier = @"list";
                          NSLocalizedString(@"WindScale", nil),
                          NSLocalizedString(@"Visiable", nil),
                          NSLocalizedString(@"Forecast", nil)];
+        NSArray *info = [[NSUserDefaults standardUserDefaults] objectForKey:kWeather];
         for (NSInteger i = 0; i < arr.count; i++) {
             FCCommenCellModel *model = [FCCommenCellModel new];
             model.title = arr[i];
+            if (info.count == arr.count) {
+                model.value = info[i];
+            }else {
+                model.value = @"";
+            }
             [_dataArr addObject:model];
         }
     }

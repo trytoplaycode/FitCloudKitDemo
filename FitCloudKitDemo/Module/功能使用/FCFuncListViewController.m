@@ -28,6 +28,9 @@
 #import "FCNetworking.h"
 #import "FCWatchFaceViewController.h"
 #import "FCSportDataPushViewController.h"
+#import "FCGlobal.h"
+#import "FCSearchViewController.h"
+#import "FCDeviceBindViewController.h"
 @interface FCFuncListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSDateFormatter *formatter;
@@ -41,6 +44,16 @@
 static NSString *identifier = @"list";
 
 @implementation FCFuncListViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled  = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled  = YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,10 +72,108 @@ static NSString *identifier = @"list";
 }
 
 - (void)backAction {
-    [self.navigationController popViewControllerAnimated:YES];
+    UIViewController *viewcontroller = nil;
+    for (NSInteger i = 0; i < self.navigationController.viewControllers.count; i++) {
+        UIViewController *viewController = self.navigationController.viewControllers[i];
+        if ([viewController isKindOfClass:[FCSearchViewController class]]) {
+            viewcontroller = viewController;
+            break;
+        }
+    }
+    
+    if ([FitCloudKit deviceReady]) {
+        if (viewcontroller) {
+            [self.navigationController popToViewController:viewcontroller animated:YES];
+        }else {
+            FCSearchViewController *detail = [FCSearchViewController new];
+            [self.navigationController pushViewController:detail animated:YES];
+        }
+    }else {
+        FCSearchViewController *search = [FCSearchViewController new];
+        search.step = 0;
+        [self.navigationController pushViewController:search animated:YES];
+    }
+}
+
+- (NSMutableArray *)dealWithTotal:(NSMutableArray *)total {
+    [total sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        FCCommenRecordModel *model = [FCCommenRecordModel yy_modelWithJSON:obj1];
+        FCCommenRecordModel *historyModel = [FCCommenRecordModel yy_modelWithJSON:obj2];
+        NSString *dateString = model.recordDate;
+        NSString *historyDateString = historyModel.recordDate;
+        NSDate *date = [self.formatter dateFromString:dateString];
+        NSDate *historyDate = [self.formatter dateFromString:historyDateString];
+        if ([date compare:historyDate] == NSOrderedAscending) {
+            return NSOrderedDescending;
+        }else if ([date compare:historyDate] == NSOrderedSame) {
+            return NSOrderedSame;
+        }else {
+            return NSOrderedAscending;
+        }
+    }];
+    for (NSInteger i = total.count-1; i >= 0; i--) {
+        FCCommenRecordModel *model = [FCCommenRecordModel yy_modelWithJSON:total[i]];
+        BOOL exist = NO;
+        // 过滤值为0的数据
+        int value = 0;
+        if (model.type == FCHistoryTypeStep) {
+            value = model.steps;
+        }else if (model.type == FCHistoryTypeSleep) {
+            value = 1;
+        }else if (model.type == FCHistoryTypeSports) {
+            value = model.duration;
+        }else if (model.type == FCHistoryTypeHeartRate) {
+            value = model.hrValue;
+        }else if (model.type == FCHistoryTypeBloodOxygen) {
+            value = model.boValue;
+        }else if (model.type == FCHistoryTypeBloodPressure) {
+            value = model.diastolic;
+        }
+        if (value == 0) {
+            [total removeObjectAtIndex:i];
+            continue;
+        }
+        //合并日期相同的数据
+        for (NSInteger j = i-1; j >= 0; j--) {
+            FCCommenRecordModel *historyModel = [FCCommenRecordModel yy_modelWithJSON:total[j]];
+            if ([model.recordDate isEqualToString:historyModel.recordDate]) {
+                if (model.type == FCHistoryTypeStep) {
+                    historyModel.steps = MAX(model.steps, historyModel.steps);
+                    historyModel.distance = MAX(model.distance, historyModel.distance);
+                    historyModel.calory = MAX(model.calory, historyModel.calory);
+                }else if (model.type == FCHistoryTypeSleep) {
+                    historyModel.quality = MAX(model.quality, historyModel.quality);
+                }else if (model.type == FCHistoryTypeSports) {
+                    historyModel.genre = MAX(model.genre, historyModel.genre);
+                    historyModel.duration = MAX(model.duration, historyModel.duration);
+                    historyModel.steps = MAX(model.steps, historyModel.steps);
+                    historyModel.distance = MAX(model.distance, historyModel.distance);
+                    historyModel.calory = MAX(model.calory, historyModel.calory);
+                    historyModel.pace = MAX(model.hr_excercise, historyModel.hr_excercise);
+                }else if (model.type == FCHistoryTypeHeartRate) {
+                    historyModel.hrValue = MAX(model.hrValue, historyModel.hrValue);
+                }else if (model.type == FCHistoryTypeBloodOxygen) {
+                    historyModel.boValue = MAX(model.boValue, historyModel.boValue);
+                }else if (model.type == FCHistoryTypeBloodPressure) {
+                    historyModel.diastolic = MAX(model.diastolic, historyModel.diastolic);
+                    historyModel.systolic = MAX(model.systolic, historyModel.systolic);
+                }
+                exist = YES;
+            }
+        }
+        if (exist) {
+            [total removeObjectAtIndex:i];
+        }
+    }
+    
+    return total;
 }
 
 - (void)sureAction {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     weakSelf(weakSelf);
     [self.hud showAnimated:YES];
     [FitCloudKit manualSyncDataWithOption:FITCLOUDDATASYNCOPTION_ALL progress:^(CGFloat progress, NSString *tip) {
@@ -156,17 +267,48 @@ static NSString *identifier = @"list";
                 }
             }
             /// 注意：正规使用场景建议使用数据库进行存储管理，此处仅为演示
-            [[NSUserDefaults standardUserDefaults] setObject:stepRcords forKey:kStepRecordList];
+            //步数
+            NSArray *steps = [[NSUserDefaults standardUserDefaults] objectForKey:kStepRecordList];
+            NSMutableArray *totalSteps = steps ? steps.mutableCopy : @[].mutableCopy;
+            [totalSteps addObjectsFromArray:stepRcords];
+            totalSteps = [self dealWithTotal:totalSteps];
+            [[NSUserDefaults standardUserDefaults] setObject:totalSteps forKey:kStepRecordList];
+            
+            ///血氧
             NSArray *bo = [[NSUserDefaults standardUserDefaults] objectForKey:kBORecordList];
-            [[NSUserDefaults standardUserDefaults] setObject:boRcords forKey:kBORecordList];
+            NSMutableArray *totalBo = bo ? bo.mutableCopy : @[].mutableCopy;
+            [totalBo addObjectsFromArray:boRcords];
+            totalBo = [self dealWithTotal:totalBo];
+            [[NSUserDefaults standardUserDefaults] setObject:totalBo forKey:kBORecordList];
+            
+            //心率
             NSArray *hr = [[NSUserDefaults standardUserDefaults] objectForKey:kHRRecordList];
-            [[NSUserDefaults standardUserDefaults] setObject:hrRcords forKey:kHRRecordList];
+            NSMutableArray *totalHR = hr ? hr.mutableCopy : @[].mutableCopy;
+            [totalHR addObjectsFromArray:hrRcords];
+            totalHR = [self dealWithTotal:totalHR];
+            [[NSUserDefaults standardUserDefaults] setObject:totalHR forKey:kHRRecordList];
+            
+            //血压
             NSArray *bp = [[NSUserDefaults standardUserDefaults] objectForKey:kHRRecordList];
-            [[NSUserDefaults standardUserDefaults] setObject:bpRcords forKey:kBPRecordList];
+            NSMutableArray *totalBP = bp ? bp.mutableCopy : @[].mutableCopy;
+            [totalBP addObjectsFromArray:bpRcords];
+            totalBP = [self dealWithTotal:totalBP];
+            [[NSUserDefaults standardUserDefaults] setObject:totalBP forKey:kBPRecordList];
+            
+            //体温
             NSArray *tm = [[NSUserDefaults standardUserDefaults] objectForKey:kBTRecordList];
-            [[NSUserDefaults standardUserDefaults] setObject:tmRcords forKey:kBTRecordList];
+            NSMutableArray *totalTM = tm ? tm.mutableCopy : @[].mutableCopy;
+            [totalTM addObjectsFromArray:tmRcords];
+            totalTM = [self dealWithTotal:totalTM];
+            [[NSUserDefaults standardUserDefaults] setObject:totalTM forKey:kBTRecordList];
+            
+            //睡眠
             NSArray *sleep = [[NSUserDefaults standardUserDefaults] objectForKey:kSleepRecordList];
-            [[NSUserDefaults standardUserDefaults] setObject:sleepRcords forKey:kSleepRecordList];
+            NSMutableArray *totalSleep = sleep ? sleep.mutableCopy : @[].mutableCopy;
+            [totalSleep addObjectsFromArray:sleepRcords];
+            totalSleep = [self dealWithTotal:totalSleep];
+            [[NSUserDefaults standardUserDefaults] setObject:totalSleep forKey:kSleepRecordList];
+            
             [self.hud hideAnimated:YES];
 //            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         });
@@ -202,6 +344,10 @@ static NSString *identifier = @"list";
             break;
         case 2:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCAlarmListViewController *alarm = [FCAlarmListViewController new];
             [self.navigationController pushViewController:alarm animated:YES];
         }
@@ -214,30 +360,50 @@ static NSString *identifier = @"list";
             break;
         case 4:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCWomenHealthyViewController *women = [FCWomenHealthyViewController new];
             [self.navigationController pushViewController:women animated:YES];
         }
             break;
         case 5:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCScreenDisplayViewController *display = [FCScreenDisplayViewController new];
             [self.navigationController pushViewController:display animated:YES];
         }
             break;
         case 6:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCWatchStyleViewController *display = [FCWatchStyleViewController new];
             [self.navigationController pushViewController:display animated:YES];
         }
             break;
         case 7:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCWatchFaceViewController *face = [FCWatchFaceViewController new];
             [self.navigationController pushViewController:face animated:YES];
         }
             break;
         case 8:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCSportDataPushViewController *sport = [FCSportDataPushViewController new];
             [self.navigationController pushViewController:sport animated:YES];
         }
@@ -262,12 +428,20 @@ static NSString *identifier = @"list";
             break;
         case 12:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCContactViewController *contact = [FCContactViewController new];
             [self.navigationController pushViewController:contact animated:YES];
         }
             break;
         case 13:
         {
+            if (![FitCloudKit deviceReady]) {
+                [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+                return;
+            }
             FCAboutBraceletViewController *abount = [FCAboutBraceletViewController new];
             [self.navigationController pushViewController:abount animated:YES];
         }

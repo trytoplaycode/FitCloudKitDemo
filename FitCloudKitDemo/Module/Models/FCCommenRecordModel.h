@@ -34,10 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否是真实血压
 @property(nonatomic, assign) int heartRateIfBaseOnPneumaticpump;
 
-// 心率
+/// 心率
 @property(nonatomic, assign) int hrValue;
 
-// 血氧
+/// 血氧
 @property(nonatomic, assign) int boValue;
 
 // 温度

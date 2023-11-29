@@ -96,7 +96,6 @@
 		A4911B802A86243200733B85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4911B262A86243200733B85 /* InfoPlist.strings */; };
 		A4911B842A862B5800733B85 /* FCWatchStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B822A862B5800733B85 /* FCWatchStyleViewController.m */; };
 		A4911B852A862B5800733B85 /* FCWatchStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B832A862B5800733B85 /* FCWatchStyleViewController.xib */; };
-		A4911B9C2A862C0200733B85 /* FCDailCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B872A862C0200733B85 /* FCDailCustomViewController.xib */; };
 		A4911B9D2A862C0200733B85 /* FCDailComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B882A862C0200733B85 /* FCDailComponentsViewController.m */; };
 		A4911B9E2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4911B8A2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m */; };
 		A4911B9F2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4911B8C2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.xib */; };
@@ -125,6 +124,7 @@
 		A4CD6EEB2A5D4E78008E5E55 /* FitCloudKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD6EEA2A5D4E78008E5E55 /* FitCloudKitDemoTests.m */; };
 		A4CD6EF52A5D4E78008E5E55 /* FitCloudKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD6EF42A5D4E78008E5E55 /* FitCloudKitDemoUITests.m */; };
 		A4CD6EF72A5D4E78008E5E55 /* FitCloudKitDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD6EF62A5D4E78008E5E55 /* FitCloudKitDemoUITestsLaunchTests.m */; };
+		A4E2977C2B08BFB70063C8D2 /* FCDailCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E2977B2B08BFB70063C8D2 /* FCDailCustomViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,7 +287,6 @@
 		A4911B812A862B5800733B85 /* FCWatchStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCWatchStyleViewController.h; sourceTree = "<group>"; };
 		A4911B822A862B5800733B85 /* FCWatchStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCWatchStyleViewController.m; sourceTree = "<group>"; };
 		A4911B832A862B5800733B85 /* FCWatchStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCWatchStyleViewController.xib; sourceTree = "<group>"; };
-		A4911B872A862C0200733B85 /* FCDailCustomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDailCustomViewController.xib; sourceTree = "<group>"; };
 		A4911B882A862C0200733B85 /* FCDailComponentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDailComponentsViewController.m; sourceTree = "<group>"; };
 		A4911B8A2A862C0200733B85 /* FCDailLibraryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCDailLibraryCollectionViewCell.m; sourceTree = "<group>"; };
 		A4911B8B2A862C0200733B85 /* FCCustomDialStyleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCCustomDialStyleCollectionViewCell.h; sourceTree = "<group>"; };
@@ -333,6 +332,7 @@
 		A4CD6EF02A5D4E78008E5E55 /* FitCloudKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitCloudKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CD6EF42A5D4E78008E5E55 /* FitCloudKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FitCloudKitDemoUITests.m; sourceTree = "<group>"; };
 		A4CD6EF62A5D4E78008E5E55 /* FitCloudKitDemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FitCloudKitDemoUITestsLaunchTests.m; sourceTree = "<group>"; };
+		A4E2977B2B08BFB70063C8D2 /* FCDailCustomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCDailCustomViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -734,7 +734,7 @@
 				A4911B922A862C0200733B85 /* FCDailComponentsViewController.xib */,
 				A4911B912A862C0200733B85 /* FCDailCustomViewController.h */,
 				A4911B9A2A862C0200733B85 /* FCDailCustomViewController.m */,
-				A4911B872A862C0200733B85 /* FCDailCustomViewController.xib */,
+				A4E2977B2B08BFB70063C8D2 /* FCDailCustomViewController.xib */,
 				A4911B902A862C0200733B85 /* FCDailLibraryViewController.h */,
 				A4911B992A862C0200733B85 /* FCDailLibraryViewController.m */,
 				A4911B932A862C0200733B85 /* FCDailLibraryViewController.xib */,
@@ -1018,6 +1018,7 @@
 				A4911B5D2A86243200733B85 /* FCHealthMonitorSettingViewController.xib in Resources */,
 				A4911B362A86243200733B85 /* FCSearchViewController.xib in Resources */,
 				A4911B802A86243200733B85 /* InfoPlist.strings in Resources */,
+				A4E2977C2B08BFB70063C8D2 /* FCDailCustomViewController.xib in Resources */,
 				A4911B5C2A86243200733B85 /* FCQRCodeViewController.xib in Resources */,
 				A4911B4A2A86243200733B85 /* FCHisoryListViewController.xib in Resources */,
 				A4911B792A86243200733B85 /* Localizable.strings in Resources */,
@@ -1035,7 +1036,6 @@
 				A4911B7D2A86243200733B85 /* LaunchScreen.storyboard in Resources */,
 				A4911BA22A862C0200733B85 /* FCDailComponentsViewController.xib in Resources */,
 				A4911B602A86243200733B85 /* FCRaiseToWakeViewController.xib in Resources */,
-				A4911B9C2A862C0200733B85 /* FCDailCustomViewController.xib in Resources */,
 				A4911B372A86243200733B85 /* FCDeviceBindViewController.xib in Resources */,
 				A4911B6A2A86243200733B85 /* FCDrinkWaterReminderViewController.xib in Resources */,
 				A4911B282A86243200733B85 /* Contents.json in Resources */,
@@ -1453,8 +1453,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1489,8 +1488,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

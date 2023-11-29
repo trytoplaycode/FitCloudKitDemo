@@ -116,6 +116,7 @@ static NSString *identifier = @"list";
 }
 
 - (void)rightButtonAction {
+    self.rightButton.enabled = NO;
     [self.dataArr removeObjectAtIndex:self.indexPath.row];
     [FitCloudKit setAlarms:self.dataArr block:^(BOOL succeed, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -126,6 +127,11 @@ static NSString *identifier = @"list";
             [self.navigationController popViewControllerAnimated:YES];
         });
     }];
+    [self performSelector:@selector(enableRightButton) withObject:nil afterDelay:1.5f];
+}
+
+- (void)enableRightButton {
+    self.rightButton.enabled = YES;
 }
 
 - (IBAction)timeAction:(id)sender {
@@ -144,6 +150,11 @@ static NSString *identifier = @"list";
 }
 
 - (IBAction)setAction:(id)sender {
+    if (self.labelTextFeild.text.length == 0) {
+        [self.view makeToast:NSLocalizedString(@"Please choose input the alarm name", nil)];
+        return;
+    }
+    self.setButton.enabled = NO;
     if (self.currentDate) {
         NSDateComponents *components = [[NSDateComponents alloc] init];
         components.year = self.currentDate.year;
@@ -162,8 +173,14 @@ static NSString *identifier = @"list";
     [FitCloudKit setAlarms:self.dataArr block:^(BOOL succeed, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             OpResultToastTip(self.view, succeed);
+            [self.navigationController popViewControllerAnimated:YES];
         });
     }];
+    [self performSelector:@selector(enableSet) withObject:nil afterDelay:1.5f];
+}
+
+- (void)enableSet {
+    self.setButton.enabled = YES;
 }
 
 @end

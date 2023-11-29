@@ -48,7 +48,8 @@ static NSString *identifier = @"watchface";
     }
     
     if (!select) {
-        value = WATCHFACEMODULESTYLE_INVALID;
+        [self.view makeToast:NSLocalizedString(@"Please choose the style", nil)];
+        return;
     }
     for (NSInteger i = 0; i < self.dataArr.count; i++) {
         FCCommenCellModel *model = self.dataArr[i];
@@ -77,6 +78,7 @@ static NSString *identifier = @"watchface";
     FitCloudWatchfaceModule *module = [FitCloudWatchfaceModule moduleWithStyle:value];
     [FitCloudKit setWatchfacePostion:0 modules:@[module] completion:^(BOOL succeed, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSUserDefaults standardUserDefaults] setObject:@(value) forKey:kDailStyle];
             OpResultToastTip(self.view, succeed);
         });
     }];
@@ -122,9 +124,13 @@ static NSString *identifier = @"watchface";
     if (!_dataArr) {
         _dataArr = @[].mutableCopy;
         NSArray *arr = @[NSLocalizedString(@"Watch Face Style One", nil),NSLocalizedString(@"Watch Face Style Two", nil),NSLocalizedString(@"Watch Face Style Three", nil),NSLocalizedString(@"Watch Face Style Four", nil),NSLocalizedString(@"Watch Face Style Five", nil),NSLocalizedString(@"Watch Face Style Six", nil),NSLocalizedString(@"Watch Face Style Seven", nil)];
+        int index = [[[NSUserDefaults standardUserDefaults] objectForKey:kDailStyle] intValue];
         for (NSInteger i = 0; i < arr.count; i++) {
             FCCommenCellModel *model = [FCCommenCellModel new];
             model.title = arr[i];
+            if (index == i) {
+                model.value = @"1";
+            }
             [_dataArr addObject:model];
         }
     }

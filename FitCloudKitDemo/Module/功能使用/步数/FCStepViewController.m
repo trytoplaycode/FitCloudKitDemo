@@ -11,6 +11,8 @@
 #import "FCFuncListTableViewCell.h"
 #import "FCTodySportsDataViewController.h"
 #import "FCStepTargetViewController.h"
+#import "FCGlobal.h"
+
 @interface FCStepViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -50,6 +52,10 @@ static NSString *identifier = @"step";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (![FitCloudKit deviceReady]) {
+        [self.view makeToast:NSLocalizedString(@"Please connect the bracelet first", nil) duration:1.f position:CSToastPositionTop];
+        return;
+    }
     switch (indexPath.row) {
         case 0:
         {

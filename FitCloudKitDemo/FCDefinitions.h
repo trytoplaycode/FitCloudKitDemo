@@ -132,6 +132,18 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
 #define kLoginFlag  @"loginFlag"
 /// 当前绑定的设备
 #define kBindDevice @"bindDevice"
+/// 目标步数
+#define kTargetSettings @"targetSettings"
+/// 女性健康
+#define kWomenHealthy @"womenHealthy"
+/// 表盘风格
+#define kDailStyle @"dailStyle"
+/// 二维码
+#define kQRCode @"qrCode"
+/// 社交
+#define kSocial @"socail"
+/// 天气
+#define kWeather @"weather"
 
 #define OpResultToastTip(v, success) [v makeToast:success ? NSLocalizedString(@"Op success.", nil) : NSLocalizedString(@"Op failure.", nil) duration:3.0f position:CSToastPositionTop]
 

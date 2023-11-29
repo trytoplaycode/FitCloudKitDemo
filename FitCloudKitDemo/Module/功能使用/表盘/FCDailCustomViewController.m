@@ -32,6 +32,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightPButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *previewImageView;
+@property (nonatomic, strong) UIButton *selectButton;
+@property (weak, nonatomic) IBOutlet UILabel *previewLabel;
+@property (weak, nonatomic) IBOutlet UILabel *selectLabel;
 @property (strong, nonatomic) UIImageView *styleImageView;
 @property (nonatomic, strong) UIImage *selectBgImage;
 
@@ -40,12 +43,16 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *rightImgView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *positionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
+@property (weak, nonatomic) IBOutlet UILabel *leftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) NSIndexPath *selectIndexPath;
 @property (nonatomic, strong) NSString *binUrl;
 @property (nonatomic, assign) FITCLOUDWATCHFACEDTPOSITION position;
 @property (nonatomic, copy) NSString *resultBinPath;
-@property (weak, nonatomic) IBOutlet LocalizedButton *sureButton;
 @property (assign, nonatomic) BOOL dfuSuccess;
 
 @end
@@ -56,6 +63,7 @@ static NSString *identifier = @"custom";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavBar:NSLocalizedString(@"DIAL CUSTOM", nil)];
+    [self addNavRightButton:NSLocalizedString(@"Create", nil) isImage:NO];
     [self initialization];
     [self loadData];
 }
@@ -64,19 +72,17 @@ static NSString *identifier = @"custom";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)rightButtonAction {
+    [self createAction];
+}
+
 - (void)initialization {
     [FitCloudDFUKit setDebugMode:YES];
     [FitCloudDFUKit setDelegate:self];
-    
-    [self.sureButton setTitle:NSLocalizedString(@"Create", nil) forState:UIControlStateNormal];
+    [self layout];
     self.position = FITCLOUDWATCHFACEDTPOSITION_TOP;
-    [self.previewImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).offset(70);
-        make.centerX.mas_equalTo(self.view.mas_centerX).offset(0);
-        make.size.mas_equalTo(CGSizeMake(220, 220));
-    }];
     self.previewImageView.backgroundColor = [UIColor blackColor];
-    self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.previewImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.previewImageView.clipsToBounds = YES;
     self.previewImageView.layer.cornerRadius = 110;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -93,6 +99,181 @@ static NSString *identifier = @"custom";
         make.centerX.mas_equalTo(self.previewImageView.mas_centerX).offset(0);
         make.top.mas_equalTo(self.previewImageView.mas_top).offset(10);
     }];
+    self.previewImageView.userInteractionEnabled = YES;
+    [self.previewImageView addSubview:self.selectButton];
+    [self.selectButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.previewImageView);
+    }];
+}
+
+- (void)layout {
+    [self.previewImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(100);
+        make.centerX.mas_equalTo(self.view.mas_centerX).offset(0);
+        make.size.mas_equalTo(CGSizeMake(220, 220));
+    }];
+    [self.previewLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.top.mas_equalTo(self.previewImageView.mas_bottom).offset(ScaleW(15));
+        make.height.mas_equalTo(ScaleW(30));
+    }];
+    [self.selectLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view.mas_left).offset(ScaleW(25));
+        make.top.mas_equalTo(self.previewLabel.mas_bottom).offset(ScaleW(10));
+        make.size.mas_equalTo(CGSizeMake(ScaleW(100), ScaleW(25)));
+    }];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.top.mas_equalTo(self.selectLabel.mas_bottom).offset(ScaleW(10));
+        make.height.mas_equalTo(ScaleW(100));
+    }];
+    [self.positionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view.mas_left).offset(ScaleW(25));
+        make.top.mas_equalTo(self.collectionView.mas_bottom).offset(ScaleW(10));
+        make.size.mas_equalTo(CGSizeMake(ScaleW(200), ScaleW(25)));
+    }];
+    [self.topImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view.mas_left).offset(ScaleW(25));
+        make.top.mas_equalTo(self.positionLabel.mas_bottom).offset(ScaleW(10));
+        make.size.mas_equalTo(CGSizeMake(ScaleW(20), ScaleW(20)));
+    }];
+    [self.topLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.topImgView.mas_right).offset(ScaleW(2));
+        make.centerY.mas_equalTo(self.topImgView.mas_centerY).offset(0);
+        make.size.mas_equalTo(CGSizeMake(ScaleW(50), ScaleW(20)));
+    }];
+    [self.topButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.topImgView.mas_left).offset(-ScaleW(5));
+        make.right.mas_equalTo(self.topLabel.mas_right).offset(ScaleW(5));
+        make.centerY.mas_equalTo(self.topImgView.mas_centerY).offset(0);
+        make.height.mas_equalTo(ScaleW(30));
+    }];
+    [self.bottomImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.topLabel.mas_right).offset(ScaleW(5));
+        make.top.mas_equalTo(self.positionLabel.mas_bottom).offset(ScaleW(10));
+        make.size.mas_equalTo(CGSizeMake(ScaleW(20), ScaleW(20)));
+    }];
+    [self.bottomLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.bottomImgView.mas_right).offset(ScaleW(2));
+        make.centerY.mas_equalTo(self.bottomImgView.mas_centerY).offset(0);
+        make.size.mas_equalTo(CGSizeMake(ScaleW(50), ScaleW(20)));
+    }];
+    [self.BottomButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.bottomImgView.mas_left).offset(-ScaleW(5));
+        make.right.mas_equalTo(self.bottomLabel.mas_right).offset(ScaleW(5));
+        make.centerY.mas_equalTo(self.bottomImgView.mas_centerY).offset(0);
+        make.height.mas_equalTo(ScaleW(30));
+    }];
+    [self.leftImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.bottomLabel.mas_right).offset(ScaleW(5));
+        make.top.mas_equalTo(self.positionLabel.mas_bottom).offset(ScaleW(10));
+        make.size.mas_equalTo(CGSizeMake(ScaleW(20), ScaleW(20)));
+    }];
+    [self.leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.leftImgView.mas_right).offset(ScaleW(2));
+        make.centerY.mas_equalTo(self.bottomImgView.mas_centerY).offset(0);
+        make.size.mas_equalTo(CGSizeMake(ScaleW(50), ScaleW(20)));
+    }];
+    [self.leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.leftImgView.mas_left).offset(-ScaleW(5));
+        make.right.mas_equalTo(self.leftLabel.mas_right).offset(ScaleW(5));
+        make.centerY.mas_equalTo(self.leftImgView.mas_centerY).offset(0);
+        make.height.mas_equalTo(ScaleW(30));
+    }];
+    self.rightImgView.image = IMAGENAME(@"unselected");
+    [self.rightImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.leftLabel.mas_right).offset(ScaleW(5));
+        make.top.mas_equalTo(self.positionLabel.mas_bottom).offset(ScaleW(10));
+        make.size.mas_equalTo(CGSizeMake(ScaleW(20), ScaleW(20)));
+    }];
+    [self.rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.rightImgView.mas_right).offset(ScaleW(2));
+        make.centerY.mas_equalTo(self.bottomImgView.mas_centerY).offset(0);
+        make.size.mas_equalTo(CGSizeMake(ScaleW(50), ScaleW(20)));
+    }];
+    [self.rightPButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.rightImgView.mas_left).offset(-ScaleW(5));
+        make.right.mas_equalTo(self.rightLabel.mas_right).offset(ScaleW(5));
+        make.centerY.mas_equalTo(self.rightImgView.mas_centerY).offset(0);
+        make.height.mas_equalTo(ScaleW(30));
+    }];
+}
+
+- (CGSize)getSizeWithLcd:(UInt8)lcd {
+    CGSize size = CGSizeZero;
+    if (lcd == 0) {
+        size = CGSizeMake(240, 240);
+    }else if (lcd == 1) {
+        size = CGSizeMake(240, 240);
+    }else if (lcd == 2) {
+        size = CGSizeMake(320, 320);
+    }else if (lcd == 3) {
+        size = CGSizeMake(360, 360);
+    }else if (lcd == 4) {
+        size = CGSizeMake(320, 385);
+    }else if (lcd == 5) {
+        size = CGSizeMake(320, 360);
+    }else if (lcd == 6) {
+        size = CGSizeMake(240, 284);
+    }else if (lcd == 7) {
+        size = CGSizeMake(240, 280);
+    }else if (lcd == 8) {
+        size = CGSizeMake(280, 442);
+    }else if (lcd == 9) {
+        size = CGSizeMake(280, 240);
+    }else if (lcd == 10) {
+        size = CGSizeMake(200, 320);
+    }else if (lcd == 11) {
+        size = CGSizeMake(368, 448);
+    }else if (lcd == 12) {
+        size = CGSizeMake(320, 390);
+    }else if (lcd == 13) {
+        size = CGSizeMake(172, 320);
+    }else if (lcd == 14) {
+        size = CGSizeMake(454, 454);
+    }else if (lcd == 15) {
+        size = CGSizeMake(128, 220);
+    }else if (lcd == 16) {
+        size = CGSizeMake(160, 80);
+    }else if (lcd == 17) {
+        size = CGSizeMake(128, 128);
+    }else if (lcd == 18) {
+        size = CGSizeMake(167, 320);
+    }else if (lcd == 19) {
+        size = CGSizeMake(80, 160);
+    }else if (lcd == 20) {
+        size = CGSizeMake(320, 380);
+    }else if (lcd == 21) {
+        size = CGSizeMake(240, 286);
+    }else if (lcd == 22) {
+        size = CGSizeMake(466, 446);
+    }else if (lcd == 23) {
+        size = CGSizeMake(240, 296);
+    }else if (lcd == 24) {
+        size = CGSizeMake(410, 502);
+    }else if (lcd == 25) {
+        size = CGSizeMake(416, 416);
+    }else if (lcd == 26) {
+        size = CGSizeMake(240, 288);
+    }else if (lcd == 27) {
+        size = CGSizeMake(340, 340);
+    }else if (lcd == 28) {
+        size = CGSizeMake(228, 460);
+    }else if (lcd == 29) {
+        size = CGSizeMake(390, 390);
+    }
+    
+    return size;
+}
+
+- (void)handleFaceLcd:(UInt8)lcd {
+    if (lcd == 0 || lcd == 2 || (lcd >= 4 && lcd <= 13 ) || (lcd >= 15 && lcd <=21) || lcd == 23 || lcd == 24 || lcd == 26 || lcd == 28) {
+        //方形
+        self.previewImageView.layer.cornerRadius = 0;
+    }else {
+        //圆形
+        self.previewImageView.layer.cornerRadius = 110;
+    }
 }
 
 - (void)loadData {
@@ -103,6 +284,7 @@ static NSString *identifier = @"custom";
                                      @"toolVersion":faceUI.toolVersion
             };
             weakSelf(weakSelf);
+            [weakSelf handleFaceLcd:faceUI.lcd];
             [FCNetworking POST:@"public/dial/customgui" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakSelf.dataArr removeAllObjects];
@@ -215,7 +397,7 @@ static NSString *identifier = @"custom";
     NSLog(@"固件升级成功...");
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.view makeToast:@"DFU成功"];
-        [self.sureButton setTitle:NSLocalizedString(@"Create", nil) forState:UIControlStateNormal];
+        [self.rightButton setTitle:NSLocalizedString(@"Create", nil) forState:UIControlStateNormal];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         self.dfuSuccess = YES;
     });
@@ -266,12 +448,13 @@ static NSString *identifier = @"custom";
 }
 
 #pragma mark - 点击事件
-- (IBAction)selectAction:(id)sender {
+- (void)selectAction {
     weakSelf(weakSelf);
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
         weakSelf.selectBgImage = [photos firstObject];
         weakSelf.previewImageView.image = [photos firstObject];
+        [weakSelf.selectButton setTitle:@"" forState:UIControlStateNormal];
     }];
     [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
@@ -293,7 +476,7 @@ static NSString *identifier = @"custom";
     self.position = FITCLOUDWATCHFACEDTPOSITION_BOTTOM;
     self.bottomImgView.image = IMAGENAME(@"selected");
     self.leftImgView.image = IMAGENAME(@"unselected");
-    self.rightImgView.image = IMAGENAME(@"unelected");
+    self.rightImgView.image = IMAGENAME(@"unselected");
     self.topImgView.image = IMAGENAME(@"unselected");
     [self.styleImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.previewImageView.mas_centerX).offset(0);
@@ -329,8 +512,8 @@ static NSString *identifier = @"custom";
     }];
 }
 
-- (IBAction)createAction:(id)sender {
-    if ([self.sureButton.titleLabel.text isEqualToString:NSLocalizedString(@"Push", nil)]) {
+- (void)createAction {
+    if ([self.rightButton.titleLabel.text isEqualToString:NSLocalizedString(@"Push", nil)]) {
         // 推送至手环
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         BOOL silentMode = FALSE;
@@ -386,7 +569,7 @@ static NSString *identifier = @"custom";
             [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
             if(success)
             {
-                [weakSelf.sureButton setTitle:NSLocalizedString(@"Push", nil) forState:UIControlStateNormal];
+                [weakSelf.rightButton setTitle:NSLocalizedString(@"Push", nil) forState:UIControlStateNormal];
                 [weakSelf.view makeToast:@"制作成功"];
                 NSLog(@"create watchface success, bin file: %@", resultBinPath);
             }
@@ -416,4 +599,16 @@ static NSString *identifier = @"custom";
     return _styleImageView;
 }
 
+- (UIButton *)selectButton {
+    if (!_selectButton) {
+        _selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_selectButton setTitle:NSLocalizedString(@"Select", nil) forState:UIControlStateNormal];
+        [_selectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _selectButton.titleLabel.font = FONT_MEDIUM(20);
+        _selectButton.backgroundColor = [UIColor clearColor];
+        [_selectButton addTarget:self action:@selector(selectAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _selectButton;
+}
 @end

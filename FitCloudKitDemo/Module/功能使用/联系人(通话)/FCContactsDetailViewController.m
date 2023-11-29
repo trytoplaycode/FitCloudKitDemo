@@ -70,16 +70,24 @@
         return;
     }
     BOOL exist = NO;
+//    BOOL nameExist = NO;
     for (FCCommenCellModel *model in self.dataArr) {
-        if ([model.title isEqualToString:self.nameTF.text] && [model.value isEqualToString:self.numberTF.text]) {
+        if ([model.title isEqualToString:self.nameTF.text]) {//&& [model.value isEqualToString:self.numberTF.text]
             exist = YES;
             break;
         }
+//        if ([model.title isEqualToString:self.nameTF.text]) {
+//            nameExist = YES;
+//        }
     }
     if (exist) {
         [self.view makeToast:NSLocalizedString(@"Contacts already exist", nil)];
         return;
     }
+//    if (nameExist && self.model) {
+//        [self.view makeToast:NSLocalizedString(@"Contacts name already exist", nil)];
+//        return;
+//    }
     if (self.model) {
         self.model.title = self.nameTF.text;
         self.model.value = self.numberTF.text;
