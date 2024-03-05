@@ -30,7 +30,6 @@
     BOOL firstInit;
 }
 
-#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialization];
@@ -64,7 +63,6 @@
     }
 }
 
-#pragma mark - 添加正常item
 - (void)initialization {
     self.centerPlace = -1;
 }
@@ -80,7 +78,6 @@
     [self addChildViewController:controller];
 }
 
-#pragma mark - 添加正常按钮
 - (void)addCenterController:(nullable id)controller bulge:(BOOL)bulge title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName {
     _bulge = bulge;
     if (controller) {
@@ -137,10 +134,10 @@
         [_tabbar addSubview:line];
         
         _tabbar.centerButtonCallback = ^{
-            //处理中间按钮点击事件
+            
 
         };
-        //隐藏系统tabbar
+        
         for (UIView *loop in self.tabBar.subviews) {
             [loop removeFromSuperview];
         }

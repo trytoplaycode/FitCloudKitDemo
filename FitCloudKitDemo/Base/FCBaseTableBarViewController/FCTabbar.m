@@ -144,7 +144,7 @@
     UIView *brigd = [btn viewWithTag:1000+index];
     brigd.hidden = YES;
 }
-#pragma mark - 点击事件处理
+#pragma mark - hitTest
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     CGRect rect = self.centerBtn.frame;
     if (CGRectContainsPoint(rect, point))

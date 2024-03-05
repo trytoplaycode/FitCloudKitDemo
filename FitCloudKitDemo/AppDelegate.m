@@ -63,14 +63,11 @@
 }
 
 - (void)OnAlexaVoiceStartRequestWithCompletion:(FitCloudAlexaVoiceStartRequestCompletion)completion {
-    NSLog(@"123");
 }
 
 - (void)OnAlexaVoiceDecodeBegin {
-    NSLog(@"123");
 }
 
 - (void)OnAlexaVoiceFinish:(NSInteger)length crc:(NSInteger)crc {
-    NSLog(@"123");
 }
 @end

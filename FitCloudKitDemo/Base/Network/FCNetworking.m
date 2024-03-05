@@ -22,7 +22,6 @@
     manager.requestSerializer.timeoutInterval = 20.f;
     [manager.requestSerializer setValue:@"application/x-www-form-urlencoded;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 
-    // 2.设置非校验证书模式
 //    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
 //    manager.securityPolicy.allowInvalidCertificates = YES;
 //    [manager.securityPolicy setValidatesDomainName:NO];

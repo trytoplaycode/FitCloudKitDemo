@@ -420,16 +420,16 @@
 		A4911A892A86243200733B85 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				A4911A8A2A86243200733B85 /* 登陆与注册 */,
-				A4911AA02A86243200733B85 /* 功能使用 */,
-				A4911A942A86243200733B85 /* 设备绑定 */,
+				A4911A8A2A86243200733B85 /* Regist and Login（登陆与注册） */,
+				A4911AA02A86243200733B85 /* Functions Demo（功能使用） */,
+				A4911A942A86243200733B85 /* Device binding（设备绑定） */,
 				A4911BBB2A86322D00733B85 /* Tools */,
 				A4911A912A86243200733B85 /* Models */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		A4911A8A2A86243200733B85 /* 登陆与注册 */ = {
+		A4911A8A2A86243200733B85 /* Regist and Login（登陆与注册） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911A8E2A86243200733B85 /* FCLoginViewController.h */,
@@ -439,7 +439,7 @@
 				A4911A8D2A86243200733B85 /* FCRegistViewController.m */,
 				A4911A8B2A86243200733B85 /* FCRegistViewController.xib */,
 			);
-			path = "登陆与注册";
+			path = "Regist and Login（登陆与注册）";
 			sourceTree = "<group>";
 		};
 		A4911A912A86243200733B85 /* Models */ = {
@@ -451,7 +451,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A4911A942A86243200733B85 /* 设备绑定 */ = {
+		A4911A942A86243200733B85 /* Device binding（设备绑定） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911A972A86243200733B85 /* FCDeviceBindingViewController.h */,
@@ -466,65 +466,65 @@
 				A4911A9A2A86243200733B85 /* FCSearchViewController.m */,
 				A4911A962A86243200733B85 /* FCSearchViewController.xib */,
 			);
-			path = "设备绑定";
+			path = "Device binding（设备绑定）";
 			sourceTree = "<group>";
 		};
-		A4911AA02A86243200733B85 /* 功能使用 */ = {
+		A4911AA02A86243200733B85 /* Functions Demo（功能使用） */ = {
 			isa = PBXGroup;
 			children = (
-				A4911B862A862C0200733B85 /* 表盘 */,
-				A4911AA52A86243200733B85 /* 表盘风格 */,
-				A4911AA12A86243200733B85 /* 表盘显示 */,
-				A4911AD12A86243200733B85 /* 步数 */,
-				A4911ADA2A86243200733B85 /* 二维码 */,
-				A4911AAE2A86243200733B85 /* 关于手环 */,
-				A4911ABC2A86243200733B85 /* 历史数据 */,
-				A4911AB32A86243200733B85 /* 联系人(通话) */,
-				A4911AC72A86243200733B85 /* 闹钟 */,
-				A4911AFD2A86243200733B85 /* 女性健康 */,
-				A4911ADE2A86243200733B85 /* 设备设置 */,
-				A4911AA92A86243200733B85 /* 社交 */,
-				A4911AF92A86243200733B85 /* 天气 */,
-				A4911BA82A862C6200733B85 /* 运动数据推送 */,
+				A4911B862A862C0200733B85 /* Dail（表盘） */,
+				A4911AA52A86243200733B85 /* Dail Style（表盘风格） */,
+				A4911AA12A86243200733B85 /* Dail Display（表盘显示） */,
+				A4911AD12A86243200733B85 /* Step(步数) */,
+				A4911ADA2A86243200733B85 /* QRCode（二维码） */,
+				A4911AAE2A86243200733B85 /* Device Detail（关于手环） */,
+				A4911ABC2A86243200733B85 /* History Data（历史数据） */,
+				A4911AB32A86243200733B85 /* Contact（联系人(通话)） */,
+				A4911AC72A86243200733B85 /* Alarm（闹钟） */,
+				A4911AFD2A86243200733B85 /* Women Health（女性健康） */,
+				A4911ADE2A86243200733B85 /* Device Settings（设备设置） */,
+				A4911AA92A86243200733B85 /* Social（社交） */,
+				A4911AF92A86243200733B85 /* Weahther（天气） */,
+				A4911BA82A862C6200733B85 /* Sports Data Push（运动数据推送） */,
 				A4911AF82A86243200733B85 /* FCFuncListTableViewCell.h */,
 				A4911ABA2A86243200733B85 /* FCFuncListTableViewCell.m */,
 				A4911AAD2A86243200733B85 /* FCFuncListViewController.h */,
 				A4911ABB2A86243200733B85 /* FCFuncListViewController.m */,
 			);
-			path = "功能使用";
+			path = "Functions Demo（功能使用）";
 			sourceTree = "<group>";
 		};
-		A4911AA12A86243200733B85 /* 表盘显示 */ = {
+		A4911AA12A86243200733B85 /* Dail Display（表盘显示） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AA42A86243200733B85 /* FCScreenDisplayViewController.h */,
 				A4911AA32A86243200733B85 /* FCScreenDisplayViewController.m */,
 				A4911AA22A86243200733B85 /* FCScreenDisplayViewController.xib */,
 			);
-			path = "表盘显示";
+			path = "Dail Display（表盘显示）";
 			sourceTree = "<group>";
 		};
-		A4911AA52A86243200733B85 /* 表盘风格 */ = {
+		A4911AA52A86243200733B85 /* Dail Style（表盘风格） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911B812A862B5800733B85 /* FCWatchStyleViewController.h */,
 				A4911B822A862B5800733B85 /* FCWatchStyleViewController.m */,
 				A4911B832A862B5800733B85 /* FCWatchStyleViewController.xib */,
 			);
-			path = "表盘风格";
+			path = "Dail Style（表盘风格）";
 			sourceTree = "<group>";
 		};
-		A4911AA92A86243200733B85 /* 社交 */ = {
+		A4911AA92A86243200733B85 /* Social（社交） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AAA2A86243200733B85 /* FCSocailViewController.xib */,
 				A4911AAB2A86243200733B85 /* FCSocailViewController.h */,
 				A4911AAC2A86243200733B85 /* FCSocailViewController.m */,
 			);
-			path = "社交";
+			path = "Social（社交）";
 			sourceTree = "<group>";
 		};
-		A4911AAE2A86243200733B85 /* 关于手环 */ = {
+		A4911AAE2A86243200733B85 /* Device Detail（关于手环） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AB02A86243200733B85 /* FCAboutBraceletViewController.h */,
@@ -532,10 +532,10 @@
 				A4911AAF2A86243200733B85 /* FCCommenCellModel.h */,
 				A4911AB22A86243200733B85 /* FCCommenCellModel.m */,
 			);
-			path = "关于手环";
+			path = "Device Detail（关于手环）";
 			sourceTree = "<group>";
 		};
-		A4911AB32A86243200733B85 /* 联系人(通话) */ = {
+		A4911AB32A86243200733B85 /* Contact（联系人(通话)） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AB92A86243200733B85 /* FCContactsDetailViewController.h */,
@@ -545,10 +545,10 @@
 				A4911AB72A86243200733B85 /* FCContactViewController.m */,
 				A4911AB52A86243200733B85 /* FCContactViewController.xib */,
 			);
-			path = "联系人(通话)";
+			path = "Contact（联系人(通话)）";
 			sourceTree = "<group>";
 		};
-		A4911ABC2A86243200733B85 /* 历史数据 */ = {
+		A4911ABC2A86243200733B85 /* History Data（历史数据） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AC12A86243200733B85 /* Cell */,
@@ -559,7 +559,7 @@
 				A4911AC02A86243200733B85 /* FCHistoryDataViewController.m */,
 				A4911AC62A86243200733B85 /* FCHistoryDataViewController.xib */,
 			);
-			path = "历史数据";
+			path = "History Data（历史数据）";
 			sourceTree = "<group>";
 		};
 		A4911AC12A86243200733B85 /* Cell */ = {
@@ -572,7 +572,7 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A4911AC72A86243200733B85 /* 闹钟 */ = {
+		A4911AC72A86243200733B85 /* Alarm（闹钟） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911ACF2A86243200733B85 /* FCAlarmCycleViewController.h */,
@@ -585,10 +585,10 @@
 				A4911BB92A862DFB00733B85 /* FCAlarmListViewController.m */,
 				A4911ACB2A86243200733B85 /* FCAlarmListViewController.xib */,
 			);
-			path = "闹钟";
+			path = "Alarm（闹钟）";
 			sourceTree = "<group>";
 		};
-		A4911AD12A86243200733B85 /* 步数 */ = {
+		A4911AD12A86243200733B85 /* Step(步数) */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AD52A86243200733B85 /* FCStepTargetViewController.h */,
@@ -600,20 +600,20 @@
 				A4911AD92A86243200733B85 /* FCTodySportsDataViewController.m */,
 				A4911AD22A86243200733B85 /* FCTodySportsDataViewController.xib */,
 			);
-			path = "步数";
+			path = "Step(步数)";
 			sourceTree = "<group>";
 		};
-		A4911ADA2A86243200733B85 /* 二维码 */ = {
+		A4911ADA2A86243200733B85 /* QRCode（二维码） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911ADD2A86243200733B85 /* FCQRCodeViewController.h */,
 				A4911ADB2A86243200733B85 /* FCQRCodeViewController.m */,
 				A4911ADC2A86243200733B85 /* FCQRCodeViewController.xib */,
 			);
-			path = "二维码";
+			path = "QRCode（二维码）";
 			sourceTree = "<group>";
 		};
-		A4911ADE2A86243200733B85 /* 设备设置 */ = {
+		A4911ADE2A86243200733B85 /* Device Settings（设备设置） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AE42A86243200733B85 /* DNDSettingViewController.h */,
@@ -642,10 +642,10 @@
 				A4911AED2A86243200733B85 /* FCSedentaryReminderViewController.m */,
 				A4911AF52A86243200733B85 /* FCSedentaryReminderViewController.xib */,
 			);
-			path = "设备设置";
+			path = "Device Settings（设备设置）";
 			sourceTree = "<group>";
 		};
-		A4911AF92A86243200733B85 /* 天气 */ = {
+		A4911AF92A86243200733B85 /* Weahther（天气） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911BB52A862D4000733B85 /* FCWeatherForecastViewController.h */,
@@ -655,17 +655,17 @@
 				A4911AFB2A86243200733B85 /* FCWeatherViewController.m */,
 				A4911AFA2A86243200733B85 /* FCWeatherViewController.xib */,
 			);
-			path = "天气";
+			path = "Weahther（天气）";
 			sourceTree = "<group>";
 		};
-		A4911AFD2A86243200733B85 /* 女性健康 */ = {
+		A4911AFD2A86243200733B85 /* Women Health（女性健康） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911AFF2A86243200733B85 /* FCWomenHealthyViewController.h */,
 				A4911B002A86243200733B85 /* FCWomenHealthyViewController.m */,
 				A4911AFE2A86243200733B85 /* FCWomenHealthyViewController.xib */,
 			);
-			path = "女性健康";
+			path = "Women Health（女性健康）";
 			sourceTree = "<group>";
 		};
 		A4911B012A86243200733B85 /* Base */ = {
@@ -725,7 +725,7 @@
 			path = en.lproj;
 			sourceTree = "<group>";
 		};
-		A4911B862A862C0200733B85 /* 表盘 */ = {
+		A4911B862A862C0200733B85 /* Dail（表盘） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911B892A862C0200733B85 /* Cells */,
@@ -743,7 +743,7 @@
 				A4911B8F2A862C0200733B85 /* FCWatchFaceViewController.xib */,
 				A4911B952A862C0200733B85 /* Models */,
 			);
-			path = "表盘";
+			path = "Dail（表盘）";
 			sourceTree = "<group>";
 		};
 		A4911B892A862C0200733B85 /* Cells */ = {
@@ -767,7 +767,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A4911BA82A862C6200733B85 /* 运动数据推送 */ = {
+		A4911BA82A862C6200733B85 /* Sports Data Push（运动数据推送） */ = {
 			isa = PBXGroup;
 			children = (
 				A4911BA92A862C6200733B85 /* Cells */,
@@ -775,7 +775,7 @@
 				A4911BAE2A862C6300733B85 /* FCSportDataPushViewController.h */,
 				A4911BAF2A862C6300733B85 /* FCSportDataPushViewController.m */,
 			);
-			path = "运动数据推送";
+			path = "Sports Data Push（运动数据推送）";
 			sourceTree = "<group>";
 		};
 		A4911BA92A862C6200733B85 /* Cells */ = {

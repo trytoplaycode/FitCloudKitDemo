@@ -11,9 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FCBaseViewController : UIViewController
 
-@property (nonatomic, assign) BOOL needBack;//默认有返回按钮
+@property (nonatomic, assign) BOOL needBack;
 
-@property (nonatomic, assign) BOOL needBottomLine;//是否需要底部阴影
+@property (nonatomic, assign) BOOL needBottomLine;
 
 @property (nonatomic, strong) UIView *navBackView;
 

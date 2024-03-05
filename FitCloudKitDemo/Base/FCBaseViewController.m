@@ -87,7 +87,7 @@
 - (void)initialization {
     
 }
-#pragma mark - 返回点击事件
+#pragma mark - Action
 - (void)backAction {
     
 }
@@ -107,7 +107,7 @@
     self.bottomLine.hidden = !_needBottomLine;
 }
 
-#pragma mark - 懒加载
+#pragma mark - Lazy
 - (UIView *)navBackView {
     if (!_navBackView) {
         _navBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTopBarHeight)];

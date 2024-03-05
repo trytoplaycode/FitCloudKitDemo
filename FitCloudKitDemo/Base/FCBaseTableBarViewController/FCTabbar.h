@@ -13,19 +13,19 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^centerButtonClickBlock)(void);
 @interface FCTabbar : UIImageView
 
-/** 点击事件 */
+/** 点击事件（click action） */
 @property (nonatomic, copy) centerButtonClickBlock centerButtonCallback;
-/** tabbar按钮显示信息 */
+/** tabbar items */
 @property(copy, nonatomic) NSArray<UITabBarItem *> *items;
-/** 设置文字颜色 */
+/** text color */
 @property (strong , nonatomic) UIColor *textColor;
-/** 设置选中颜色 */
+/** select text color */
 @property (strong , nonatomic) UIColor *selectedTextColor;
-/** 其他按钮 */
+/** other buttons */
 @property (strong , nonatomic) NSMutableArray <FCButton*> *btnArr;
-/** 中间按钮 */
+/** center button */
 @property (strong , nonatomic) FCCenterButton *centerBtn;
-/** 按钮索引 */
+/** select index */
 @property (assign, nonatomic) NSUInteger selectButtoIndex;
 
 - (void)setBrigdAtIndex:(NSInteger)index;

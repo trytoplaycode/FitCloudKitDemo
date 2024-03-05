@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) FCTabbar *tabbar;
 
 /**
- * 添加子控制器
- * @param controller          需管理的子控制器
- * @param title               底部文字
- * @param imageName           未选中的图片名
- * @param selectedImageName   选中的图片名
+ * 添加tabbar（add child controller）
+ * @param controller          需要管理的控制器（controller）
+ * @param title               底部文字（title for tabbar）
+ * @param imageName           未选中时的图片（unselect image）
+ * @param selectedImageName   选中时的图片（select image）
  */
 - (void)addChildController:(id)controller
                      title:(NSString *)title
@@ -26,11 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
          selectedImageName:(NSString *)selectedImageName;
 
 /**
- * 设置中间按钮
- * @param controller          需管理的子控制器
- * @param title               底部文字
- * @param imageName           未选中的图片名
- * @param selectedImageName   选中的图片名
+ * 添加tabbar（add child controller）
+ * @param controller          需要管理的控制器（controller）
+ * @param title               底部文字（title for tabbar）
+ * @param imageName           未选中时的图片（unselect image）
+ * @param selectedImageName   选中时的图片（select image）
  */
 - (void)addCenterController:(nullable id)controller
                       bulge:(BOOL)bulge
